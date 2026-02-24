@@ -3,98 +3,257 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="Deploy OpenClaw on Railway in 5 Minutes (2026)" 
-  description="The easiest way to set up OpenClaw. One-click deployment on Railway - zero terminal, zero code. £5/month, 24/7 uptime.">
+  title="Set Up OpenClaw on Railway in 5 Minutes (2026)" 
+  description="The easiest way to set up OpenClaw. One-click setup on Railway - no terminal, no code. £5/month, 24/7 uptime.">
   
+  <style>
+    .hero-simple {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    
+    .hero-simple h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .hero-simple .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .step-card h2 {
+      font-size: 1.6rem;
+      margin: 0 0 16px 0;
+      color: var(--text);
+    }
+    
+    .step-card p {
+      margin-bottom: 20px;
+    }
+    
+    .step-card ol, .step-card ul {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+    
+    .step-card li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255, 107, 74, 0.1) 0%, rgba(255, 130, 102, 0.05) 100%);
+      border: 1px solid rgba(255, 107, 74, 0.2);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box strong {
+      color: var(--accent);
+    }
+    
+    .pros-cons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    
+    .pro-item, .con-item {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg-card-hover);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    
+    .pro-item .icon { color: var(--green); font-size: 1.3rem; }
+    .con-item .icon { color: var(--text-dim); font-size: 1.3rem; }
+    
+    .final-push {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
+      padding: 48px 32px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    
+    .final-push h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 0 16px 0;
+    }
+    
+    .final-push p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+  </style>
+
+  <div class="hero-simple">
+    <div class="container-narrow">
+      <h1>Set Up OpenClaw on Railway<br>in 5 Minutes</h1>
+      <p class="subtitle">The easiest way to get your AI assistant running. No terminal, no code - just click and paste.</p>
+    </div>
+  </div>
+
   <div class="article">
     <div class="container-narrow">
-      <h1>Set Up OpenClaw on Railway in 5 Minutes</h1>
-      <p class="subtitle">The easiest way to get OpenClaw running. No terminal, no code - just click a button and paste one thing.</p>
 
+      <!-- BIG CTA -->
       <div class="cta-box">
-        <h3>⚡ Start Here</h3>
-        <p>Click the button below, sign up for Railway (free trial available), paste your API key, and you're done.</p>
+        <h3>⚡ Ready to Start?</h3>
+        <p>Follow the steps below, or just click here now if you already have an Anthropic API key.</p>
         <a href="https://railway.app/new/template/openclaw" class="cta-btn" target="_blank" rel="noopener">
           Set Up on Railway →
         </a>
-        <p style="font-size: 0.85rem; margin-top: 12px; margin-bottom: 0;">£5/month after trial · Cancel anytime</p>
+        <p style="font-size: 0.85rem; margin-top: 12px; margin-bottom: 0; opacity: 0.9;">Free trial · £5/month after · Cancel anytime</p>
       </div>
 
-      <h2>Why Railway?</h2>
-      <p>Railway is a hosting platform that handles all the technical stuff for you. You don't need to know what Linux is, what a terminal is, or how servers work. You click a button and it just works.</p>
+      <!-- STEP 1 -->
+      <div class="step-card">
+        <h2>Step 1: Get Your API Key</h2>
+        <p>OpenClaw uses Claude (made by Anthropic) as its brain. You need an API key to let it think.</p>
+        
+        <ol>
+          <li>Go to <a href="https://console.anthropic.com" target="_blank" style="color: var(--accent);">console.anthropic.com</a></li>
+          <li>Sign up for an account (it's free)</li>
+          <li>Add £5-10 credit to your account (pay as you go)</li>
+          <li>Click "API Keys" in the sidebar</li>
+          <li>Click "Create Key" and copy it somewhere safe</li>
+        </ol>
 
-      <ul>
-        <li><strong>One-click deploy</strong> - Literally click one button</li>
-        <li><strong>£5/month</strong> - Cheaper than Netflix</li>
-        <li><strong>24/7 online</strong> - Your PC doesn't need to stay on</li>
-        <li><strong>Automatic updates</strong> - New OpenClaw features deploy automatically</li>
-        <li><strong>Zero maintenance</strong> - Set it and forget it</li>
-      </ul>
-
-      <h2>Step 1: Get an Anthropic API Key</h2>
-      <p>OpenClaw uses Claude (made by Anthropic) as its brain. You need an API key to let it think.</p>
-
-      <ol>
-        <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color: var(--accent);">console.anthropic.com</a></li>
-        <li>Sign up for an account (free)</li>
-        <li>Add £5-10 credit to your account (pay-as-you-go, lasts weeks for normal use)</li>
-        <li>Click "API Keys" in the sidebar</li>
-        <li>Click "Create Key" and copy it somewhere safe</li>
-      </ol>
-
-      <p><strong>Cost:</strong> Expect to spend £2-5/month on API usage for personal use. Heavy users might spend £10-15.</p>
-
-      <h2>Step 2: Set Up on Railway</h2>
-      <p>Now the easy part. Click this button:</p>
-
-      <div class="cta-box">
-        <a href="https://railway.app/new/template/openclaw" class="cta-btn" target="_blank" rel="noopener">
-          🚀 Set Up on Railway
-        </a>
+        <div class="highlight-box">
+          <strong>💰 Cost:</strong> Expect to spend £2-5/month on API usage for normal personal use. Heavy users might spend £10-15. This is separate from Railway hosting.
+        </div>
       </div>
 
-      <p>You'll be asked to:</p>
-      <ol>
-        <li><strong>Sign up for Railway</strong> - Use GitHub login (easiest)</li>
-        <li><strong>Paste your API key</strong> - The one from Step 1</li>
-        <li><strong>Click the button</strong> - That's it</li>
-      </ol>
+      <!-- STEP 2 -->
+      <div class="step-card">
+        <h2>Step 2: Set Up on Railway</h2>
+        <p>Railway is a hosting platform that runs OpenClaw for you 24/7. No need to keep your computer on.</p>
 
-      <p>Railway will set up OpenClaw for you. This takes about 2-3 minutes. You'll see a progress bar.</p>
+        <div class="cta-box" style="margin: 24px 0;">
+          <a href="https://railway.app/new/template/openclaw" class="cta-btn" target="_blank" rel="noopener">
+            🚀 Open Railway Setup
+          </a>
+        </div>
 
-      <h2>Step 3: Connect WhatsApp</h2>
-      <p>Once deployed, you need to connect your WhatsApp so you can message your assistant.</p>
+        <p>You'll be asked to:</p>
+        <ol>
+          <li><strong>Sign up for Railway</strong> - Use GitHub login (easiest)</li>
+          <li><strong>Paste your API key</strong> - The one from Step 1</li>
+          <li><strong>Click the button</strong> - That's it</li>
+        </ol>
 
-      <p><strong>We'll add detailed WhatsApp setup instructions here soon.</strong> For now, check the <a href="https://docs.openclaw.ai" target="_blank" rel="noopener" style="color: var(--accent);">official OpenClaw docs</a>.</p>
+        <p>Railway will set up OpenClaw for you. This takes about 2-3 minutes. You'll see a progress bar.</p>
+      </div>
 
-      <h2>Step 4: Start Using It</h2>
-      <p>Message your OpenClaw assistant on WhatsApp and try:</p>
-      <ul>
-        <li>"Check my emails and flag anything urgent"</li>
-        <li>"What's on my calendar this week?"</li>
-        <li>"Remind me to call Dave at 2pm tomorrow"</li>
-        <li>"Book me a table for 2 on Friday at 7pm"</li>
-      </ul>
+      <!-- STEP 3 -->
+      <div class="step-card">
+        <h2>Step 3: Connect WhatsApp</h2>
+        <p>Once Railway finishes, you need to connect WhatsApp so you can message your assistant.</p>
+        
+        <p><strong>📱 Detailed WhatsApp setup instructions coming soon.</strong> For now, check the <a href="https://docs.openclaw.ai" target="_blank" style="color: var(--accent);">official OpenClaw docs</a> for the latest instructions.</p>
+      </div>
 
-      <h2>Pricing Breakdown</h2>
-      <ul>
-        <li><strong>Railway hosting:</strong> £5/month (24/7 server)</li>
-        <li><strong>Anthropic API:</strong> £2-10/month (depends on usage)</li>
-        <li><strong>Total:</strong> £7-15/month for a personal AI assistant</li>
-      </ul>
+      <!-- STEP 4 -->
+      <div class="step-card">
+        <h2>Step 4: Start Using It</h2>
+        <p>Once WhatsApp is connected, message your OpenClaw assistant and try:</p>
+        
+        <ul>
+          <li>"Check my emails and flag anything urgent"</li>
+          <li>"What's on my calendar this week?"</li>
+          <li>"Remind me to call Dave at 2pm tomorrow"</li>
+          <li>"Book me a table for 2 on Friday at 7pm"</li>
+        </ul>
 
-      <p>Compare that to hiring a virtual assistant (£500+/month) or wasting 5 hours a week on admin tasks (your time = priceless).</p>
+        <p>It'll respond just like a person would, and actually do the tasks for you.</p>
+      </div>
 
-      <div class="cta-box">
-        <h3>Ready to Get Started?</h3>
-        <p>That's it - you can be up and running in 5 minutes.</p>
+      <!-- WHY RAILWAY -->
+      <div class="step-card">
+        <h2>Why Railway?</h2>
+        <p>Railway handles all the technical stuff so you don't have to:</p>
+        
+        <div class="pros-cons">
+          <div class="pro-item">
+            <span class="icon">✓</span>
+            <div>
+              <strong>No terminal needed</strong>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin: 4px 0 0;">Just click buttons</p>
+            </div>
+          </div>
+          <div class="pro-item">
+            <span class="icon">✓</span>
+            <div>
+              <strong>24/7 uptime</strong>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin: 4px 0 0;">Always available</p>
+            </div>
+          </div>
+          <div class="pro-item">
+            <span class="icon">✓</span>
+            <div>
+              <strong>Auto-updates</strong>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin: 4px 0 0;">New features automatically</p>
+            </div>
+          </div>
+          <div class="pro-item">
+            <span class="icon">✓</span>
+            <div>
+              <strong>£5/month</strong>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin: 4px 0 0;">Cheaper than Netflix</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING -->
+      <div class="step-card">
+        <h2>What Does This Cost?</h2>
+        <p>Here's the full breakdown:</p>
+        
+        <ul>
+          <li><strong>Railway hosting:</strong> £5/month (runs OpenClaw 24/7)</li>
+          <li><strong>Anthropic API:</strong> £2-10/month (depends how much you use it)</li>
+          <li><strong>Total:</strong> £7-15/month for your own AI assistant</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p style="margin: 0;"><strong>Compare:</strong> Hiring a virtual assistant costs £500+/month. Or think about how many hours a week you spend on admin tasks - your time is worth way more than £15.</p>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="final-push">
+        <h2>Ready to Get Started?</h2>
+        <p>You're 5 minutes away from having your own AI assistant.</p>
         <a href="https://railway.app/new/template/openclaw" class="cta-btn" target="_blank" rel="noopener">
           Set Up on Railway →
         </a>
       </div>
 
-      <h2>Prefer Free? Try Local Install</h2>
-      <p>If you don't want to pay £5/month, you can <a href="/guides/local-install" style="color: var(--accent);">install OpenClaw on your computer for free</a>. Takes 20 minutes and requires your PC to stay on.</p>
+      <!-- ALTERNATIVE -->
+      <div style="text-align: center; margin: 40px 0;">
+        <p style="color: var(--text-muted);">Don't want to pay £5/month? <a href="/guides/local-install" style="color: var(--accent);">Install OpenClaw on your computer for free</a> (takes 20 minutes, computer must stay on)</p>
+      </div>
 
     </div>
   </div>
