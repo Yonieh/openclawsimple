@@ -1,5 +1,4 @@
 ---
-// OpenClaw Simple - Accessible, Stylish Homepage
 import SchemaOrg from '../components/SchemaOrg.astro';
 ---
 <!DOCTYPE html>
@@ -7,16 +6,16 @@ import SchemaOrg from '../components/SchemaOrg.astro';
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenClaw Setup Guide: Install in 5 Minutes | OpenClaw Simple</title>
-<meta name="description" content="Complete beginner's guide to setting up OpenClaw - your AI assistant that checks emails, books restaurants, and manages your calendar from WhatsApp. Free and paid options.">
+<title>OpenClaw VPS Setup Guide: Complete Installation Tutorial | OpenClaw Simple</title>
+<meta name="description" content="Complete guide to setting up OpenClaw on your own VPS. Compare providers (Hetzner, DigitalOcean, Linode), AI models (Claude, GPT, Gemini), and get running in 20 minutes with copy-paste commands.">
 <link rel="canonical" href="https://openclawsimple.com" />
-<meta property="og:title" content="Set Up OpenClaw in 5 Minutes">
-<meta property="og:description" content="Your AI assistant that checks emails, books restaurants, and manages your calendar from WhatsApp.">
+<meta property="og:title" content="OpenClaw VPS Setup Guide - Complete Tutorial">
+<meta property="og:description" content="Set up OpenClaw on your VPS. Compare providers, choose your AI model, copy-paste commands. Full control, £4/month.">
 <meta property="og:url" content="https://openclawsimple.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenClaw Setup Guide: Install in 5 Minutes">
-<meta name="twitter:description" content="Complete beginner's guide. Free and paid setup options. Your AI assistant that actually does things.">
+<meta name="twitter:title" content="OpenClaw VPS Setup Guide">
+<meta name="twitter:description" content="VPS setup tutorial with provider comparisons, AI model reviews, and copy-paste commands.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <SchemaOrg type="website" />
 <style>
@@ -37,6 +36,8 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     --accent-glow: rgba(255, 107, 87, 0.25);
     --green: #52d179;
     --blue: #5b9eff;
+    --yellow: #fbbf24;
+    --purple: #a78bfa;
     --font-body: 'Inter', -apple-system, sans-serif;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -65,7 +66,6 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     outline-offset: 2px;
   }
 
-  /* Screen reader only text */
   .sr-only {
     position: absolute;
     width: 1px;
@@ -78,7 +78,6 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     border-width: 0;
   }
 
-  /* SKIP TO CONTENT */
   .skip-to-main {
     position: absolute;
     left: -9999px;
@@ -152,47 +151,6 @@ import SchemaOrg from '../components/SchemaOrg.astro';
   .hero {
     padding: 140px 0 80px;
     text-align: center;
-    position: relative;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-    font-weight: 500;
-  }
-
-  .hero-badge .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 8px var(--green);
-    animation: pulse 2s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
   }
 
   h1 {
@@ -213,7 +171,7 @@ import SchemaOrg from '../components/SchemaOrg.astro';
   .hero-sub {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 680px;
     margin: 0 auto 48px;
     line-height: 1.6;
   }
@@ -223,7 +181,7 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 56px;
+    margin-bottom: 72px;
   }
 
   .btn-primary {
@@ -269,110 +227,17 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     box-shadow: var(--shadow-md);
   }
 
-  /* TRUST BAR - now a proper list */
-  .trust-bar {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 72px;
-    list-style: none;
+  /* COMPARISON SECTION */
+  .section {
+    padding: 80px 0;
   }
 
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9375rem;
-    color: var(--text-tertiary);
-    font-weight: 500;
-  }
-
-  /* CHAT DEMO */
-  .chat-demo {
-    max-width: 480px;
-    margin: 0 auto 100px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .chat-header {
-    padding: 16px 24px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    background: var(--bg-elevated);
-  }
-
-  .chat-header .status {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 8px var(--green);
-  }
-
-  .chat-messages {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .msg {
-    max-width: 85%;
-    padding: 12px 16px;
-    border-radius: 16px;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    animation: fadeUp 0.5s ease both;
-  }
-
-  .msg:nth-child(1) { animation-delay: 0.2s; }
-  .msg:nth-child(2) { animation-delay: 0.6s; }
-  .msg:nth-child(3) { animation-delay: 1.0s; }
-  .msg:nth-child(4) { animation-delay: 1.4s; }
-  .msg:nth-child(5) { animation-delay: 1.8s; }
-  .msg:nth-child(6) { animation-delay: 2.2s; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .msg-user {
-    align-self: flex-end;
-    background: var(--accent);
-    color: white;
-    border-bottom-right-radius: 4px;
-  }
-
-  .msg-bot {
-    align-self: flex-start;
-    background: var(--bg-elevated);
-    color: var(--text);
-    border-bottom-left-radius: 4px;
-    border: 1px solid var(--border);
-  }
-
-  .msg-bot .check {
-    color: var(--green);
-    font-weight: 600;
-  }
-
-  /* SECTIONS */
   .section-title {
     text-align: center;
-    margin-bottom: 16px;
     font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: 800;
     letter-spacing: -0.02em;
+    margin-bottom: 16px;
   }
 
   .section-sub {
@@ -382,44 +247,36 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     margin-bottom: 56px;
   }
 
-  #start { scroll-margin-top: 100px; padding: 80px 0; }
-  #what-is { scroll-margin-top: 100px; padding: 80px 0; background: var(--bg-elevated); }
-
-  /* PATHS */
-  .paths {
+  /* VPS COMPARISON TABLE */
+  .comparison-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-bottom: var(--space-2xl);
   }
 
-  .path-card {
+  .provider-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
     padding: 32px;
-    position: relative;
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
   }
 
-  .path-card:hover {
+  .provider-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--border);
-  }
-
-  .path-card.recommended {
     border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent), var(--shadow-md), var(--shadow-glow);
   }
 
-  .path-badge {
-    position: absolute;
-    top: -14px;
-    left: 32px;
-    padding: 6px 16px;
+  .provider-card.recommended {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent), var(--shadow-md);
+  }
+
+  .provider-badge {
+    display: inline-block;
+    padding: 4px 12px;
     background: var(--accent);
     color: white;
     font-size: 0.75rem;
@@ -427,94 +284,86 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
+    margin-bottom: 16px;
   }
 
-  .path-icon { font-size: 2.5rem; margin-bottom: 20px; }
-  .path-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
-  .path-card .desc {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 28px;
-    line-height: 1.6;
+  .provider-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
   }
 
-  /* PATH STATS - now a definition list */
-  .path-stats {
+  .provider-card .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .provider-card .price-note {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    margin-bottom: 24px;
+  }
+
+  .provider-card ul {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .provider-card li {
+    padding: 8px 0;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
-    flex: 1;
-  }
-
-  .path-stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    gap: 10px;
     font-size: 0.9375rem;
+    color: var(--text-secondary);
   }
 
-  .path-stat dt { color: var(--text-secondary); }
-  .path-stat dd { font-weight: 600; color: var(--text); margin: 0; }
+  .provider-card li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
 
-  .path-link {
+  .provider-link {
     display: block;
     text-align: center;
     padding: 14px;
-    background: transparent;
+    background: var(--bg-elevated);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     color: var(--text);
     font-weight: 600;
-    font-size: 1rem;
     text-decoration: none;
     transition: all 0.2s;
   }
 
-  .path-link:hover {
+  .provider-link:hover {
     background: var(--bg-card-hover);
+    border-color: var(--accent);
     transform: translateY(-1px);
   }
 
-  .path-card.recommended .path-link {
+  .provider-card.recommended .provider-link {
     background: var(--accent);
     border-color: var(--accent);
     color: white;
   }
 
-  .path-card.recommended .path-link:hover {
+  .provider-card.recommended .provider-link:hover {
     background: var(--accent-hover);
   }
 
-  .path-link.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  /* FEATURES */
-  .what-is-content {
-    max-width: 720px;
-    margin: 0 auto 64px;
-    text-align: center;
-  }
-
-  .what-is-content p {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .what-is-content strong { color: var(--text); }
-
-  .features {
+  /* AI MODEL CARDS */
+  .model-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
   }
 
-  .feature-card {
+  .model-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -522,31 +371,65 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     transition: all 0.3s;
   }
 
-  .feature-card:hover {
+  .model-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    border-color: var(--accent);
   }
 
-  .feature-icon { font-size: 2rem; margin-bottom: 16px; }
-  .feature-card h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
-  .feature-card p { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
-
-  /* FINAL CTA */
-  .final-cta {
-    text-align: center;
-    padding: 100px 0;
-  }
-
-  .final-cta h2 {
-    font-size: clamp(1.875rem, 4vw, 2.5rem);
-    font-weight: 800;
+  .model-card .model-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 16px;
   }
 
-  .final-cta p {
+  .model-icon {
+    font-size: 2rem;
+  }
+
+  .model-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .model-card .rating {
+    color: var(--yellow);
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+  }
+
+  .model-card p {
     color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .model-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    background: var(--bg-elevated);
+    padding: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
     font-size: 1.125rem;
-    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--text);
   }
 
   /* FOOTER */
@@ -599,196 +482,248 @@ import SchemaOrg from '../components/SchemaOrg.astro';
   @media (max-width: 768px) {
     nav { padding: var(--space-md); }
     .hero { padding: 120px 0 60px; }
-    .trust-bar { gap: 24px; }
-    .paths { grid-template-columns: 1fr; }
+    .comparison-grid { grid-template-columns: 1fr; }
     .hero-buttons { flex-direction: column; align-items: center; }
-    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-    }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Skip to main content for keyboard/screen reader users -->
 <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
 <nav role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="OpenClaw Simple — home">
+  <a href="/" class="nav-logo" aria-label="OpenClaw Simple home">
     <span class="lobster" aria-hidden="true">🦞</span>
     <span>OpenClaw Simple</span>
   </a>
-  <a href="#start" class="nav-cta">Get Started</a>
+  <a href="/guides/vps-deployment" class="nav-cta">Start Setup</a>
 </nav>
 
 <main id="main-content">
 
 <!-- HERO -->
-<section class="hero" aria-labelledby="hero-heading">
+<section class="hero">
   <div class="container">
-    <div class="hero-badge">
-      <span class="dot" aria-hidden="true"></span>
-      Complete beginner's guide
-    </div>
-
-    <h1 id="hero-heading">Set Up OpenClaw in <span class="highlight">5 Minutes</span></h1>
+    <h1>Set Up OpenClaw on <span class="highlight">Your Own VPS</span></h1>
 
     <p class="hero-sub">
-      Your own AI assistant that actually does things. Checks emails, books restaurants, manages your calendar — all from WhatsApp. We'll show you the easiest way.
+      Complete control, full privacy, £4/month. Choose your VPS provider, pick your AI model, copy-paste the commands, and you're running in 20 minutes.
     </p>
 
     <div class="hero-buttons">
-      <a href="/guides/railway-quick-start" class="btn-primary">Get Started →</a>
-      <a href="#what-is" class="btn-secondary">See How It Works</a>
-    </div>
-
-    <ul class="trust-bar" aria-label="Key benefits">
-      <li class="trust-item"><span aria-hidden="true">⚡</span> Easy to follow</li>
-      <li class="trust-item"><span aria-hidden="true">💰</span> Free option available</li>
-      <li class="trust-item"><span aria-hidden="true">🔒</span> Your data stays yours</li>
-    </ul>
-
-    <div class="chat-demo" role="figure" aria-label="Example conversation with OpenClaw on WhatsApp">
-      <div class="chat-header">
-        <span class="status" aria-hidden="true"></span>
-        <span aria-hidden="true">🦞</span> OpenClaw — Online
-      </div>
-      <div class="chat-messages" aria-hidden="true">
-        <div class="msg msg-user">Check my emails and flag anything urgent</div>
-        <div class="msg msg-bot"><span class="check">✓</span> Checked — 3 urgent emails found</div>
-        <div class="msg msg-user">Book me a table for 2 on Friday at 7pm</div>
-        <div class="msg msg-bot"><span class="check">✓</span> Booking request sent</div>
-        <div class="msg msg-user">Remind me to call Dave at 9am tomorrow</div>
-        <div class="msg msg-bot"><span class="check">✓</span> Reminder set for 9:00 AM</div>
-      </div>
+      <a href="/guides/vps-deployment" class="btn-primary">Full Setup Guide →</a>
+      <a href="#providers" class="btn-secondary">Compare Providers</a>
     </div>
   </div>
 </section>
 
-<!-- SETUP PATHS -->
-<section id="start" aria-labelledby="start-heading">
+<!-- VPS PROVIDERS -->
+<section id="providers" class="section" style="background: var(--bg-elevated);">
   <div class="container">
-    <h2 class="section-title" id="start-heading">Choose Your Setup Method</h2>
-    <p class="section-sub">Pick the approach that works best for you</p>
+    <h2 class="section-title">Choose Your VPS Provider</h2>
+    <p class="section-sub">All work great with OpenClaw. Pick based on location and price.</p>
 
-    <div class="paths">
-      <article class="path-card recommended">
-        <span class="path-badge">⚡ Easiest</span>
-        <div class="path-icon" aria-hidden="true">✨</div>
-        <h3>One-Click Setup</h3>
-        <p class="desc">Just click a button and paste one thing. No terminal, no code.</p>
-        <dl class="path-stats">
-          <div class="path-stat">
-            <dt>Time:</dt>
-            <dd>5 minutes</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Cost:</dt>
-            <dd>£5/month hosting</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Always on:</dt>
-            <dd>24/7</dd>
-          </div>
-        </dl>
-        <a href="/guides/railway-quick-start" class="path-link">Start Here →</a>
+    <div class="comparison-grid">
+      <!-- HETZNER -->
+      <article class="provider-card recommended">
+        <span class="provider-badge">⭐ Best Value</span>
+        <h3>Hetzner</h3>
+        <div class="price">€4.15<span style="font-size: 1rem; font-weight: 400; color: var(--text-secondary);">/mo</span></div>
+        <p class="price-note">~£3.50/month · Germany-based</p>
+        <ul>
+          <li>2 vCPU, 4GB RAM</li>
+          <li>40GB SSD storage</li>
+          <li>20TB traffic</li>
+          <li>European data centers</li>
+          <li>Great performance</li>
+        </ul>
+        <a href="https://www.hetzner.com/cloud" target="_blank" rel="noopener" class="provider-link">
+          Get Hetzner VPS →
+        </a>
       </article>
 
-      <article class="path-card">
-        <div class="path-icon" aria-hidden="true">🛠️</div>
-        <h3>Free Setup</h3>
-        <p class="desc">Run it on your Mac or Windows computer. No monthly cost.</p>
-        <dl class="path-stats">
-          <div class="path-stat">
-            <dt>Time:</dt>
-            <dd>20 minutes</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Cost:</dt>
-            <dd>Free</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Note:</dt>
-            <dd>Computer stays on</dd>
-          </div>
-        </dl>
-        <a href="/guides/local-install" class="path-link">Free Guide →</a>
+      <!-- DIGITALOCEAN -->
+      <article class="provider-card">
+        <h3>DigitalOcean</h3>
+        <div class="price">$6<span style="font-size: 1rem; font-weight: 400; color: var(--text-secondary);">/mo</span></div>
+        <p class="price-note">~£4.80/month · US-based</p>
+        <ul>
+          <li>1 vCPU, 1GB RAM</li>
+          <li>25GB SSD storage</li>
+          <li>1TB traffic</li>
+          <li>Global data centers</li>
+          <li>Beginner-friendly UI</li>
+        </ul>
+        <a href="https://www.digitalocean.com/products/droplets" target="_blank" rel="noopener" class="provider-link">
+          Get DigitalOcean Droplet →
+        </a>
       </article>
 
-      <article class="path-card">
-        <div class="path-icon" aria-hidden="true">🚀</div>
-        <h3>Done For You</h3>
-        <p class="desc">We handle everything. You just start using it.</p>
-        <dl class="path-stats">
-          <div class="path-stat">
-            <dt>Time:</dt>
-            <dd>2 minutes</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Cost:</dt>
-            <dd>£20/month</dd>
-          </div>
-          <div class="path-stat">
-            <dt>Work:</dt>
-            <dd>None</dd>
-          </div>
-        </dl>
-        <span class="path-link disabled" role="link" aria-disabled="true">Coming Soon</span>
+      <!-- LINODE -->
+      <article class="provider-card">
+        <h3>Linode (Akamai)</h3>
+        <div class="price">$5<span style="font-size: 1rem; font-weight: 400; color: var(--text-secondary);">/mo</span></div>
+        <p class="price-note">~£4/month · US-based</p>
+        <ul>
+          <li>1 vCPU, 1GB RAM</li>
+          <li>25GB SSD storage</li>
+          <li>1TB traffic</li>
+          <li>11 global locations</li>
+          <li>Excellent support</li>
+        </ul>
+        <a href="https://www.linode.com/products/shared/" target="_blank" rel="noopener" class="provider-link">
+          Get Linode VPS →
+        </a>
+      </article>
+
+      <!-- VULTR -->
+      <article class="provider-card">
+        <h3>Vultr</h3>
+        <div class="price">$6<span style="font-size: 1rem; font-weight: 400; color: var(--text-secondary);">/mo</span></div>
+        <p class="price-note">~£4.80/month · US-based</p>
+        <ul>
+          <li>1 vCPU, 1GB RAM</li>
+          <li>25GB SSD storage</li>
+          <li>1TB traffic</li>
+          <li>32 global locations</li>
+          <li>Fast network</li>
+        </ul>
+        <a href="https://www.vultr.com/pricing/" target="_blank" rel="noopener" class="provider-link">
+          Get Vultr VPS →
+        </a>
       </article>
     </div>
+
+    <p style="text-align: center; color: var(--text-tertiary); font-size: 0.9375rem;">
+      💡 <strong>Recommendation:</strong> Hetzner for Europe (best price), DigitalOcean for US (easiest setup)
+    </p>
   </div>
 </section>
 
-<!-- WHAT IS OPENCLAW -->
-<section id="what-is" aria-labelledby="what-is-heading">
+<!-- AI MODEL PROVIDERS -->
+<section id="ai-models" class="section">
   <div class="container">
-    <h2 class="section-title" id="what-is-heading">What is OpenClaw?</h2>
+    <h2 class="section-title">Choose Your AI Model</h2>
+    <p class="section-sub">OpenClaw works with multiple AI providers. Pick based on quality and cost.</p>
 
-    <div class="what-is-content">
-      <p>
-        OpenClaw is an open-source AI assistant that <strong>actually does things</strong> for you. Unlike ChatGPT which just answers questions, OpenClaw connects to your email, calendar, and apps to handle boring admin work.
-      </p>
-      <p>
-        You message it from WhatsApp like you'd message a person. It runs on your own server (or one you rent), so your data stays private. This guide shows you the easiest ways to set it up.
-      </p>
+    <div class="model-grid">
+      <!-- ANTHROPIC CLAUDE -->
+      <article class="model-card">
+        <div class="model-header">
+          <span class="model-icon">🤖</span>
+          <div>
+            <h3>Anthropic Claude</h3>
+            <div class="rating">★★★★★ Recommended</div>
+          </div>
+        </div>
+        <p>Most capable model. Best at following complex instructions, writing code, and having natural conversations.</p>
+        <div class="model-stats">
+          <div class="stat">
+            <div class="stat-label">Cost</div>
+            <div class="stat-value">£2–10/mo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Quality</div>
+            <div class="stat-value">Excellent</div>
+          </div>
+        </div>
+        <a href="https://console.anthropic.com" target="_blank" rel="noopener" class="provider-link">
+          Get API Key →
+        </a>
+      </article>
+
+      <!-- OPENAI GPT -->
+      <article class="model-card">
+        <div class="model-header">
+          <span class="model-icon">💬</span>
+          <div>
+            <h3>OpenAI GPT-4</h3>
+            <div class="rating">★★★★☆ Popular</div>
+          </div>
+        </div>
+        <p>Well-known, widely used. Good at general tasks, creative writing, and quick responses.</p>
+        <div class="model-stats">
+          <div class="stat">
+            <div class="stat-label">Cost</div>
+            <div class="stat-value">£3–12/mo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Quality</div>
+            <div class="stat-value">Very Good</div>
+          </div>
+        </div>
+        <a href="https://platform.openai.com" target="_blank" rel="noopener" class="provider-link">
+          Get API Key →
+        </a>
+      </article>
+
+      <!-- GOOGLE GEMINI -->
+      <article class="model-card">
+        <div class="model-header">
+          <span class="model-icon">🔷</span>
+          <div>
+            <h3>Google Gemini</h3>
+            <div class="rating">★★★★☆ Fast</div>
+          </div>
+        </div>
+        <p>Google's latest. Fast responses, good at search and factual questions. Generous free tier.</p>
+        <div class="model-stats">
+          <div class="stat">
+            <div class="stat-label">Cost</div>
+            <div class="stat-value">£0–8/mo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Quality</div>
+            <div class="stat-value">Good</div>
+          </div>
+        </div>
+        <a href="https://ai.google.dev" target="_blank" rel="noopener" class="provider-link">
+          Get API Key →
+        </a>
+      </article>
+
+      <!-- MISTRAL -->
+      <article class="model-card">
+        <div class="model-header">
+          <span class="model-icon">⚡</span>
+          <div>
+            <h3>Mistral AI</h3>
+            <div class="rating">★★★☆☆ Budget</div>
+          </div>
+        </div>
+        <p>European open-source model. Cheaper, privacy-focused, good for basic tasks.</p>
+        <div class="model-stats">
+          <div class="stat">
+            <div class="stat-label">Cost</div>
+            <div class="stat-value">£1–5/mo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Quality</div>
+            <div class="stat-value">Decent</div>
+          </div>
+        </div>
+        <a href="https://console.mistral.ai" target="_blank" rel="noopener" class="provider-link">
+          Get API Key →
+        </a>
+      </article>
     </div>
 
-    <div class="features" role="list">
-      <div class="feature-card" role="listitem">
-        <div class="feature-icon" aria-hidden="true">📧</div>
-        <h4>Email Management</h4>
-        <p>Checks inbox, flags urgent messages, drafts replies</p>
-      </div>
-      <div class="feature-card" role="listitem">
-        <div class="feature-icon" aria-hidden="true">📅</div>
-        <h4>Calendar Control</h4>
-        <p>Schedules meetings, sets reminders, checks availability</p>
-      </div>
-      <div class="feature-card" role="listitem">
-        <div class="feature-icon" aria-hidden="true">🍽️</div>
-        <h4>Bookings &amp; Reservations</h4>
-        <p>Books restaurants, orders taxis, makes appointments</p>
-      </div>
-      <div class="feature-card" role="listitem">
-        <div class="feature-icon" aria-hidden="true">🔒</div>
-        <h4>Your Data, Your Control</h4>
-        <p>Self-hosted, open source, no vendor lock-in</p>
-      </div>
-    </div>
+    <p style="text-align: center; color: var(--text-tertiary); font-size: 0.9375rem; margin-top: 32px;">
+      💡 <strong>Recommendation:</strong> Anthropic Claude for best quality, Gemini for budget-conscious users
+    </p>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta" aria-labelledby="cta-heading">
+<!-- QUICK START CTA -->
+<section class="section" style="background: var(--bg-elevated); text-align: center;">
   <div class="container">
-    <h2 id="cta-heading">Ready to Get Started?</h2>
-    <p>Follow one of our guides and have OpenClaw running in minutes.</p>
-    <a href="/guides/railway-quick-start" class="btn-primary">Start With the Easy Guide →</a>
+    <h2 class="section-title">Ready to Set Up?</h2>
+    <p class="section-sub">Follow our step-by-step guide with copy-paste commands.</p>
+    <a href="/guides/vps-deployment" class="btn-primary">Start VPS Setup Guide →</a>
+    <p style="margin-top: 32px; color: var(--text-tertiary); font-size: 0.9375rem;">
+      Prefer no-code setup? Try our <a href="/guides/railway-quick-start" style="color: var(--accent);">Railway one-click option</a> (£5/month)
+    </p>
   </div>
 </section>
 
@@ -803,10 +738,10 @@ import SchemaOrg from '../components/SchemaOrg.astro';
     </div>
     <p class="footer-tagline">Setup guides for normal humans</p>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/guides/railway-quick-start">Quick Start</a>
+      <a href="/guides/vps-deployment">VPS Setup</a>
+      <a href="/guides/railway-quick-start">Railway (Easy)</a>
       <a href="/guides/what-is-openclaw">What is OpenClaw</a>
-      <a href="/guides/local-install">Free Setup</a>
-      <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub <span class="sr-only">(opens in new tab)</span></a>
+      <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in new tab)</span></a>
     </nav>
     <p class="footer-disclaimer">Independent resource · Not affiliated with OpenClaw project</p>
   </div>
