@@ -41,7 +41,7 @@ import '../styles/global.css';
 	</head>
 	<body class="antialiased">
 		<!-- Header -->
-		<header class="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+		<header class="border-b border-gray-100 glass-effect sticky top-0 z-50 shadow-sm">
 			<div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
 				<div class="flex items-center justify-between">
 					<div class="flex items-center space-x-3">
@@ -58,8 +58,12 @@ import '../styles/global.css';
 		</header>
 
 		<!-- Hero -->
-		<section class="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 py-20 sm:py-28">
-			<div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+		<section class="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20 sm:py-32">
+			<!-- Decorative background elements -->
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+			<div class="absolute top-0 right-1/4 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+			<div class="absolute -bottom-8 left-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+			
 			<div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
 				<div class="text-center mb-12">
 					<div class="inline-block mb-4">
@@ -67,9 +71,9 @@ import '../styles/global.css';
 							✨ No technical skills required
 						</span>
 					</div>
-					<h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+					<h1 class="text-5xl sm:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
 						Set Up Your AI Assistant<br />
-						<span class="gradient-text">in 5 Minutes</span>
+						<span class="gradient-text bg-clip-text">in 5 Minutes</span>
 					</h1>
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
 						OpenClaw is the AI that actually does things — clears your inbox, books restaurants, manages your calendar. We'll show you the easiest way to get started.
@@ -112,12 +116,13 @@ import '../styles/global.css';
 				
 				<div class="grid md:grid-cols-3 gap-8">
 					<!-- Path 1: Railway -->
-					<div class="relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200 card-hover">
-						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-							<span class="bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
-								⭐ RECOMMENDED
+					<div class="relative bg-white rounded-3xl p-8 border-2 border-indigo-200 card-hover shadow-xl">
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+							<span class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg">
+								✨ RECOMMENDED
 							</span>
 						</div>
+						<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl opacity-50 -z-10"></div>
 						<div class="text-5xl mb-4">✨</div>
 						<h3 class="text-2xl font-bold text-gray-900 mb-3">Click & Done</h3>
 						<div class="space-y-2 mb-6">
@@ -143,13 +148,13 @@ import '../styles/global.css';
 						<p class="text-gray-700 mb-6 leading-relaxed">
 							Deploy with Railway's one-click button. No terminal, no code. Perfect for anyone who just wants it to work.
 						</p>
-						<a href="/guides/railway-quick-start" class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-colors">
+						<a href="/guides/railway-quick-start" class="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center px-6 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300">
 							Start here →
 						</a>
 					</div>
 
 					<!-- Path 2: Free DIY -->
-					<div class="bg-white rounded-2xl p-8 border-2 border-gray-200 card-hover">
+					<div class="bg-white rounded-3xl p-8 border-2 border-gray-200 card-hover shadow-lg">
 						<div class="text-5xl mb-4">🛠️</div>
 						<h3 class="text-2xl font-bold text-gray-900 mb-3">Free DIY Install</h3>
 						<div class="space-y-2 mb-6">
@@ -184,7 +189,7 @@ import '../styles/global.css';
 					</div>
 
 					<!-- Path 3: Premium -->
-					<div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-200 card-hover opacity-75">
+					<div class="bg-white rounded-3xl p-8 border-2 border-gray-200 card-hover shadow-lg opacity-75">
 						<div class="text-5xl mb-4">🚀</div>
 						<h3 class="text-2xl font-bold text-gray-900 mb-3">Done For You</h3>
 						<div class="space-y-2 mb-6">
@@ -226,7 +231,7 @@ import '../styles/global.css';
 					<p class="text-xl text-gray-600">Your AI assistant that actually does things</p>
 				</div>
 				
-				<div class="bg-white rounded-2xl p-8 shadow-lg">
+				<div class="bg-white rounded-3xl p-10 shadow-2xl border border-gray-100">
 					<div class="prose prose-lg max-w-none">
 						<p class="text-gray-700 leading-relaxed mb-6">
 							Think of OpenClaw like having a really capable assistant you can text from WhatsApp or Telegram. You send it messages like:
