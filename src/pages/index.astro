@@ -9,145 +9,167 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>OpenClaw Simple - Setup Guides for Complete Beginners</title>
-		<meta name="description" content="Step-by-step guides to set up and use OpenClaw, the AI assistant that actually does things. Perfect for complete beginners with zero tech experience." />
+		<meta name="description" content="Honest, simple guides for setting up OpenClaw when you're not technical. No jargon, no assumptions - just step-by-step help that actually works." />
 	</head>
 	<body>
 		<div class="min-h-screen">
 			<!-- Header -->
 			<header class="bg-white border-b border-gray-200">
-				<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-					<div class="flex items-center justify-between">
-						<div class="flex items-center space-x-3">
-							<span class="text-4xl">🦞</span>
-							<h1 class="text-2xl font-bold text-gray-900">OpenClaw Simple</h1>
+				<div class="max-w-5xl mx-auto px-4 sm:px-6 py-4">
+					<div class="flex items-center space-x-2">
+						<span class="text-3xl">🦞</span>
+						<div>
+							<h1 class="text-xl font-bold text-gray-900">OpenClaw Simple</h1>
+							<p class="text-xs text-gray-500">Setup guides for normal humans</p>
 						</div>
-						<nav class="hidden md:flex space-x-8">
-							<a href="#guides" class="text-gray-600 hover:text-gray-900">Guides</a>
-							<a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-						</nav>
 					</div>
 				</div>
 			</header>
 
 			<!-- Hero -->
-			<section class="bg-gradient-to-b from-blue-50 to-white py-20">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<h2 class="text-5xl font-extrabold text-gray-900 mb-6">
-						Set Up OpenClaw<br />
-						<span class="text-blue-600">Without the Headache</span>
+			<section class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 to-white">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6">
+					<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+						"I heard about OpenClaw.<br />How do I actually set this thing up?"
 					</h2>
-					<p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-						Your AI assistant that clears your inbox, manages your calendar, and automates your life. 
-						<strong>Complete beginner?</strong> We'll walk you through it step by step.
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						You're not technical. You've never touched a terminal. You just want an AI assistant that actually <em>does stuff</em> — clears your emails, books things, sorts your calendar.
 					</p>
-					<div class="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="#guides" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition">
-							Start Learning →
-						</a>
-						<a href="#about" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg border-2 border-blue-600 hover:bg-blue-50 transition">
-							What is OpenClaw?
-						</a>
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						The problem? Every guide assumes you know what "SSH" means or how to "deploy to a VPS." 
+					</p>
+					<p class="text-lg text-gray-700 mb-8 leading-relaxed">
+						<strong>This site exists because I got frustrated too.</strong> These are the guides I wish existed when I started — written for people who don't live in terminals.
+					</p>
+					<a href="#guides" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+						Show me the guides →
+					</a>
+				</div>
+			</section>
+
+			<!-- What is OpenClaw (Simple) -->
+			<section class="py-12 bg-white">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6">
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">What even is OpenClaw?</h3>
+					<div class="space-y-4 text-gray-700 leading-relaxed">
+						<p>
+							Think of it like having a really capable assistant who lives in your phone or computer. You text it like you'd text a person:
+						</p>
+						<div class="bg-gray-50 border-l-4 border-blue-500 p-4 italic">
+							<p>"Check my emails and flag anything urgent."</p>
+							<p class="mt-2">"Book me a table at that Italian place for Friday at 7."</p>
+							<p class="mt-2">"Remind me to call Dave tomorrow morning."</p>
+						</div>
+						<p>
+							And it actually <strong>does it</strong> — not just tells you how, but goes and does the thing. Clears your inbox, sends the booking request, sets the reminder.
+						</p>
+						<p>
+							The catch? You have to set it up yourself. And that's where it gets intimidating if you're not a developer.
+						</p>
+						<p class="font-semibold">
+							That's what these guides are for. We'll get you from "I've no idea what I'm doing" to "holy shit, this thing actually works."
+						</p>
 					</div>
 				</div>
 			</section>
 
 			<!-- Guides Section -->
-			<section id="guides" class="py-20 bg-white">
-				<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h3 class="text-3xl font-bold text-gray-900 mb-4 text-center">Getting Started Guides</h3>
-					<p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-						Step-by-step tutorials written for people who've never touched a terminal before.
-					</p>
+			<section id="guides" class="py-12 bg-gray-50">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6">
+					<h3 class="text-2xl font-bold text-gray-900 mb-2">The Guides</h3>
+					<p class="text-gray-600 mb-8">Start from the top. Each one builds on the last.</p>
 					
-					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-						<!-- Guide Cards - Coming Soon -->
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">🚀</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Installing OpenClaw</h4>
-							<p class="text-gray-600 mb-4">Your first steps: from zero to running OpenClaw in under 15 minutes.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
+					<div class="space-y-4">
+						<!-- Guide 1 -->
+						<div class="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition">
+							<div class="flex items-start">
+								<span class="text-3xl mr-4">1️⃣</span>
+								<div class="flex-1">
+									<h4 class="text-xl font-bold text-gray-900 mb-2">Installing OpenClaw (15 minutes)</h4>
+									<p class="text-gray-600 mb-3">Getting OpenClaw running on your computer. Step by step, with screenshots for every single click.</p>
+									<span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded">Writing now</span>
+								</div>
+							</div>
 						</div>
 
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">💬</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Connecting WhatsApp</h4>
-							<p class="text-gray-600 mb-4">Control OpenClaw from your phone. No app needed.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
+						<!-- Guide 2 -->
+						<div class="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition opacity-60">
+							<div class="flex items-start">
+								<span class="text-3xl mr-4">2️⃣</span>
+								<div class="flex-1">
+									<h4 class="text-xl font-bold text-gray-900 mb-2">Connecting WhatsApp</h4>
+									<p class="text-gray-600 mb-3">Control it from your phone. No app needed — just WhatsApp.</p>
+									<span class="text-gray-500 text-sm">Coming next</span>
+								</div>
+							</div>
 						</div>
 
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">🤖</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Your First Agent</h4>
-							<p class="text-gray-600 mb-4">Teach OpenClaw who you are and what you need help with.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
+						<!-- Guide 3 -->
+						<div class="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition opacity-60">
+							<div class="flex items-start">
+								<span class="text-3xl mr-4">3️⃣</span>
+								<div class="flex-1">
+									<h4 class="text-xl font-bold text-gray-900 mb-2">Teaching It Who You Are</h4>
+									<p class="text-gray-600 mb-3">Give it context so it actually understands what you need help with.</p>
+									<span class="text-gray-500 text-sm">Coming soon</span>
+								</div>
+							</div>
 						</div>
 
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">☁️</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Running on a VPS</h4>
-							<p class="text-gray-600 mb-4">Keep OpenClaw running 24/7 for under £5/month.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
+						<!-- Guide 4 -->
+						<div class="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition opacity-60">
+							<div class="flex items-start">
+								<span class="text-3xl mr-4">4️⃣</span>
+								<div class="flex-1">
+									<h4 class="text-xl font-bold text-gray-900 mb-2">Running It 24/7 (Without Leaving Your Laptop On)</h4>
+									<p class="text-gray-600 mb-3">Use a cheap server so OpenClaw is always available. Costs about £4/month.</p>
+									<span class="text-gray-500 text-sm">Coming soon</span>
+								</div>
+							</div>
 						</div>
 
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">🔒</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Security Best Practices</h4>
-							<p class="text-gray-600 mb-4">Keep your data safe while letting OpenClaw do its job.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
-						</div>
-
-						<div class="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
-							<div class="text-3xl mb-4">🐛</div>
-							<h4 class="text-xl font-bold text-gray-900 mb-2">Common Problems</h4>
-							<p class="text-gray-600 mb-4">Troubleshooting the issues everyone runs into.</p>
-							<span class="text-blue-600 font-semibold">Coming soon</span>
+						<!-- Guide 5 -->
+						<div class="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition opacity-60">
+							<div class="flex items-start">
+								<span class="text-3xl mr-4">5️⃣</span>
+								<div class="flex-1">
+									<h4 class="text-xl font-bold text-gray-900 mb-2">When Things Break</h4>
+									<p class="text-gray-600 mb-3">Common problems and how to fix them without panicking.</p>
+									<span class="text-gray-500 text-sm">Coming soon</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- About Section -->
-			<section id="about" class="py-20 bg-gray-50">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">What is OpenClaw?</h3>
-					<div class="prose prose-lg mx-auto">
-						<p class="text-gray-700 leading-relaxed mb-4">
-							OpenClaw is an AI assistant that runs on your computer (or a server) and actually <em>does things</em> for you. 
-							Not just answers questions — it clears your inbox, manages your calendar, sends messages, checks you in for flights, 
-							and automates all the boring stuff you hate doing.
+			<!-- Who Made This -->
+			<section class="py-12 bg-white border-t border-gray-200">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6">
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">Who made this?</h3>
+					<div class="space-y-4 text-gray-700 leading-relaxed">
+						<p>
+							I'm not a developer. I'm a product person who got excited about OpenClaw, tried to set it up, and spent three frustrating days piecing together Reddit posts and Discord messages.
 						</p>
-						<p class="text-gray-700 leading-relaxed mb-4">
-							The catch? Setting it up can be intimidating if you're not technical. That's where we come in.
+						<p>
+							Every guide assumed I knew what a "Docker container" was or how to "SSH into a server." I didn't. I had to learn the hard way.
 						</p>
-						<p class="text-gray-700 leading-relaxed">
-							This site exists to make OpenClaw accessible to <strong>everyone</strong> — even if you've never opened a terminal 
-							or heard the word "API" before. We'll walk you through every step in plain English.
+						<p>
+							So I'm writing the guides I wish existed — for people like me who just want the damn thing to work.
+						</p>
+						<p class="text-sm text-gray-500 italic">
+							(This site isn't affiliated with the OpenClaw project. It's just me, trying to help.)
 						</p>
 					</div>
-				</div>
-			</section>
-
-			<!-- CTA -->
-			<section class="py-20 bg-blue-600 text-white">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<h3 class="text-3xl font-bold mb-4">Ready to Get Started?</h3>
-					<p class="text-xl mb-8 opacity-90">
-						Guides are being written right now. Bookmark this page or check back soon.
-					</p>
-					<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
-						OpenClaw on GitHub →
-					</a>
 				</div>
 			</section>
 
 			<!-- Footer -->
-			<footer class="bg-white border-t border-gray-200 py-12">
-				<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
-					<p class="mb-2">
-						OpenClaw Simple is an independent resource. Not affiliated with the OpenClaw project.
-					</p>
-					<p class="text-sm">
-						Built to help beginners get started without the frustration.
+			<footer class="bg-gray-50 border-t border-gray-200 py-8">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6 text-center text-sm text-gray-600">
+					<p class="mb-2">OpenClaw Simple · Beginner-friendly guides</p>
+					<p>
+						<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenClaw on GitHub</a>
 					</p>
 				</div>
 			</footer>
