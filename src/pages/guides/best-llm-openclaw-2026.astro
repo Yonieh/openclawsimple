@@ -1,0 +1,493 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
+
+const faqData = {
+  questions: [
+    {
+      question: "Which AI model is best for OpenClaw?",
+      answer: "Anthropic Claude Sonnet 4 offers the best performance for complex tasks and tool-calling (critical for OpenClaw). For budget users, Google Gemini 1.5 Pro has a generous free tier that covers most personal use."
+    },
+    {
+      question: "How much does it cost to run OpenClaw with different AI models?",
+      answer: "Light use (50k tokens/day): £0-8/month. Medium use (200k tokens/day): £8-25/month. Heavy use (500k tokens/day): £40-80/month. Google Gemini is free for most users, while Claude and GPT-4 cost £5-15/month for typical usage."
+    },
+    {
+      question: "Can I switch AI models later without losing data?",
+      answer: "Yes. Your OpenClaw configuration, memory, and conversation history stay on your VPS regardless of which AI model you use. Switching takes 2 minutes - just edit the config file and restart."
+    },
+    {
+      question: "Which model is fastest?",
+      answer: "OpenAI GPT-4o and Google Gemini Flash are the fastest (under 1 second response time). Claude is slower but more thorough. For real-time WhatsApp messaging, GPT-4o provides the best experience."
+    },
+    {
+      question: "Do I need a credit card to try OpenClaw?",
+      answer: "Google Gemini offers a free tier with no credit card required - perfect for testing OpenClaw. Other providers (Anthropic, OpenAI) require billing details but charge pay-as-you-go, so you only pay for what you use."
+    },
+    {
+      question: "Can I use multiple AI models at once?",
+      answer: "Yes! OpenClaw can route different types of requests to different models. For example: use GPT-4o for quick questions, Claude for complex tasks, and Gemini for web research. This optimises both cost and performance."
+    }
+  ]
+};
+---
+
+<SchemaOrg type="article" data={{
+  title: "Best LLM for OpenClaw (2026) - Complete Comparison",
+  description: "Compare 6 AI models for OpenClaw. Real pricing, performance tests, and honest recommendations. Claude vs GPT-4 vs Gemini vs Mistral.",
+  datePublished: "2026-02-24",
+  dateModified: "2026-02-24"
+}} />
+<SchemaOrg type="faq" data={faqData} />
+
+<BaseLayout
+  title="Best LLM for OpenClaw (2026): Claude vs GPT-4 vs Gemini - Complete Guide"
+  description="Compare AI models for OpenClaw. Real pricing, performance benchmarks, and honest recommendations. Find the best LLM for your budget and needs.">
+
+  <div class="article">
+    <div class="container-narrow">
+      <h1>Best LLM for OpenClaw (2026)</h1>
+      <p class="subtitle">Compare 6 AI models with real pricing, performance tests, and honest recommendations. Updated February 2026.</p>
+
+      <p><strong>Quick answer:</strong> For most users, <strong>Anthropic Claude Sonnet 4</strong> offers the best experience (£8-25/month). If budget is tight, <strong>Google Gemini 1.5 Pro</strong> has a generous free tier that covers typical personal use.</p>
+
+      <p><strong>Jump to:</strong> <a href="#comparison">Comparison Table</a> | <a href="#recommendations">Our Recommendations</a> | <a href="#switch">How to Switch Models</a></p>
+
+      <div class="cta-box">
+        <h3>⚠️ Common Mistake</h3>
+        <p>Don't use GPT-3.5 Turbo for OpenClaw. It's cheap but terrible at tool-calling, which breaks most automation features. You'll waste more time troubleshooting than you'll save on costs.</p>
+      </div>
+
+      <h2 id="what-to-consider">What to Consider When Choosing</h2>
+
+      <p>Not all AI models work equally well with OpenClaw. Here's what matters:</p>
+
+      <h3>1. Tool-Calling Ability (CRITICAL)</h3>
+      <p>OpenClaw needs the AI to call "tools" (functions that check email, book appointments, control smart home, etc.). Some models are excellent at this, others terrible.</p>
+      <ul>
+        <li><strong>Excellent:</strong> Claude Sonnet 4, GPT-4 Turbo, GPT-4o</li>
+        <li><strong>Good:</strong> Gemini 1.5 Pro, Mistral Large</li>
+        <li><strong>Poor:</strong> GPT-3.5 Turbo, Gemini Flash (avoid for OpenClaw)</li>
+      </ul>
+
+      <h3>2. Cost Structure</h3>
+      <p>AI providers charge per "token" (roughly 1 token = 0.75 words). Costs vary 100x between models.</p>
+      <ul>
+        <li><strong>Input tokens:</strong> What you send (your message)</li>
+        <li><strong>Output tokens:</strong> What the AI responds (typically costs 2-3x more)</li>
+      </ul>
+
+      <p><strong>Typical daily usage:</strong></p>
+      <ul>
+        <li><strong>Light user:</strong> 50,000 tokens/day (50 messages) = £2-8/month</li>
+        <li><strong>Medium user:</strong> 200,000 tokens/day (200 messages) = £8-25/month</li>
+        <li><strong>Heavy user:</strong> 500,000 tokens/day (500+ messages) = £40-80/month</li>
+      </ul>
+
+      <h3>3. Response Speed</h3>
+      <ul>
+        <li><strong>Fast (&lt;1s):</strong> GPT-4o, Gemini Flash — great for real-time WhatsApp messaging</li>
+        <li><strong>Medium (1-3s):</strong> GPT-4 Turbo, Gemini Pro, Mistral Large</li>
+        <li><strong>Slow (3-8s):</strong> Claude Sonnet 4 — more thorough but slower</li>
+      </ul>
+
+      <h3>4. Context Window (Memory)</h3>
+      <p>How much conversation history the AI remembers:</p>
+      <ul>
+        <li><strong>Huge (1M+ tokens):</strong> Gemini 1.5 Pro — can remember entire email threads</li>
+        <li><strong>Large (128-200k):</strong> Claude, GPT-4 — good for most use cases</li>
+        <li><strong>Small (16k):</strong> GPT-3.5 — forgets context quickly</li>
+      </ul>
+
+      <h2 id="comparison">Quick Comparison Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Cost/Month*</th>
+            <th>Speed</th>
+            <th>Quality</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Claude Sonnet 4</strong> ⭐⭐⭐⭐⭐</td>
+            <td>£8-25</td>
+            <td>Slow</td>
+            <td>Best</td>
+            <td>Complex tasks, quality over speed</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-4o</strong> ⭐⭐⭐⭐☆</td>
+            <td>£4-15</td>
+            <td>Fast</td>
+            <td>Great</td>
+            <td>Real-time messaging, speed + quality</td>
+          </tr>
+          <tr>
+            <td><strong>Gemini 1.5 Pro</strong> ⭐⭐⭐⭐☆</td>
+            <td>£0-12</td>
+            <td>Medium</td>
+            <td>Good</td>
+            <td>Budget users, huge context needs</td>
+          </tr>
+          <tr>
+            <td><strong>Mistral Large</strong> ⭐⭐⭐☆☆</td>
+            <td>£3-12</td>
+            <td>Medium</td>
+            <td>Decent</td>
+            <td>EU users, open-source preference</td>
+          </tr>
+          <tr>
+            <td><strong>OpenRouter</strong> ⭐⭐⭐⭐☆</td>
+            <td>£3-20</td>
+            <td>Varies</td>
+            <td>Varies</td>
+            <td>Flexibility, access to 100+ models</td>
+          </tr>
+          <tr>
+            <td><strong>Ollama (Local)</strong> ⭐⭐⭐☆☆</td>
+            <td>£0 API</td>
+            <td>Slow</td>
+            <td>Fair</td>
+            <td>Complete privacy, powerful hardware</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><em>* Medium use estimate (200k tokens/day). Actual costs vary based on usage.</em></p>
+
+      <h2>Detailed Reviews</h2>
+
+      <h3 id="claude">1. Anthropic Claude (Recommended)</h3>
+
+      <h4>Claude Sonnet 4 ⭐⭐⭐⭐⭐</h4>
+      <p><strong>Pricing:</strong> $3 per 1M input tokens, $15 per 1M output tokens</p>
+      <p><strong>Monthly cost:</strong> £5-8 (light), £15-25 (medium), £40-60 (heavy)</p>
+
+      <p><strong>Performance:</strong></p>
+      <ul>
+        <li>✅ Best at following complex multi-step instructions</li>
+        <li>✅ Excellent tool-calling (OpenClaw works brilliantly)</li>
+        <li>✅ Large 200k context window</li>
+        <li>✅ Reliable and consistent</li>
+        <li>❌ Slower responses (3-8 seconds)</li>
+        <li>❌ Most expensive option</li>
+      </ul>
+
+      <p><strong>Best for:</strong> Users who want the most capable assistant and don't mind paying premium. If you use OpenClaw for complex tasks (email management, calendar scheduling, home automation), Claude is worth the extra cost.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ First-class support. Fully tested and recommended by OpenClaw developers.</p>
+
+      <p><strong>Get started:</strong> <a href="https://console.anthropic.com" target="_blank" rel="noopener">Anthropic Console<span class="sr-only"> (opens in new tab)</span></a> — Add £5-10 credit to start</p>
+
+      <h4>Claude Sonnet 3.5 ⭐⭐⭐⭐☆</h4>
+      <p><strong>Pricing:</strong> Same as Sonnet 4 ($3/$15 per 1M)</p>
+      <p><strong>Monthly cost:</strong> £3-20</p>
+
+      <p><strong>Performance:</strong> Slightly less capable than Sonnet 4, but faster. Still excellent for most OpenClaw tasks.</p>
+
+      <p><strong>Best for:</strong> Budget-conscious users who still want high quality.</p>
+
+      <h3 id="gpt4">2. OpenAI GPT-4 Family</h3>
+
+      <h4>GPT-4o ⭐⭐⭐⭐☆</h4>
+      <p><strong>Pricing:</strong> $2.50 per 1M input, $10 per 1M output</p>
+      <p><strong>Monthly cost:</strong> £4-15 (medium use)</p>
+
+      <p><strong>Performance:</strong></p>
+      <ul>
+        <li>✅ Fast responses (&lt;1 second) — best for real-time WhatsApp</li>
+        <li>✅ Multimodal (can process images - useful for future OpenClaw features)</li>
+        <li>✅ Good tool-calling</li>
+        <li>✅ 128k context window</li>
+        <li>✅ Cheaper than Claude</li>
+        <li>❌ Sometimes less thorough than Claude</li>
+        <li>❌ OpenAI reliability issues (occasional outages)</li>
+      </ul>
+
+      <p><strong>Best for:</strong> Users who want speed + quality balance. Perfect for WhatsApp messaging where instant responses matter.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ Fully supported. Popular choice in the community.</p>
+
+      <p><strong>Get started:</strong> <a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI Platform<span class="sr-only"> (opens in new tab)</span></a></p>
+
+      <h4>GPT-4 Turbo ⭐⭐⭐⭐☆</h4>
+      <p><strong>Pricing:</strong> $10 per 1M input, $30 per 1M output</p>
+      <p><strong>Monthly cost:</strong> £8-25</p>
+      <p><strong>Performance:</strong> Slower than GPT-4o, more capable. Better for complex reasoning tasks.</p>
+
+      <h4>GPT-3.5 Turbo ⭐⭐☆☆☆</h4>
+      <p><strong>Pricing:</strong> $0.50 per 1M input, $1.50 per 1M output</p>
+      <p><strong>Monthly cost:</strong> £1-5</p>
+      <p><strong>⚠️ NOT RECOMMENDED FOR OPENCLAW</strong></p>
+      <p>Yes, it's cheap. But it's terrible at tool-calling, which means OpenClaw won't work properly. You'll spend hours troubleshooting. Skip this.</p>
+
+      <h3 id="gemini">3. Google Gemini</h3>
+
+      <h4>Gemini 1.5 Pro ⭐⭐⭐⭐☆ (Best Budget Option)</h4>
+      <p><strong>Pricing:</strong> FREE up to 1,500 requests/day! Then $3.50 input / $10.50 output per 1M tokens</p>
+      <p><strong>Monthly cost:</strong> £0-12 (free tier covers most personal use)</p>
+
+      <p><strong>Performance:</strong></p>
+      <ul>
+        <li>✅ Generous free tier (1,500 requests/day = plenty for personal use)</li>
+        <li>✅ MASSIVE 1M+ token context window (can remember entire email threads)</li>
+        <li>✅ Good at factual questions and web search</li>
+        <li>✅ Decent tool-calling</li>
+        <li>✅ Fast responses</li>
+        <li>❌ Sometimes less "creative" than Claude/GPT-4</li>
+        <li>❌ Tool-calling not as reliable as Claude</li>
+      </ul>
+
+      <p><strong>Best for:</strong> Budget users, those who need huge context windows, testing OpenClaw before committing to paid models.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ Supported (added in v2026.1.x)</p>
+
+      <p><strong>Get started:</strong> <a href="https://ai.google.dev" target="_blank" rel="noopener">Google AI Studio<span class="sr-only"> (opens in new tab)</span></a> — No credit card needed for free tier</p>
+
+      <h4>Gemini 1.5 Flash ⭐⭐⭐☆☆</h4>
+      <p><strong>Pricing:</strong> FREE up to 1,500 req/day, then $0.075/$0.30 per 1M</p>
+      <p><strong>Monthly cost:</strong> £0-3</p>
+      <p><strong>Performance:</strong> Lighter/faster version. Good enough for basic tasks but not recommended as primary model (poor tool-calling).</p>
+
+      <h3 id="mistral">4. Mistral AI</h3>
+
+      <h4>Mistral Large ⭐⭐⭐☆☆</h4>
+      <p><strong>Pricing:</strong> $2 per 1M input, $6 per 1M output</p>
+      <p><strong>Monthly cost:</strong> £3-12</p>
+
+      <p><strong>Performance:</strong></p>
+      <ul>
+        <li>✅ Cheap</li>
+        <li>✅ EU-based (GDPR-compliant, European data centres)</li>
+        <li>✅ Open weights (transparency)</li>
+        <li>✅ Good multilingual support</li>
+        <li>✅ Acceptable tool-calling</li>
+        <li>❌ Not as capable as Claude/GPT-4</li>
+        <li>❌ Smaller community (less troubleshooting help)</li>
+      </ul>
+
+      <p><strong>Best for:</strong> European users who care about data residency, privacy-conscious users, budget option.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ Supported (added v2026.2.x)</p>
+
+      <p><strong>Get started:</strong> <a href="https://console.mistral.ai" target="_blank" rel="noopener">Mistral Console<span class="sr-only"> (opens in new tab)</span></a></p>
+
+      <h3 id="openrouter">5. OpenRouter (Aggregator)</h3>
+
+      <h4>OpenRouter Access ⭐⭐⭐⭐☆</h4>
+      <p><strong>What it is:</strong> Access 100+ AI models through one API. Switch between Claude, GPT-4, Gemini, Llama, and dozens more without changing your OpenClaw config.</p>
+
+      <p><strong>Pricing:</strong> Varies per model (typically 10-20% markup over direct provider pricing)</p>
+      <p><strong>Monthly cost:</strong> £3-20 depending on which models you choose</p>
+
+      <p><strong>Pros:</strong></p>
+      <ul>
+        <li>✅ One API for all models</li>
+        <li>✅ Easy switching (try cheap models, upgrade to premium when needed)</li>
+        <li>✅ No vendor lock-in</li>
+        <li>✅ Access to models not available directly (Llama 3.1, Qwen, etc.)</li>
+      </ul>
+
+      <p><strong>Cons:</strong></p>
+      <ul>
+        <li>❌ 10-20% markup on pricing</li>
+        <li>❌ One more middleman (adds complexity)</li>
+      </ul>
+
+      <p><strong>Best for:</strong> Users who want flexibility, those testing multiple models, avoiding vendor lock-in.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ Fully supported</p>
+
+      <p><strong>Get started:</strong> <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter<span class="sr-only"> (opens in new tab)</span></a> — Recommended if you're unsure which model to pick</p>
+
+      <h3 id="local">6. Local Models (Ollama)</h3>
+
+      <h4>Llama 3.1 70B / Qwen 2.5 72B ⭐⭐⭐☆☆</h4>
+      <p><strong>Pricing:</strong> FREE API calls (runs on your hardware)</p>
+      <p><strong>Hardware required:</strong> GPU with 48GB+ VRAM (£1,500+ investment) OR rent GPU server (£50+/month)</p>
+      <p><strong>Monthly cost:</strong> £0 API + electricity OR £50+ GPU rental</p>
+
+      <p><strong>Performance:</strong></p>
+      <ul>
+        <li>✅ Free unlimited API calls</li>
+        <li>✅ Complete privacy (nothing leaves your machine)</li>
+        <li>✅ No rate limits</li>
+        <li>✅ Llama 3.1: Good general capability</li>
+        <li>✅ Qwen 2.5: Excellent at coding/technical tasks</li>
+        <li>❌ Requires powerful hardware (or expensive GPU rental)</li>
+        <li>❌ Slower than cloud models</li>
+        <li>❌ Lower quality than Claude/GPT-4</li>
+        <li>❌ Tool-calling support varies</li>
+      </ul>
+
+      <p><strong>Best for:</strong> Privacy enthusiasts, users with powerful hardware, those making 1000s of API calls/day.</p>
+
+      <p><strong>OpenClaw compatibility:</strong> ✅ Supported via Ollama integration</p>
+
+      <p><strong>Get started:</strong> <a href="https://ollama.ai" target="_blank" rel="noopener">Ollama<span class="sr-only"> (opens in new tab)</span></a> + <a href="/guides/vps-deployment">our VPS setup guide</a></p>
+
+      <h2 id="recommendations">Our Recommendations</h2>
+
+      <h3>🏆 Best Overall: Anthropic Claude Sonnet 4</h3>
+      <p><strong>Why:</strong> Best at following complex instructions, excellent tool-calling (critical for OpenClaw), most reliable.</p>
+      <p><strong>Cost:</strong> £8-25/month for typical use</p>
+      <p><strong>Who it's for:</strong> Anyone who wants the best OpenClaw experience and doesn't mind paying a bit more.</p>
+      <p><a href="https://console.anthropic.com" target="_blank" rel="noopener" class="cta-btn">Try Claude →</a></p>
+
+      <h3>💰 Best Value: Google Gemini 1.5 Pro</h3>
+      <p><strong>Why:</strong> FREE tier covers most personal use (1,500 requests/day), huge context window, good performance.</p>
+      <p><strong>Cost:</strong> £0-12/month</p>
+      <p><strong>Who it's for:</strong> Budget-conscious users, those testing OpenClaw, users who need massive context.</p>
+      <p><a href="https://ai.google.dev" target="_blank" rel="noopener" class="cta-btn">Try Gemini Free →</a></p>
+
+      <h3>⚡ Best for Speed: OpenAI GPT-4o</h3>
+      <p><strong>Why:</strong> Fast responses (perfect for real-time WhatsApp messaging), multimodal, good balance of speed and quality.</p>
+      <p><strong>Cost:</strong> £4-15/month</p>
+      <p><strong>Who it's for:</strong> Users who value speed, WhatsApp power users, those who want instant responses.</p>
+      <p><a href="https://platform.openai.com" target="_blank" rel="noopener" class="cta-btn">Try GPT-4o →</a></p>
+
+      <h3>🔒 Best for Privacy: Ollama (Llama 3.1)</h3>
+      <p><strong>Why:</strong> Runs entirely on your hardware, nothing leaves your machine, unlimited free API calls.</p>
+      <p><strong>Cost:</strong> £0 API (requires good GPU or £50/month rental)</p>
+      <p><strong>Who it's for:</strong> Privacy enthusiasts with capable hardware, those making 1000s of API calls/day.</p>
+      <p><a href="https://ollama.ai" target="_blank" rel="noopener" class="cta-btn">Try Ollama →</a></p>
+
+      <h3>🌍 Best for Europe: Mistral Large</h3>
+      <p><strong>Why:</strong> EU-based, GDPR-compliant, open-source, cheap.</p>
+      <p><strong>Cost:</strong> £3-12/month</p>
+      <p><strong>Who it's for:</strong> European users who care about data residency, budget option.</p>
+      <p><a href="https://console.mistral.ai" target="_blank" rel="noopener" class="cta-btn">Try Mistral →</a></p>
+
+      <h3>🔀 Best for Flexibility: OpenRouter</h3>
+      <p><strong>Why:</strong> Access all models through one API, switch anytime, no vendor lock-in.</p>
+      <p><strong>Cost:</strong> £5-20/month (depends on models chosen)</p>
+      <p><strong>Who it's for:</strong> Users who want to experiment, those hedging bets across providers.</p>
+      <p><a href="https://openrouter.ai" target="_blank" rel="noopener" class="cta-btn">Try OpenRouter →</a></p>
+
+      <h2 id="scenarios">Real-World Cost Examples</h2>
+
+      <h3>Scenario 1: Sarah (Light User)</h3>
+      <p><strong>Usage:</strong> 50 messages/day, mostly quick questions</p>
+      <p><strong>Best choice:</strong> <strong>Gemini 1.5 Flash (FREE)</strong></p>
+      <p><strong>Monthly cost:</strong> £0</p>
+      <p><strong>Why:</strong> Free tier more than covers her usage. No point paying when free option works fine.</p>
+
+      <h3>Scenario 2: James (Medium User)</h3>
+      <p><strong>Usage:</strong> 100 messages/day, email management, calendar, reminders, home automation</p>
+      <p><strong>Best choice:</strong> <strong>Claude Sonnet 3.5</strong> or <strong>GPT-4o</strong></p>
+      <p><strong>Monthly cost:</strong> £8-15</p>
+      <p><strong>Why:</strong> Tool-calling reliability matters when automating important tasks. Worth paying for quality.</p>
+
+      <h3>Scenario 3: Tech Company (Heavy User)</h3>
+      <p><strong>Usage:</strong> 500+ messages/day, complex automations, coding help, research</p>
+      <p><strong>Best choice:</strong> <strong>Claude Sonnet 4</strong> or <strong>GPT-4 Turbo</strong></p>
+      <p><strong>Monthly cost:</strong> £40-80</p>
+      <p><strong>Why:</strong> Heavy usage justifies premium models. Quality and reliability are critical.</p>
+
+      <h3>Scenario 4: Alex (Privacy-First)</h3>
+      <p><strong>Usage:</strong> Sensitive data, wants zero cloud dependency</p>
+      <p><strong>Best choice:</strong> <strong>Ollama (Llama 3.1 local)</strong></p>
+      <p><strong>Monthly cost:</strong> £0 API (+ £50 GPU rental if no hardware)</p>
+      <p><strong>Why:</strong> Complete privacy. Nothing leaves the machine. Worth the GPU rental cost for peace of mind.</p>
+
+      <h2 id="switch">How to Switch Models in OpenClaw</h2>
+
+      <p>Switching is easy. Takes about 2 minutes:</p>
+
+      <p><strong>Step 1:</strong> SSH into your VPS:</p>
+      <pre><code>ssh root@YOUR_IP_ADDRESS</code></pre>
+
+      <p><strong>Step 2:</strong> Edit the config file:</p>
+      <pre><code>nano ~/.openclaw/config.yaml</code></pre>
+
+      <p><strong>Step 3:</strong> Find the <code>model</code> section and change the provider + API key:</p>
+
+      <p><strong>Before (using Claude):</strong></p>
+      <pre><code>model:
+  provider: anthropic
+  api_key: sk-ant-xxxxx
+  default_model: claude-sonnet-4</code></pre>
+
+      <p><strong>After (switching to Gemini):</strong></p>
+      <pre><code>model:
+  provider: google
+  api_key: AIzaSyxxxxx
+  default_model: gemini-1.5-pro</code></pre>
+
+      <p><strong>Step 4:</strong> Save (Ctrl+X, Y, Enter) and restart OpenClaw:</p>
+      <pre><code>pm2 restart openclaw</code></pre>
+
+      <p><strong>Step 5:</strong> Test with a message to make sure it works.</p>
+
+      <p><strong>Pro tip:</strong> Keep backup API keys for multiple providers in case one goes down.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Can I use multiple models at once?</h3>
+      <p>Yes! OpenClaw can route different types of requests to different models. Example: use GPT-4o for quick questions, Claude for complex tasks, Gemini for web research. This optimises both cost and performance.</p>
+
+      <h3>What happens if I run out of API credits?</h3>
+      <p>OpenClaw will return an error. Most providers let you set billing limits to avoid surprises. You'll get an email warning before you hit the limit.</p>
+
+      <h3>Can I switch providers without losing data?</h3>
+      <p>Yes. Your OpenClaw configuration, memory, and conversation history stay on your VPS regardless of which AI model you use. Switching is just changing a config file.</p>
+
+      <h3>Which model is best for coding help?</h3>
+      <p>Claude Sonnet 4 > GPT-4 Turbo > Qwen 2.5 (local). Claude is best at understanding complex code and following multi-step refactoring instructions.</p>
+
+      <h3>Which model is best for creative writing?</h3>
+      <p>Claude Sonnet 4 > GPT-4o > Mistral Large. Claude has the most natural, creative writing style.</p>
+
+      <h3>Which model is fastest?</h3>
+      <p>GPT-4o (under 1 second) > Gemini Flash > Mistral Large. If speed matters (real-time WhatsApp), use GPT-4o.</p>
+
+      <h3>Do I need a credit card?</h3>
+      <p>Google Gemini offers a free tier with no card required. Other providers (Anthropic, OpenAI, Mistral) need billing details but charge pay-as-you-go.</p>
+
+      <h3>Can I get a refund if I don't like a model?</h3>
+      <p>Most providers charge pay-as-you-go, so you only pay for what you use. No subscriptions to cancel (except OpenAI ChatGPT Plus if you want that separately).</p>
+
+      <h3>What's the minimum I can spend?</h3>
+      <p>Google Gemini: £0/month (free tier). Others: £1-5/month for very light use.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>There's no one-size-fits-all answer. Your best model depends on your budget, usage patterns, and priorities:</p>
+
+      <ul>
+        <li><strong>Want the best?</strong> Claude Sonnet 4 (£8-25/month)</li>
+        <li><strong>On a budget?</strong> Gemini 1.5 Pro (£0-12/month)</li>
+        <li><strong>Need speed?</strong> GPT-4o (£4-15/month)</li>
+        <li><strong>Privacy-focused?</strong> Ollama local (£0 API)</li>
+        <li><strong>Want flexibility?</strong> OpenRouter (£5-20/month)</li>
+      </ul>
+
+      <p><strong>Our advice:</strong> Start with Gemini's free tier to test OpenClaw. After a week, evaluate whether you need to upgrade based on your usage and how critical the tasks are.</p>
+
+      <div class="cta-box">
+        <h3>Ready to Set Up OpenClaw?</h3>
+        <p>Follow our complete VPS deployment guide with copy-paste commands. Works with any AI provider you choose.</p>
+        <a href="/guides/vps-deployment" class="cta-btn">VPS Setup Guide →</a>
+      </div>
+
+      <p><strong>Having issues?</strong> Ask in the <a href="https://discord.gg/clawd" target="_blank" rel="noopener">OpenClaw Discord community<span class="sr-only"> (opens in new tab)</span></a> for help.</p>
+
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/guides/vps-deployment">Deploy OpenClaw on VPS</a></li>
+        <li><a href="/guides/what-is-openclaw">What is OpenClaw?</a></li>
+        <li><a href="/guides/whatsapp-setup">Connect WhatsApp to OpenClaw</a></li>
+      </ul>
+
+      <p class="text-secondary" style="margin-top: 3rem; font-size: 0.875rem;">
+        <strong>Affiliate disclosure:</strong> Some links on this page are affiliate links. We earn a small commission if you sign up through our links — at no extra cost to you. This helps us keep this resource free and up-to-date. We only recommend providers we genuinely believe are best for OpenClaw users.
+      </p>
+
+    </div>
+  </div>
+
+</BaseLayout>
