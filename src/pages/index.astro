@@ -1,13 +1,13 @@
 ---
-// OpenClaw Simple - Professional Setup Guide
+// OpenClaw Simple - Conversion-Optimized Homepage
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set Up OpenClaw in 5 Minutes — OpenClaw Simple</title>
-<meta name="description" content="OpenClaw Setup Guide - Install & Configure in 5 Minutes. No technical skills required. Your AI assistant that actually does things.">
+<title>Set Up OpenClaw in 5 Minutes — Your AI Assistant That Actually Does Things</title>
+<meta name="description" content="Deploy your own AI assistant in 5 minutes. OpenClaw checks emails, books restaurants, manages your calendar - all from WhatsApp. From £5/month.">
 <link rel="canonical" href="https://openclawsimple.com" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -26,7 +26,6 @@
     --accent-glow: rgba(255, 77, 58, 0.15);
     --accent-soft: #ff6b5a;
     --green: #3ddc84;
-    --green-dim: rgba(61, 220, 132, 0.12);
     --blue: #5b8def;
     --font-body: 'DM Sans', -apple-system, sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -35,7 +34,6 @@
   }
 
   html { scroll-behavior: smooth; }
-
   body {
     font-family: var(--font-body);
     background: var(--bg);
@@ -45,7 +43,7 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0;
@@ -71,10 +69,7 @@
     text-decoration: none;
   }
 
-  .nav-logo .lobster {
-    font-size: 1.4rem;
-    filter: drop-shadow(0 0 8px rgba(255, 77, 58, 0.4));
-  }
+  .nav-logo .lobster { font-size: 1.4rem; filter: drop-shadow(0 0 8px rgba(255, 77, 58, 0.4)); }
 
   .nav-cta {
     padding: 8px 20px;
@@ -94,14 +89,10 @@
     box-shadow: 0 4px 20px var(--accent-glow);
   }
 
-  /* ── CONTAINER ── */
-  .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  /* CONTAINER */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     padding: 140px 0 80px;
     text-align: center;
@@ -225,7 +216,7 @@
     transform: translateY(-2px);
   }
 
-  /* ── TRUST BAR ── */
+  /* TRUST BAR */
   .trust-bar {
     display: flex;
     justify-content: center;
@@ -243,11 +234,9 @@
     font-weight: 500;
   }
 
-  .trust-item .icon {
-    font-size: 1rem;
-  }
+  .trust-item .icon { font-size: 1rem; }
 
-  /* ── CHAT DEMO ── */
+  /* CHAT DEMO */
   .chat-demo {
     max-width: 440px;
     margin: 0 auto 100px;
@@ -323,7 +312,7 @@
     font-weight: 600;
   }
 
-  /* ── SECTION TITLES ── */
+  /* SECTION TITLES */
   .section-title {
     text-align: center;
     margin-bottom: 16px;
@@ -339,7 +328,7 @@
     margin-bottom: 48px;
   }
 
-  /* ── SETUP PATHS ── */
+  /* SETUP PATHS */
   #start { scroll-margin-top: 80px; }
 
   .paths {
@@ -385,10 +374,7 @@
     border-radius: 6px;
   }
 
-  .path-icon {
-    font-size: 2rem;
-    margin-bottom: 16px;
-  }
+  .path-icon { font-size: 2rem; margin-bottom: 16px; }
 
   .path-card h3 {
     font-size: 1.25rem;
@@ -418,10 +404,7 @@
     font-size: 0.85rem;
   }
 
-  .path-stat .label {
-    color: var(--text-muted);
-  }
-
+  .path-stat .label { color: var(--text-muted); }
   .path-stat .value {
     font-weight: 600;
     font-family: var(--font-mono);
@@ -470,7 +453,7 @@
     cursor: not-allowed;
   }
 
-  /* ── WHAT IS SECTION ── */
+  /* WHAT IS SECTION */
   #what-is { scroll-margin-top: 80px; }
 
   .what-is-content {
@@ -486,11 +469,9 @@
     margin-bottom: 16px;
   }
 
-  .what-is-content strong {
-    color: var(--text);
-  }
+  .what-is-content strong { color: var(--text); }
 
-  /* ── FEATURES GRID ── */
+  /* FEATURES GRID */
   .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -511,10 +492,7 @@
     transform: translateY(-2px);
   }
 
-  .feature-icon {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
+  .feature-icon { font-size: 1.5rem; margin-bottom: 12px; }
 
   .feature-card h4 {
     font-size: 0.95rem;
@@ -528,7 +506,7 @@
     line-height: 1.6;
   }
 
-  /* ── CTA SECTION ── */
+  /* CTA SECTION */
   .final-cta {
     text-align: center;
     padding: 80px 0;
@@ -557,7 +535,7 @@
     margin-bottom: 32px;
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
     padding: 32px 0;
@@ -595,16 +573,14 @@
     transition: color 0.2s;
   }
 
-  .footer-links a:hover {
-    color: var(--text);
-  }
+  .footer-links a:hover { color: var(--text); }
 
   .footer-disclaimer {
     font-size: 0.72rem;
     color: var(--text-dim);
   }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 600px) {
     nav { padding: 12px 16px; }
     .hero { padding: 120px 0 60px; }
@@ -633,24 +609,24 @@
   <div class="container">
     <div class="hero-badge">
       <span class="dot"></span>
-      No technical skills required
+      Used by hundreds · From £5/month
     </div>
 
-    <h1>Set Up OpenClaw<br>in <span class="highlight">5 Minutes</span></h1>
+    <h1>Your AI Assistant<br>That <span class="highlight">Actually Works</span></h1>
 
     <p class="hero-sub">
-      Your AI assistant that actually does things. Clear your inbox, book restaurants, manage your calendar — all from WhatsApp.
+      Forget ChatGPT. OpenClaw actually DOES things - checks emails, books restaurants, manages your calendar. All from WhatsApp. Set up in 5 minutes.
     </p>
 
     <div class="hero-buttons">
-      <a href="#start" class="btn-primary">Get Started Free →</a>
-      <a href="#what-is" class="btn-secondary">What is OpenClaw?</a>
+      <a href="/guides/railway-quick-start" class="btn-primary">Deploy in 5 Minutes →</a>
+      <a href="#what-is" class="btn-secondary">See How It Works</a>
     </div>
 
     <div class="trust-bar">
-      <span class="trust-item"><span class="icon">✦</span> Free option available</span>
       <span class="trust-item"><span class="icon">⚡</span> 5 minute setup</span>
-      <span class="trust-item"><span class="icon">🔒</span> Your data stays yours</span>
+      <span class="trust-item"><span class="icon">💰</span> From £5/month</span>
+      <span class="trust-item"><span class="icon">🔒</span> You own your data</span>
     </div>
 
     <!-- CHAT DEMO -->
@@ -674,69 +650,68 @@
 <!-- SETUP PATHS -->
 <section id="start">
   <div class="container">
-    <h2 class="section-title">Choose Your Setup Path</h2>
-    <p class="section-sub">Pick based on how much effort you want to put in</p>
+    <h2 class="section-title">Choose Your Setup</h2>
+    <p class="section-sub">One-click or free DIY - you decide</p>
 
     <div class="paths">
-      <!-- CLICK & DONE -->
+      <!-- RAILWAY -->
       <div class="path-card recommended">
-        <span class="path-badge">⭐ Recommended</span>
+        <span class="path-badge">⚡ EASIEST</span>
         <div class="path-icon">✨</div>
-        <h3>Click &amp; Done</h3>
-        <p class="desc">Deploy with one click. Zero terminal, zero code.</p>
+        <h3>One-Click Deploy</h3>
+        <p class="desc">Click, paste your API key, done. Zero terminal, zero code.</p>
         <div class="path-stats">
           <div class="path-stat">
-            <span class="label">Setup:</span>
+            <span class="label">Time:</span>
             <span class="value">5 minutes</span>
           </div>
           <div class="path-stat">
             <span class="label">Cost:</span>
-            <span class="value">£5/month</span>
+            <span class="value">£5/mo hosting</span>
           </div>
           <div class="path-stat">
             <span class="label">Uptime:</span>
             <span class="value">24/7</span>
           </div>
         </div>
-        <a href="/guides/railway-quick-start" class="path-link">Start Here →</a>
+        <a href="/guides/railway-quick-start" class="path-link">Deploy Now →</a>
       </div>
 
-      <!-- FREE DIY -->
+      <!-- LOCAL -->
       <div class="path-card">
         <div class="path-icon">🛠️</div>
         <h3>Free DIY</h3>
-        <p class="desc">Install on your Mac or Windows PC for free.</p>
+        <p class="desc">Install on your Mac or Windows PC. £0 hosting cost.</p>
         <div class="path-stats">
           <div class="path-stat">
-            <span class="label">Setup:</span>
+            <span class="label">Time:</span>
             <span class="value">20 minutes</span>
           </div>
           <div class="path-stat">
             <span class="label">Cost:</span>
-            <span class="value">£0</span>
+            <span class="value">£0 hosting</span>
           </div>
           <div class="path-stat">
-            <span class="label">Guide:</span>
-            <span class="value">Step-by-step</span>
+            <span class="label">Caveat:</span>
+            <span class="value">PC must stay on</span>
           </div>
         </div>
-        <p class="path-note">⚠ PC must stay on to work</p>
         <a href="/guides/local-install" class="path-link">Free Guide →</a>
       </div>
 
-      <!-- DONE FOR YOU -->
+      <!-- PREMIUM -->
       <div class="path-card">
         <div class="path-icon">🚀</div>
         <h3>Done For You</h3>
-        <p class="desc">We set up and manage everything for you.</p>
+        <p class="desc">We set up everything. You just message it.</p>
         <div class="path-stats">
           <div class="path-stat">
-            <span class="label">Setup:</span>
+            <span class="label">Time:</span>
             <span class="value">2 minutes</span>
           </div>
           <div class="path-stat">
             <span class="label">Cost:</span>
-            <span class="value">£20/month</span>
+            <span class="value">£20/mo all-in</span>
           </div>
           <div class="path-stat">
             <span class="label">Effort:</span>
@@ -752,37 +727,37 @@
 <!-- WHAT IS OPENCLAW -->
 <section id="what-is">
   <div class="container">
-    <h2 class="section-title">What is OpenClaw?</h2>
+    <h2 class="section-title">What Actually Is This?</h2>
 
     <div class="what-is-content">
       <p>
-        OpenClaw is an AI assistant that runs on your computer or server and actually <strong>does things</strong> for you. Unlike ChatGPT which just answers questions, OpenClaw takes action.
+        OpenClaw is an AI assistant that <strong>takes action</strong>. Unlike ChatGPT which just answers questions, OpenClaw connects to your email, calendar, and apps to actually DO the boring admin work.
       </p>
       <p>
-        You message it from WhatsApp or Telegram like you'd message a person, and it handles all the boring admin — checking emails, booking restaurants, managing your calendar, sending messages, and more.
+        You message it from WhatsApp like you'd message a person. It runs on your own server (or one you rent for £5/month), so your data stays private and you're not locked into some SaaS subscription.
       </p>
     </div>
 
     <div class="features">
       <div class="feature-card">
-        <div class="feature-icon">🔓</div>
-        <h4>Open Source</h4>
-        <p>You control it completely, no vendor lock-in</p>
+        <div class="feature-icon">📧</div>
+        <h4>Email Management</h4>
+        <p>Checks inbox, flags urgent messages, drafts replies</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🏠</div>
-        <h4>Self-Hosted</h4>
-        <p>Your data stays with you, private and secure</p>
+        <div class="feature-icon">📅</div>
+        <h4>Calendar Control</h4>
+        <p>Schedules meetings, sets reminders, checks availability</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <h4>Works From Phone</h4>
-        <p>Message it like a person via WhatsApp</p>
+        <div class="feature-icon">🍽️</div>
+        <h4>Bookings & Reservations</h4>
+        <p>Books restaurants, orders taxis, makes appointments</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⚙️</div>
-        <h4>Fully Customizable</h4>
-        <p>Make it work exactly how you want</p>
+        <div class="feature-icon">🔒</div>
+        <h4>Your Data, Your Control</h4>
+        <p>Self-hosted, open source, no vendor lock-in</p>
       </div>
     </div>
   </div>
@@ -791,9 +766,9 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
-    <h2>Ready to Get Started?</h2>
-    <p>Choose your setup path and have your AI assistant running in minutes.</p>
-    <a href="#start" class="btn-primary">Choose Your Path →</a>
+    <h2>Stop Wasting Time on Admin</h2>
+    <p>Deploy your AI assistant in 5 minutes. From £5/month.</p>
+    <a href="/guides/railway-quick-start" class="btn-primary">Get Started Now →</a>
   </div>
 </section>
 
@@ -805,7 +780,10 @@
     </div>
     <p class="footer-tagline">Setup guides for normal humans</p>
     <div class="footer-links">
-      <a href="https://github.com/openclaw/openclaw">OpenClaw on GitHub</a>
+      <a href="/guides/railway-quick-start">Quick Start</a>
+      <a href="/guides/what-is-openclaw">What is OpenClaw</a>
+      <a href="/guides/local-install">Free Setup</a>
+      <a href="https://github.com/openclaw/openclaw">GitHub</a>
     </div>
     <p class="footer-disclaimer">Independent resource · Not affiliated with OpenClaw project</p>
   </div>

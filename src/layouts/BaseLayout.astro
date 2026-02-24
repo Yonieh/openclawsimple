@@ -1,0 +1,329 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={`https://openclawsimple.com${Astro.url.pathname}`} />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0c;
+      --bg-card: #111116;
+      --bg-card-hover: #18181f;
+      --border: #1e1e28;
+      --border-accent: #2a2a38;
+      --text: #e8e8ed;
+      --text-muted: #8888a0;
+      --text-dim: #55556a;
+      --accent: #ff4d3a;
+      --accent-glow: rgba(255, 77, 58, 0.15);
+      --accent-soft: #ff6b5a;
+      --green: #3ddc84;
+      --blue: #5b8def;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 12, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo .lobster {
+      font-size: 1.4rem;
+      filter: drop-shadow(0 0 8px rgba(255, 77, 58, 0.4));
+    }
+
+    .nav-cta {
+      padding: 8px 20px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-narrow {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ARTICLE CONTENT */
+    .article {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    .article h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .article .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .article h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .article h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .article p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .article ul, .article ol {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+
+    .article li {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .article code {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      color: var(--accent);
+    }
+
+    .article pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 24px;
+    }
+
+    .article pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--text);
+    }
+
+    /* CTA BOX */
+    .cta-box {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6b5a 100%);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #fff;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .article { padding-top: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="lobster">🦞</span>
+    OpenClaw Simple
+  </a>
+  <a href="/#start" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- CONTENT -->
+<slot />
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">
+      <span>🦞</span> OpenClaw Simple
+    </div>
+    <p class="footer-tagline">Setup guides for normal humans</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/guides/railway-quick-start">Quick Start</a>
+      <a href="/guides/what-is-openclaw">What is OpenClaw</a>
+      <a href="https://github.com/openclaw/openclaw" target="_blank">GitHub</a>
+    </div>
+    <p class="footer-disclaimer">Independent resource · Not affiliated with OpenClaw project</p>
+  </div>
+</footer>
+
+</body>
+</html>
