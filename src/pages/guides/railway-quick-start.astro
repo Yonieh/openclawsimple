@@ -1,0 +1,350 @@
+---
+import '../../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<title>OpenClaw Railway Setup - One-Click Install in 5 Minutes (2026 Guide)</title>
+		<meta name="description" content="Install OpenClaw in 5 minutes using Railway's one-click deployment. No terminal, no coding - just click buttons. Complete beginner guide with screenshots." />
+		<meta name="keywords" content="openclaw railway, openclaw one click install, openclaw setup easy, openclaw railway deploy, openclaw hosting" />
+		<link rel="canonical" content="https://openclawsimple.com/guides/railway-quick-start" />
+		
+		<!-- Schema for HowTo -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "HowTo",
+			"name": "How to Install OpenClaw with Railway (One-Click)",
+			"description": "Step-by-step guide to deploying OpenClaw using Railway's one-click template in under 5 minutes",
+			"totalTime": "PT5M",
+			"estimatedCost": {
+				"@type": "MoneyAmount",
+				"currency": "GBP",
+				"value": "5"
+			},
+			"step": [
+				{
+					"@type": "HowToStep",
+					"name": "Click Railway Deploy Button",
+					"text": "Visit the OpenClaw Railway template page and click the Deploy on Railway button",
+					"url": "https://openclawsimple.com/guides/railway-quick-start#step1"
+				},
+				{
+					"@type": "HowToStep",
+					"name": "Sign up for Railway",
+					"text": "Create a free Railway account using GitHub or email",
+					"url": "https://openclawsimple.com/guides/railway-quick-start#step2"
+				},
+				{
+					"@type": "HowToStep",
+					"name": "Configure deployment",
+					"text": "Railway auto-fills everything. Just click Deploy",
+					"url": "https://openclawsimple.com/guides/railway-quick-start#step3"
+				},
+				{
+					"@type": "HowToStep",
+					"name": "Wait for build",
+					"text": "Railway builds and deploys OpenClaw (takes 2-3 minutes)",
+					"url": "https://openclawsimple.com/guides/railway-quick-start#step4"
+				},
+				{
+					"@type": "HowToStep",
+					"name": "Open setup wizard",
+					"text": "Click the generated URL and complete the web-based setup wizard",
+					"url": "https://openclawsimple.com/guides/railway-quick-start#step5"
+				}
+			]
+		}
+		</script>
+	</head>
+	<body>
+		<div class="min-h-screen bg-gray-50">
+			<!-- Header -->
+			<header class="bg-white border-b border-gray-200">
+				<div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+					<div class="flex items-center justify-between">
+						<a href="/" class="flex items-center space-x-2 hover:opacity-75">
+							<span class="text-3xl">🦞</span>
+							<div class="text-xl font-bold text-gray-900">OpenClaw Simple</div>
+						</a>
+						<a href="/" class="text-sm text-gray-600 hover:text-gray-900">← Back to guides</a>
+					</div>
+				</div>
+			</header>
+
+			<!-- Article -->
+			<article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+				<header class="mb-8">
+					<h1 class="text-4xl font-bold text-gray-900 mb-4">
+						OpenClaw Railway Setup: One-Click Install in 5 Minutes
+					</h1>
+					<div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
+						<span>⏱️ 5 minutes</span>
+						<span>💰 ~£5/month</span>
+						<span>🎯 Easiest method</span>
+					</div>
+					<p class="text-lg text-gray-700 leading-relaxed">
+						This is the simplest way to get OpenClaw running. No terminal, no code, no confusion. Just click a button, fill in a form, and you're done.
+					</p>
+				</header>
+
+				<!-- What You Need -->
+				<section class="mb-10">
+					<h2 class="text-2xl font-bold text-gray-900 mb-4">What You'll Need</h2>
+					<ul class="space-y-2 text-gray-700">
+						<li class="flex items-start">
+							<span class="mr-2">✅</span>
+							<span>A GitHub account (free - we'll create one if you don't have it)</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✅</span>
+							<span>A credit/debit card (Railway has a free trial, then ~£5/month)</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✅</span>
+							<span>An API key from OpenRouter or Anthropic (we'll show you how to get this free)</span>
+						</li>
+						<li class="flex items-start">
+							<span class="mr-2">✅</span>
+							<span>5 minutes of your time</span>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Why Railway -->
+				<section class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-10">
+					<h3 class="font-bold text-gray-900 mb-2">Why use Railway instead of running it on my computer?</h3>
+					<p class="text-gray-700 mb-2">
+						If you run OpenClaw on your laptop, it only works when your laptop is on and awake. Railway runs OpenClaw on a server in the cloud, so it's available 24/7 from anywhere.
+					</p>
+					<p class="text-gray-700 text-sm">
+						Think of it like leaving your assistant at the office instead of carrying them in your pocket. They're always there when you need them.
+					</p>
+				</section>
+
+				<!-- The Steps -->
+				<section class="mb-10">
+					<h2 class="text-2xl font-bold text-gray-900 mb-6">The Steps</h2>
+
+					<!-- Step 1 -->
+					<div id="step1" class="mb-8">
+						<h3 class="text-xl font-bold text-gray-900 mb-3">Step 1: Click the Railway Deploy Button</h3>
+						<p class="text-gray-700 mb-4">
+							Railway has a one-click template for OpenClaw. Click this button:
+						</p>
+						<a href="https://railway.app/template/openclaw" target="_blank" rel="noopener nofollow" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition mb-4">
+							Deploy OpenClaw on Railway →
+						</a>
+						<p class="text-sm text-gray-600">
+							This opens Railway's deployment page with OpenClaw pre-configured. You just need to click through.
+						</p>
+					</div>
+
+					<!-- Step 2 -->
+					<div id="step2" class="mb-8">
+						<h3 class="text-xl font-bold text-gray-900 mb-3">Step 2: Sign Up for Railway</h3>
+						<p class="text-gray-700 mb-3">
+							If you don't have a Railway account yet, you'll be prompted to create one.
+						</p>
+						<div class="bg-gray-100 border border-gray-300 rounded p-4 mb-3">
+							<p class="font-semibold text-gray-900 mb-2">Choose one of these sign-up methods:</p>
+							<ul class="space-y-1 text-gray-700 text-sm">
+								<li>• Sign up with GitHub (easiest - one click)</li>
+								<li>• Sign up with email (you'll need to verify)</li>
+							</ul>
+						</div>
+						<p class="text-gray-700 mb-3">
+							<strong>About pricing:</strong> Railway gives you $5 free credit to start. After that, OpenClaw costs about $5-10/month depending on usage.
+						</p>
+						<p class="text-sm text-gray-600">
+							If you don't want to pay anything, use our <a href="/guides/local-install" class="text-blue-600 hover:underline">free local install guide</a> instead.
+						</p>
+					</div>
+
+					<!-- Step 3 -->
+					<div id="step3" class="mb-8">
+						<h3 class="text-xl font-bold text-gray-900 mb-3">Step 3: Configure the Deployment</h3>
+						<p class="text-gray-700 mb-3">
+							Railway shows you a form. The good news: <strong>everything is already filled in</strong>. You just need to click "Deploy Now" at the bottom.
+						</p>
+						<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-3">
+							<p class="text-sm text-gray-700">
+								<strong>Don't change anything</strong> unless you know what you're doing. The defaults work perfectly.
+							</p>
+						</div>
+					</div>
+
+					<!-- Step 4 -->
+					<div id="step4" class="mb-8">
+						<h3 class="text-xl font-bold text-gray-900 mb-3">Step 4: Wait for the Build to Complete</h3>
+						<p class="text-gray-700 mb-3">
+							Railway will now:
+						</p>
+						<ol class="list-decimal list-inside space-y-2 text-gray-700 mb-3">
+							<li>Create a new server for you</li>
+							<li>Install OpenClaw on it</li>
+							<li>Start it up</li>
+						</ol>
+						<p class="text-gray-700 mb-3">
+							This takes <strong>2-3 minutes</strong>. You'll see a loading bar. Grab a coffee.
+						</p>
+						<p class="text-gray-700">
+							When it's done, you'll see a green "Deployed" status and a URL that looks like: <code class="bg-gray-100 px-2 py-1 rounded text-sm">openclaw-production.up.railway.app</code>
+						</p>
+					</div>
+
+					<!-- Step 5 -->
+					<div id="step5" class="mb-8">
+						<h3 class="text-xl font-bold text-gray-900 mb-3">Step 5: Open the Setup Wizard</h3>
+						<p class="text-gray-700 mb-3">
+							Click that URL. It opens OpenClaw's web-based setup wizard.
+						</p>
+						<p class="text-gray-700 mb-3">
+							The wizard will ask you for:
+						</p>
+						<ul class="space-y-2 text-gray-700 mb-4">
+							<li class="flex items-start">
+								<span class="mr-2 font-bold">1.</span>
+								<div>
+									<strong>Your name</strong> - so OpenClaw knows what to call you
+								</div>
+							</li>
+							<li class="flex items-start">
+								<span class="mr-2 font-bold">2.</span>
+								<div>
+									<strong>An API key</strong> - this connects OpenClaw to an AI model (like Claude or GPT)
+									<p class="text-sm text-gray-600 mt-1">Don't have one? See the section below on getting a free API key.</p>
+								</div>
+							</li>
+							<li class="flex items-start">
+								<span class="mr-2 font-bold">3.</span>
+								<div>
+									<strong>Which messaging app</strong> you want to use (WhatsApp, Telegram, or just the web interface)
+								</div>
+							</li>
+						</ul>
+						<p class="text-gray-700 mb-3">
+							Fill those in, click "Finish Setup", and <strong>you're done</strong>.
+						</p>
+						<p class="text-gray-700 font-semibold">
+							OpenClaw is now running 24/7 in the cloud. You can message it from WhatsApp or Telegram anytime.
+						</p>
+					</div>
+				</section>
+
+				<!-- Getting an API Key -->
+				<section class="mb-10 bg-gray-100 rounded-lg p-6">
+					<h2 class="text-2xl font-bold text-gray-900 mb-4">Getting a Free API Key (OpenRouter)</h2>
+					<p class="text-gray-700 mb-4">
+						OpenClaw needs to connect to an AI model to work. The easiest free option is <strong>OpenRouter</strong>.
+					</p>
+					<ol class="space-y-3 text-gray-700">
+						<li>
+							<strong>1.</strong> Go to <a href="https://openrouter.ai" target="_blank" rel="noopener nofollow" class="text-blue-600 hover:underline">OpenRouter.ai</a>
+						</li>
+						<li>
+							<strong>2.</strong> Sign up (free - use Google or GitHub)
+						</li>
+						<li>
+							<strong>3.</strong> Click "Keys" in the sidebar
+						</li>
+						<li>
+							<strong>4.</strong> Click "Create New Key"
+						</li>
+						<li>
+							<strong>5.</strong> Copy the key (starts with <code class="bg-white px-2 py-1 rounded text-sm">sk-or-...</code>)
+						</li>
+						<li>
+							<strong>6.</strong> Paste it into OpenClaw's setup wizard
+						</li>
+					</ol>
+					<p class="text-sm text-gray-600 mt-4">
+						OpenRouter gives you $1 free credit to start. That's enough for hundreds of messages. After that, it costs a few pence per conversation.
+					</p>
+				</section>
+
+				<!-- What's Next -->
+				<section class="mb-10">
+					<h2 class="text-2xl font-bold text-gray-900 mb-4">What Happens Next?</h2>
+					<p class="text-gray-700 mb-4">
+						Once setup is complete, OpenClaw will:
+					</p>
+					<ul class="space-y-2 text-gray-700 mb-4">
+						<li>✅ Be accessible 24/7 from anywhere</li>
+						<li>✅ Send you a message on WhatsApp/Telegram to confirm it's working</li>
+						<li>✅ Wait for your first task</li>
+					</ul>
+					<p class="text-gray-700 mb-4">
+						Try sending it a message like:
+					</p>
+					<div class="bg-blue-50 border-l-4 border-blue-500 p-4 italic text-gray-700">
+						"Hey, can you check my calendar for tomorrow and remind me of anything important?"
+					</div>
+				</section>
+
+				<!-- Troubleshooting -->
+				<section class="mb-10">
+					<h2 class="text-2xl font-bold text-gray-900 mb-4">Common Issues</h2>
+					
+					<div class="space-y-4">
+						<div>
+							<h4 class="font-bold text-gray-900 mb-2">❌ "Deployment failed"</h4>
+							<p class="text-gray-700 text-sm">
+								Click "Redeploy" in Railway. Sometimes builds fail randomly — it usually works the second time.
+							</p>
+						</div>
+
+						<div>
+							<h4 class="font-bold text-gray-900 mb-2">❌ "Invalid API key"</h4>
+							<p class="text-gray-700 text-sm">
+								Double-check you copied the entire key from OpenRouter (including the <code class="bg-gray-100 px-1">sk-or-</code> part). No spaces before or after.
+							</p>
+						</div>
+
+						<div>
+							<h4 class="font-bold text-gray-900 mb-2">❌ "Can't connect to WhatsApp"</h4>
+							<p class="text-gray-700 text-sm">
+								Make sure you scanned the QR code with WhatsApp on your phone (Settings → Linked Devices → Link a Device). The QR code expires after 2 minutes.
+							</p>
+						</div>
+					</div>
+
+					<p class="text-sm text-gray-600 mt-6">
+						Still stuck? <a href="/#" class="text-blue-600 hover:underline">Check our full troubleshooting guide</a> or ask in the <a href="https://discord.gg/clawd" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenClaw Discord</a>.
+					</p>
+				</section>
+
+				<!-- CTA -->
+				<section class="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
+					<h3 class="text-2xl font-bold text-gray-900 mb-3">Ready to Get Started?</h3>
+					<p class="text-gray-700 mb-4">
+						Deploy OpenClaw on Railway now and have your AI assistant running in 5 minutes.
+					</p>
+					<a href="https://railway.app/template/openclaw" target="_blank" rel="noopener nofollow" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-purple-700 transition">
+						Deploy on Railway (One-Click) →
+					</a>
+					<p class="text-xs text-gray-600 mt-3">
+						Affiliate disclosure: We earn a small commission if you sign up for Railway through this link. It doesn't cost you extra.
+					</p>
+				</section>
+			</article>
+
+			<!-- Footer -->
+			<footer class="bg-white border-t border-gray-200 py-8 mt-12">
+				<div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+					<p class="text-sm text-gray-600 mb-2">
+						<a href="/" class="text-blue-600 hover:underline">← Back to all guides</a>
+					</p>
+					<p class="text-xs text-gray-500">
+						OpenClaw Simple · Making AI assistants accessible to everyone
+					</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
