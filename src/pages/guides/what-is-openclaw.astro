@@ -1,62 +1,243 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
+
+const faqData = {
+  questions: [
+    {
+      question: "What is OpenClaw?",
+      answer: "OpenClaw is an open-source AI assistant that runs on your own server and actually does things for you - checking emails, booking restaurants, managing your calendar, and more. You message it from WhatsApp like a person."
+    },
+    {
+      question: "How is OpenClaw different from ChatGPT?",
+      answer: "ChatGPT just answers questions. OpenClaw takes action - it can check your email, book appointments, control smart home devices, and integrate with your apps. It runs on your own server, so your data stays private."
+    },
+    {
+      question: "Do I need to know how to code?",
+      answer: "No. You can set up OpenClaw by copying and pasting a few commands into a terminal. Our guides walk you through every step for complete beginners."
+    },
+    {
+      question: "How much does OpenClaw cost?",
+      answer: "OpenClaw itself is free (open-source). You pay for: VPS hosting (£4-6/month) and AI model API usage (£2-10/month). Total: £7-15/month for complete control."
+    },
+    {
+      question: "Is my data private?",
+      answer: "Yes. OpenClaw runs entirely on your server. Your conversations and data stay under your control. When you ask questions, they're sent to your chosen AI provider (Claude, GPT, Gemini) to generate responses, but you choose which provider you trust."
+    }
+  ]
+};
 ---
+
+<SchemaOrg type="article" data={{
+  title: "What is OpenClaw? Complete Explanation",
+  description: "Learn what OpenClaw is, how it works, and why it's different from ChatGPT. Complete beginner's guide to this open-source AI assistant.",
+  datePublished: "2026-02-24",
+  dateModified: "2026-02-24"
+}} />
+<SchemaOrg type="faq" data={faqData} />
 
 <BaseLayout
   title="What is OpenClaw? Complete Beginner's Guide (2026)"
-  description="OpenClaw explained in plain English. Learn what it is, how it works, what it can do, and whether it's right for you. No jargon, just clear answers.">
+  description="OpenClaw explained simply. Learn what it is, how it works, why it's different from ChatGPT, and whether it's right for you. Complete guide for non-technical users.">
 
   <div class="article">
     <div class="container-narrow">
-      <h1>What is OpenClaw? A Complete Beginner's Guide</h1>
-      <p class="subtitle">OpenClaw explained in plain English — what it does, how it works, and whether you should use it.</p>
+      <h1>What is OpenClaw?</h1>
+      <p class="subtitle">Your own AI assistant that actually does things. Explained for complete beginners.</p>
 
-      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
-        <h3 style="color: #1c1c26;">Full Guide Coming Soon</h3>
-        <p style="color: rgba(0,0,0,0.8);">This page is being expanded. Here's a quick overview to get you started.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">Jump Straight to Setup →</a>
+      <h2>The Simple Explanation</h2>
+      <p>OpenClaw is an AI assistant that <strong>actually does things</strong> for you.</p>
+
+      <p>Unlike ChatGPT (which just answers questions), OpenClaw can:</p>
+      <ul>
+        <li>Check your emails and flag urgent messages</li>
+        <li>Book restaurants and appointments</li>
+        <li>Manage your calendar</li>
+        <li>Control your smart home devices</li>
+        <li>Send messages and make calls</li>
+        <li>Search the web and summarise articles</li>
+      </ul>
+
+      <p>You message it from WhatsApp like you'd message a person. It runs on your own server (or one you rent), so your data stays private.</p>
+
+      <h2>How is This Different From ChatGPT?</h2>
+
+      <h3>ChatGPT (and Similar)</h3>
+      <ul>
+        <li>Answers questions</li>
+        <li>Gives advice and explanations</li>
+        <li>Writes text</li>
+        <li>Can't take action</li>
+        <li>Can't access your email, calendar, apps</li>
+        <li>You copy-paste everything manually</li>
+      </ul>
+
+      <h3>OpenClaw</h3>
+      <ul>
+        <li>Does all of the above, PLUS...</li>
+        <li>Takes action for you</li>
+        <li>Connects to your email, calendar, smart home</li>
+        <li>Works from WhatsApp (no switching apps)</li>
+        <li>Runs on your own server</li>
+        <li>Your data stays private</li>
+        <li>You control everything</li>
+      </ul>
+
+      <p><strong>Think of it like this:</strong> ChatGPT is a helpful friend who gives advice. OpenClaw is a personal assistant who actually does the work.</p>
+
+      <h2>How Does It Work?</h2>
+
+      <p>OpenClaw has three main parts:</p>
+
+      <ol>
+        <li><strong>Your server</strong> - A small computer (VPS) that runs 24/7. Costs £4–6/month to rent.</li>
+        <li><strong>AI brain</strong> - You connect it to Claude, GPT-4, or Gemini. This is what understands your messages and decides what to do. Costs £2–10/month.</li>
+        <li><strong>Messaging interface</strong> - You message it via WhatsApp (or Telegram, Discord). It responds and takes action.</li>
+      </ol>
+
+      <p><strong>When you message OpenClaw:</strong></p>
+      <ol>
+        <li>Your message goes to your server</li>
+        <li>OpenClaw sends it to the AI brain (Claude, GPT, etc.)</li>
+        <li>The AI decides what action to take</li>
+        <li>OpenClaw executes the action (checks email, books restaurant, etc.)</li>
+        <li>You get a response on WhatsApp</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>Try It Yourself</h3>
+        <p>Set up your own OpenClaw instance in 20 minutes with our step-by-step guide.</p>
+        <a href="/guides/vps-deployment" class="cta-btn">VPS Setup Guide →</a>
       </div>
 
-      <h2>The Short Version</h2>
-      <p>OpenClaw is a free, open-source AI assistant that <strong>actually does things</strong> for you. You message it from WhatsApp, and it handles tasks like checking your email, managing your calendar, booking restaurants, and setting reminders.</p>
+      <h2>Who is OpenClaw For?</h2>
 
-      <p>Unlike ChatGPT or Siri, OpenClaw connects to your real apps and takes real actions. It doesn't just answer questions — it does the work.</p>
-
-      <h2>How is it Different from ChatGPT?</h2>
-      <p>Think of it this way:</p>
+      <p><strong>Perfect for:</strong></p>
       <ul>
-        <li><strong>ChatGPT</strong> answers your questions. "What's a good Italian restaurant near me?" — it gives you suggestions.</li>
-        <li><strong>OpenClaw</strong> does the task. "Book me a table for 2 at an Italian place on Friday at 7pm" — it actually makes the booking.</li>
-      </ul>
-      <p>OpenClaw is more like a personal assistant than a chatbot. It connects to your email, calendar, and other services to take action on your behalf.</p>
-
-      <h2>What Can It Do?</h2>
-      <ul>
-        <li><strong>Email:</strong> Check your inbox, flag urgent messages, draft replies</li>
-        <li><strong>Calendar:</strong> Schedule meetings, set reminders, check your availability</li>
-        <li><strong>Bookings:</strong> Reserve restaurants, order taxis, make appointments</li>
-        <li><strong>Research:</strong> Look things up, summarise articles, compare options</li>
-        <li><strong>Reminders:</strong> Set alerts for tasks, follow-ups, and deadlines</li>
-        <li><strong>Custom tasks:</strong> Anything you can teach it through "skills"</li>
+        <li>People who want a personal AI assistant but care about privacy</li>
+        <li>Busy professionals who need help managing admin tasks</li>
+        <li>Tech enthusiasts who like owning and controlling their tools</li>
+        <li>Anyone tired of switching between 10 different apps</li>
       </ul>
 
-      <h2>Is My Data Safe?</h2>
-      <p>Yes. OpenClaw runs on <strong>your own server</strong> (or your own computer). Your messages, emails, and calendar data never pass through anyone else's systems. You're in full control.</p>
-      <p>It's open source, so the code is public and auditable. There's no company collecting your data or locking you in.</p>
-
-      <h2>What Does It Cost?</h2>
+      <p><strong>Not ideal if:</strong></p>
       <ul>
-        <li><strong>OpenClaw itself:</strong> Free (open source)</li>
-        <li><strong>AI brain (Anthropic API):</strong> £2–10/month depending on use</li>
-        <li><strong>Hosting (optional):</strong> £5/month on Railway, or free on your own computer</li>
-        <li><strong>Total:</strong> £2–15/month for your own AI assistant</li>
+        <li>You just want to ask questions (ChatGPT is fine for that)</li>
+        <li>You're not willing to spend £10–15/month</li>
+        <li>You want zero setup (though our <a href="/guides/railway-quick-start">Railway option</a> is very easy)</li>
+      </ul>
+
+      <h2>What Can OpenClaw Actually Do?</h2>
+
+      <h3>Out of the Box</h3>
+      <ul>
+        <li>Answer questions and have conversations (like ChatGPT)</li>
+        <li>Search the web and summarise articles</li>
+        <li>Set reminders and timers</li>
+        <li>Write and edit text</li>
+        <li>Basic maths and calculations</li>
+      </ul>
+
+      <h3>With Integrations (Easy to Set Up)</h3>
+      <ul>
+        <li><strong>Email:</strong> Gmail, Outlook - check inbox, send emails, flag urgent messages</li>
+        <li><strong>Calendar:</strong> Google Calendar, Outlook - check schedule, book meetings, set reminders</li>
+        <li><strong>Tasks:</strong> Todoist, Notion, Trello - add tasks, check to-do lists</li>
+        <li><strong>Smart home:</strong> Home Assistant, Philips Hue - control lights, heating, devices</li>
+        <li><strong>Messaging:</strong> Send WhatsApp messages, Telegram messages, SMS</li>
+      </ul>
+
+      <h3>With Skills (Community Plugins)</h3>
+      <p>The <a href="https://clawhub.com" target="_blank" rel="noopener">ClawHub</a> marketplace has hundreds of community-made skills:</p>
+      <ul>
+        <li>Weather forecasts</li>
+        <li>Food delivery (Deliveroo, Uber Eats)</li>
+        <li>Music control (Spotify)</li>
+        <li>News summaries</li>
+        <li>Recipe suggestions</li>
+        <li>Travel planning</li>
+        <li>And many more...</li>
+      </ul>
+
+      <h2>Is It Secure and Private?</h2>
+
+      <p><strong>Yes, more so than most AI assistants:</strong></p>
+
+      <ul>
+        <li>OpenClaw runs on <strong>your server</strong>, not someone else's cloud</li>
+        <li>Your conversations stay on <strong>your server</strong></li>
+        <li>You choose which AI provider you trust (Claude, GPT, Gemini)</li>
+        <li>It's <strong>open-source</strong> - anyone can inspect the code</li>
+        <li>No company has access to your data unless you integrate their service</li>
+      </ul>
+
+      <p><strong>What gets shared:</strong></p>
+      <ul>
+        <li>When you ask OpenClaw something, your message is sent to your chosen AI provider (Anthropic, OpenAI, Google) to generate a response</li>
+        <li>If you integrate email/calendar, OpenClaw accesses those (but doesn't send them to the AI unless you ask it to)</li>
+      </ul>
+
+      <p><strong>Bottom line:</strong> You're in control. You decide what OpenClaw can access and which services you trust.</p>
+
+      <h2>How Much Does It Cost?</h2>
+
+      <p><strong>OpenClaw itself is free</strong> (it's open-source). You pay for:</p>
+
+      <ul>
+        <li><strong>VPS hosting:</strong> €4–6/month (Hetzner, DigitalOcean, Linode)</li>
+        <li><strong>AI model API:</strong> £2–10/month (Anthropic, OpenAI, Google)</li>
+        <li><strong>Total:</strong> £7–15/month depending on usage</li>
+      </ul>
+
+      <p><strong>Compare to alternatives:</strong></p>
+      <ul>
+        <li>Virtual assistant (human): £500+/month</li>
+        <li>ChatGPT Plus: £20/month (but can't take actions)</li>
+        <li>Multiple app subscriptions: £30+/month</li>
       </ul>
 
       <div class="cta-box">
-        <h3>Ready to Try It?</h3>
-        <p>Set up OpenClaw in 5 minutes with our one-click guide.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">Get Started →</a>
+        <h3>Ready to Set Up?</h3>
+        <p>Choose your path based on technical comfort level.</p>
+        <a href="/guides/vps-deployment" class="cta-btn">VPS Setup (Full Control) →</a>
+        <p style="margin-top: 16px; font-size: 0.9375rem;"><a href="/guides/railway-quick-start" style="color: white; text-decoration: underline;">Railway Setup (Easy, One-Click)</a></p>
       </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Do I need to know how to code?</h3>
+      <p>No. Our guides are written for complete beginners. If you can copy and paste text, you can set up OpenClaw.</p>
+
+      <h3>Can I use it on my phone?</h3>
+      <p>OpenClaw runs on a server (VPS or Railway). You <strong>message</strong> it from your phone via WhatsApp. So yes, you interact with it entirely from your phone.</p>
+
+      <h3>What happens if my server goes down?</h3>
+      <p>OpenClaw stops working until you restart it. VPS providers have 99.9% uptime, so this rarely happens. You can restart it via SSH from anywhere.</p>
+
+      <h3>Can multiple people use the same OpenClaw instance?</h3>
+      <p>Yes. You can configure it for family members or team use. Each person would message the same OpenClaw number on WhatsApp.</p>
+
+      <h3>Can I switch AI providers later?</h3>
+      <p>Yes. Change the configuration file and restart OpenClaw. Takes 2 minutes.</p>
+
+      <h3>Is there a mobile app?</h3>
+      <p>Not needed. You message OpenClaw via WhatsApp, Telegram, or Discord - apps you already have.</p>
+
+      <h2>Next Steps</h2>
+
+      <p><strong>Want to set it up?</strong></p>
+      <ul>
+        <li><a href="/guides/vps-deployment">VPS Deployment Guide</a> - Full control, £7–15/month</li>
+        <li><a href="/guides/railway-quick-start">Railway One-Click Setup</a> - Easier, £5/month hosting + API costs</li>
+      </ul>
+
+      <p><strong>Want to learn more?</strong></p>
+      <ul>
+        <li><a href="https://docs.openclaw.ai" target="_blank" rel="noopener">Official OpenClaw Documentation</a></li>
+        <li><a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub Repository</a></li>
+        <li><a href="https://discord.gg/clawd" target="_blank" rel="noopener">Join the Discord Community</a></li>
+      </ul>
+
     </div>
   </div>
 

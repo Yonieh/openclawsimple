@@ -1,58 +1,332 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
+
+const howToData = {
+  title: "How to Deploy OpenClaw on a VPS",
+  description: "Complete step-by-step guide to installing OpenClaw on your VPS with copy-paste commands. Works with Hetzner, DigitalOcean, Linode, and Vultr.",
+  totalTime: "PT20M",
+  cost: "4",
+  steps: [
+    {
+      name: "Choose and Create VPS",
+      text: "Pick a provider (Hetzner recommended), create an account, and spin up a basic VPS with Ubuntu 22.04.",
+      anchor: "#step-1"
+    },
+    {
+      name: "Get Your AI Model API Key",
+      text: "Sign up for Anthropic (recommended), add credit, and generate an API key.",
+      anchor: "#step-2"
+    },
+    {
+      name: "Install OpenClaw",
+      text: "SSH into your VPS and run the one-line installation command.",
+      anchor: "#step-3"
+    },
+    {
+      name: "Configure API Keys",
+      text: "Add your AI provider API key to the OpenClaw configuration.",
+      anchor: "#step-4"
+    },
+    {
+      name: "Start OpenClaw",
+      text: "Launch OpenClaw and verify it's running correctly.",
+      anchor: "#step-5"
+    },
+    {
+      name: "Connect WhatsApp",
+      text: "Link your WhatsApp account to message your OpenClaw assistant.",
+      anchor: "#step-6"
+    }
+  ]
+};
+
+const faqData = {
+  questions: [
+    {
+      question: "Which VPS provider should I choose?",
+      answer: "Hetzner offers the best value (€4.15/month for 4GB RAM). DigitalOcean is easier if you're a beginner. All providers work equally well with OpenClaw."
+    },
+    {
+      question: "Which AI model should I use?",
+      answer: "Anthropic Claude is the most capable and costs £2-10/month. Google Gemini has a generous free tier. OpenAI GPT-4 is also excellent but slightly more expensive."
+    },
+    {
+      question: "How much technical knowledge do I need?",
+      answer: "Very little. If you can copy and paste commands into a terminal, you can do this. We explain every step clearly."
+    },
+    {
+      question: "Can I switch providers later?",
+      answer: "Yes. Your OpenClaw configuration is portable. You can back it up and move to a different VPS anytime."
+    },
+    {
+      question: "Is my data private?",
+      answer: "Yes. OpenClaw runs entirely on your VPS. Your conversations and data stay on your server under your control."
+    }
+  ]
+};
 ---
 
+<SchemaOrg type="howto" data={howToData} />
+<SchemaOrg type="article" data={{
+  title: "Deploy OpenClaw on VPS - Complete Guide",
+  description: "Step-by-step tutorial for installing OpenClaw on your VPS. Copy-paste commands, provider comparisons, and post-setup configuration.",
+  datePublished: "2026-02-24",
+  dateModified: "2026-02-24"
+}} />
+<SchemaOrg type="faq" data={faqData} />
+
 <BaseLayout
-  title="Deploy OpenClaw on a VPS — Full Server Setup Guide (2026)"
-  description="Install OpenClaw on your own VPS for full control. Step-by-step guide for Ubuntu, Debian, and other Linux servers.">
+  title="Deploy OpenClaw on VPS: Complete Setup Guide (2026)"
+  description="Full tutorial for setting up OpenClaw on your VPS. Compare providers (Hetzner, DigitalOcean, Linode), choose AI models, and follow copy-paste commands. Complete control for £4/month.">
 
   <div class="article">
     <div class="container-narrow">
-      <h1>Deploy OpenClaw on a VPS</h1>
-      <p class="subtitle">Full control on your own server. Best for technical users who want maximum flexibility.</p>
+      <h1>Deploy OpenClaw on Your VPS</h1>
+      <p class="subtitle">Complete setup guide with copy-paste commands. Works with any VPS provider. Takes about 20 minutes.</p>
 
-      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
-        <h3 style="color: #1c1c26;">Full Guide Coming Soon</h3>
-        <p style="color: rgba(0,0,0,0.8);">Detailed instructions for VPS deployment are being written. Here's what to expect.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">Try the Easy Setup Instead →</a>
+      <div class="cta-box">
+        <h3>⚡ What You'll Get</h3>
+        <p>Your own AI assistant running 24/7 on your own server. Full control, complete privacy, costs £4–14/month total (VPS + AI API).</p>
       </div>
 
-      <h2>Who Is This For?</h2>
-      <p>This guide is for people who are comfortable with a terminal and want to run OpenClaw on their own Linux server. If terms like SSH, npm, and systemd sound familiar, you're in the right place.</p>
-      <p>If that sounds intimidating, the <a href="/guides/railway-quick-start">Railway one-click setup</a> gives you the same result without any terminal work.</p>
+      <h2 id="step-1">Step 1: Choose and Create Your VPS</h2>
+      <p>A VPS (Virtual Private Server) is basically a computer in someone else's data centre that you rent. You'll install OpenClaw on it.</p>
 
-      <h2>What You'll Need</h2>
-      <ul>
-        <li>A VPS running Ubuntu 22.04+ or Debian 12+ (providers like Hetzner, DigitalOcean, Linode all work)</li>
-        <li>At least 1 GB RAM and 10 GB storage</li>
-        <li>SSH access to your server</li>
-        <li>A domain name (optional but recommended)</li>
-        <li>An Anthropic API key</li>
-      </ul>
-
-      <h2>Quick Overview</h2>
+      <h3>Recommended: Hetzner (Best Value)</h3>
+      <p><strong>Why Hetzner:</strong> €4.15/month gets you 4GB RAM (double what others offer). Based in Germany, excellent performance.</p>
+      
       <ol>
-        <li><strong>Set up your server</strong> — install Node.js 20+ and basic dependencies</li>
-        <li><strong>Install OpenClaw</strong> — one npm command</li>
-        <li><strong>Run the setup wizard</strong> — configure your AI model, API key, and preferences</li>
-        <li><strong>Set up as a service</strong> — keep it running 24/7 with systemd</li>
-        <li><strong>Connect WhatsApp</strong> — scan a QR code to link your phone</li>
-        <li><strong>Secure it</strong> — firewall, HTTPS, and access controls</li>
+        <li>Go to <a href="https://www.hetzner.com/cloud" target="_blank" rel="noopener">Hetzner Cloud</a> and create an account</li>
+        <li>Click <strong>New Project</strong> → name it "OpenClaw"</li>
+        <li>Click <strong>Add Server</strong></li>
+        <li>Choose location: <strong>Nuremberg</strong> (closest to UK)</li>
+        <li>Image: <strong>Ubuntu 22.04</strong></li>
+        <li>Type: <strong>CX21</strong> (2 vCPU, 4GB RAM, €4.15/mo)</li>
+        <li>SSH Key: Click <strong>Add SSH Key</strong> (we'll explain this next)</li>
+        <li>Click <strong>Create & Buy Now</strong></li>
       </ol>
 
-      <h2>VPS vs Railway</h2>
+      <h3>Alternative: DigitalOcean (Easiest for Beginners)</h3>
+      <p><strong>Why DigitalOcean:</strong> Simpler interface, more beginner-friendly. $6/month for 1GB RAM (sufficient but less headroom).</p>
+      
+      <ol>
+        <li>Go to <a href="https://www.digitalocean.com/products/droplets" target="_blank" rel="noopener">DigitalOcean Droplets</a></li>
+        <li>Sign up (they offer $200 free credit for new users)</li>
+        <li>Click <strong>Create</strong> → <strong>Droplets</strong></li>
+        <li>Choose region closest to you</li>
+        <li>Image: <strong>Ubuntu 22.04 LTS</strong></li>
+        <li>Droplet Type: <strong>Basic</strong> → <strong>Regular, $6/mo</strong> (1GB RAM)</li>
+        <li>Authentication: <strong>SSH Key</strong> (add yours or create password)</li>
+        <li>Click <strong>Create Droplet</strong></li>
+      </ol>
+
+      <h3>What About SSH Keys?</h3>
+      <p>SSH keys are how you securely connect to your server. Most providers guide you through creating one. If you skip this step, you'll get a password emailed to you instead (less secure but works).</p>
+
+      <p><strong>Once created:</strong> You'll get an <strong>IP address</strong> (something like 123.45.67.89). Save this - you'll need it.</p>
+
+      <h2 id="step-2">Step 2: Get Your AI Model API Key</h2>
+      <p>OpenClaw needs an AI "brain" to work. You'll connect it to one of these providers.</p>
+
+      <h3>Recommended: Anthropic Claude</h3>
+      <p><strong>Why Claude:</strong> Most capable, best at following complex instructions. Costs £2–10/month for normal use.</p>
+
+      <ol>
+        <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a></li>
+        <li>Sign up for an account</li>
+        <li>Add credit: Click <strong>Settings</strong> → <strong>Billing</strong> → <strong>Add Credit</strong> (£5–10 to start)</li>
+        <li>Get API key: Click <strong>API Keys</strong> → <strong>Create Key</strong></li>
+        <li>Copy the key and save it somewhere safe (you'll paste it later)</li>
+      </ol>
+
+      <h3>Alternative: Google Gemini (Free Tier)</h3>
+      <p><strong>Why Gemini:</strong> Generous free tier. Good enough for most tasks. Fast responses.</p>
+
+      <ol>
+        <li>Go to <a href="https://ai.google.dev" target="_blank" rel="noopener">ai.google.dev</a></li>
+        <li>Click <strong>Get API Key</strong></li>
+        <li>Create a project in Google Cloud Console</li>
+        <li>Enable the Gemini API</li>
+        <li>Create an API key and copy it</li>
+      </ol>
+
+      <h3>Alternative: OpenAI GPT-4</h3>
+      <ol>
+        <li>Go to <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a></li>
+        <li>Sign up and add billing details</li>
+        <li>Navigate to <strong>API Keys</strong> → <strong>Create New Key</strong></li>
+        <li>Copy and save the key</li>
+      </ol>
+
+      <h2 id="step-3">Step 3: Connect to Your VPS and Install OpenClaw</h2>
+      <p>Now you'll connect to your server and install OpenClaw. Don't worry - it's just copy-paste.</p>
+
+      <h3>Connect via SSH</h3>
+      <p><strong>On Mac or Linux:</strong> Open Terminal and type:</p>
+      <pre><code>ssh root@YOUR_IP_ADDRESS</code></pre>
+      
+      <p><strong>On Windows:</strong> Use <a href="https://www.putty.org" target="_blank" rel="noopener">PuTTY</a> or Windows Terminal (built into Windows 11).</p>
+
+      <p>Replace <code>YOUR_IP_ADDRESS</code> with the IP you got from your VPS provider (e.g., <code>ssh root@123.45.67.89</code>).</p>
+
+      <p>If prompted "Are you sure you want to continue?", type <strong>yes</strong> and press Enter.</p>
+
+      <h3>Install OpenClaw (One Command)</h3>
+      <p>Once you're connected (you'll see <code>root@...</code> in your terminal), paste this command:</p>
+
+      <pre><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></pre>
+
+      <p>This will:</p>
       <ul>
-        <li><strong>More control</strong> — full root access, custom domains, SSH</li>
-        <li><strong>Potentially cheaper</strong> — a basic VPS starts around £3–4/month</li>
-        <li><strong>More work</strong> — you handle updates, security, and maintenance</li>
-        <li><strong>More flexible</strong> — run additional services alongside OpenClaw</li>
+        <li>Install Node.js (required for OpenClaw)</li>
+        <li>Download and install OpenClaw</li>
+        <li>Set up the necessary files</li>
+      </ul>
+
+      <p>Takes about 2–3 minutes. You'll see progress messages.</p>
+
+      <h2 id="step-4">Step 4: Configure Your API Keys</h2>
+      <p>Now you need to tell OpenClaw which AI model to use.</p>
+
+      <p>OpenClaw will ask you some questions during first-time setup. Here's what to enter:</p>
+
+      <ol>
+        <li><strong>Gateway token:</strong> Just press Enter (creates a random secure token)</li>
+        <li><strong>Default model provider:</strong> Type <code>anthropic</code> (or <code>openai</code>, <code>google</code> if you chose different)</li>
+        <li><strong>API key:</strong> Paste the API key you saved from Step 2</li>
+        <li><strong>Enable WhatsApp?</strong> Type <code>yes</code></li>
+      </ol>
+
+      <p>OpenClaw will save these settings to <code>~/.openclaw/config.yaml</code>.</p>
+
+      <h2 id="step-5">Step 5: Start OpenClaw</h2>
+      <p>Launch OpenClaw with this command:</p>
+
+      <pre><code>openclaw gateway start</code></pre>
+
+      <p>You should see output like:</p>
+      <pre><code>OpenClaw Gateway started
+Listening on port 3000
+WhatsApp: Waiting for connection...</code></pre>
+
+      <p>Congratulations! OpenClaw is now running on your server.</p>
+
+      <h3>Keep It Running (Even When You Disconnect)</h3>
+      <p>Right now, OpenClaw will stop if you close your terminal. To keep it running 24/7, use <code>pm2</code> (a process manager):</p>
+
+      <pre><code>npm install -g pm2
+pm2 start openclaw -- gateway start
+pm2 save
+pm2 startup</code></pre>
+
+      <p>Now OpenClaw will restart automatically if your server reboots.</p>
+
+      <h2 id="step-6">Step 6: Connect WhatsApp</h2>
+      <p>The final step is linking your WhatsApp account so you can message your AI assistant.</p>
+
+      <p><strong>Full WhatsApp setup instructions:</strong> <a href="/guides/whatsapp-setup">WhatsApp Connection Guide</a></p>
+
+      <p><strong>Quick version:</strong></p>
+      <ol>
+        <li>OpenClaw will display a QR code in your terminal</li>
+        <li>Open WhatsApp on your phone</li>
+        <li>Go to <strong>Settings</strong> → <strong>Linked Devices</strong> → <strong>Link a Device</strong></li>
+        <li>Scan the QR code</li>
+        <li>Done! Message yourself on WhatsApp and your OpenClaw assistant will respond</li>
+      </ol>
+
+      <div class="cta-box">
+        <h3>✅ You're All Set!</h3>
+        <p>OpenClaw is now running on your VPS. Message it on WhatsApp to test it out.</p>
+        <a href="#what-next" class="cta-btn">What to Do Next →</a>
+      </div>
+
+      <h2 id="what-next">What to Do Once OpenClaw Is Running</h2>
+      <p>Now that you have OpenClaw set up, here's what you can do with it:</p>
+
+      <h3>Test Basic Commands</h3>
+      <p>Message your OpenClaw WhatsApp number and try:</p>
+      <ul>
+        <li><strong>"What's the weather like today?"</strong> - Test web search</li>
+        <li><strong>"Remind me to call Dave at 2pm tomorrow"</strong> - Test reminders</li>
+        <li><strong>"Check my calendar for this week"</strong> - Test calendar integration (if configured)</li>
+        <li><strong>"Help"</strong> - See available commands</li>
+      </ul>
+
+      <h3>Connect More Services</h3>
+      <p>OpenClaw can integrate with:</p>
+      <ul>
+        <li><strong>Email</strong> - Check inbox, send emails, flag urgent messages</li>
+        <li><strong>Calendar</strong> - Google Calendar, Outlook, iCloud</li>
+        <li><strong>Task managers</strong> - Todoist, Notion, Trello</li>
+        <li><strong>Smart home</strong> - Home Assistant, Philips Hue</li>
+      </ul>
+
+      <p>Check the <a href="https://docs.openclaw.ai" target="_blank" rel="noopener">official OpenClaw docs</a> for integration guides.</p>
+
+      <h3>Customise Your Assistant</h3>
+      <p>You can:</p>
+      <ul>
+        <li>Change its personality (edit the system prompt)</li>
+        <li>Add custom commands and shortcuts</li>
+        <li>Install skills from the <a href="https://clawhub.com" target="_blank" rel="noopener">ClawHub</a> marketplace</li>
+        <li>Switch to a different AI model anytime</li>
+      </ul>
+
+      <h3>Monitor and Maintain</h3>
+      <p>Every few weeks:</p>
+      <ul>
+        <li>SSH into your VPS: <code>ssh root@YOUR_IP</code></li>
+        <li>Update OpenClaw: <code>npm update -g openclaw</code></li>
+        <li>Restart: <code>pm2 restart openclaw</code></li>
+        <li>Check usage: <code>openclaw status</code></li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>How much will this cost per month?</h3>
+      <p><strong>VPS:</strong> €4–6/month (Hetzner or DigitalOcean)<br>
+      <strong>AI API:</strong> £2–10/month depending on usage<br>
+      <strong>Total:</strong> £7–15/month for complete control</p>
+
+      <h3>What if I want to change AI providers later?</h3>
+      <p>Easy. Just edit <code>~/.openclaw/config.yaml</code>, change the provider and API key, then restart: <code>pm2 restart openclaw</code></p>
+
+      <h3>Can I run this on a Raspberry Pi instead?</h3>
+      <p>Yes! The installation process is almost identical. Just use a Pi 4 with at least 2GB RAM.</p>
+
+      <h3>Is my data stored on the VPS or sent to the AI provider?</h3>
+      <p>Your OpenClaw configuration and memory files stay on your VPS. When you send a message, OpenClaw sends it to your chosen AI provider (Anthropic, OpenAI, etc.) to generate a response. The AI provider processes it but doesn't permanently store your conversations (check their privacy policies for details).</p>
+
+      <h3>What if something breaks?</h3>
+      <p>Check logs: <code>pm2 logs openclaw</code><br>
+      Restart: <code>pm2 restart openclaw</code><br>
+      Full reinstall: Delete <code>~/.openclaw</code> folder and run the install script again.</p>
+
+      <h3>Can I access OpenClaw from multiple devices?</h3>
+      <p>Yes. WhatsApp is the main interface, but you can also:</p>
+      <ul>
+        <li>Add Telegram as another messaging interface</li>
+        <li>Set up Discord bot integration</li>
+        <li>Access the web UI (if enabled)</li>
       </ul>
 
       <div class="cta-box">
-        <h3>Want the Easy Route?</h3>
-        <p>Railway handles all the server work for you. Same result, zero terminal commands.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">One-Click Setup →</a>
+        <h3>Need Help?</h3>
+        <p>Join the OpenClaw community for troubleshooting and tips.</p>
+        <a href="https://discord.gg/clawd" target="_blank" rel="noopener" class="cta-btn">Join Discord Community →</a>
       </div>
+
+      <h2>Next Steps</h2>
+      <ul>
+        <li><a href="/guides/whatsapp-setup">Complete WhatsApp Setup Guide</a></li>
+        <li><a href="/guides/what-is-openclaw">Learn More About OpenClaw</a></li>
+        <li><a href="https://docs.openclaw.ai" target="_blank" rel="noopener">Official OpenClaw Documentation</a></li>
+      </ul>
+
+      <p><strong>Prefer an easier setup?</strong> Try our <a href="/guides/railway-quick-start">Railway one-click option</a> - no VPS needed, £5/month.</p>
+
     </div>
   </div>
 

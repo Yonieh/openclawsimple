@@ -1,55 +1,254 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaOrg from '../../components/SchemaOrg.astro';
+
+const howToData = {
+  title: "How to Connect WhatsApp to OpenClaw",
+  description: "Step-by-step guide to linking your WhatsApp account to OpenClaw so you can message your AI assistant.",
+  totalTime: "PT5M",
+  steps: [
+    {
+      name: "Ensure OpenClaw is Running",
+      text: "Make sure OpenClaw is installed and running on your VPS or Railway instance.",
+      anchor: "#step-1"
+    },
+    {
+      name: "Access the QR Code",
+      text: "View the WhatsApp QR code either in your terminal or web interface.",
+      anchor: "#step-2"
+    },
+    {
+      name: "Link Your Phone",
+      text: "Open WhatsApp on your phone, go to Linked Devices, and scan the QR code.",
+      anchor: "#step-3"
+    },
+    {
+      name: "Test the Connection",
+      text: "Send a test message to verify OpenClaw responds correctly.",
+      anchor: "#step-4"
+    }
+  ]
+};
+
+const faqData = {
+  questions: [
+    {
+      question: "Will this affect my normal WhatsApp?",
+      answer: "No. OpenClaw acts as a linked device, like WhatsApp Web. Your normal WhatsApp on your phone works exactly the same."
+    },
+    {
+      question: "Can I unlink OpenClaw later?",
+      answer: "Yes. Go to WhatsApp Settings → Linked Devices → OpenClaw → Log Out. This disconnects it instantly."
+    },
+    {
+      question: "Does OpenClaw read all my WhatsApp messages?",
+      answer: "No. OpenClaw only sees messages you send TO it (as a linked device). It doesn't have access to your normal WhatsApp conversations with other people."
+    },
+    {
+      question: "What if the QR code expires?",
+      answer: "QR codes expire after 60 seconds. Just refresh your terminal or reload the web interface to get a new one."
+    },
+    {
+      question: "Can I use Telegram instead?",
+      answer: "Yes! OpenClaw supports Telegram, Discord, Signal, and other messaging platforms. WhatsApp is just the most popular option."
+    }
+  ]
+};
 ---
 
+<SchemaOrg type="howto" data={howToData} />
+<SchemaOrg type="article" data={{
+  title: "Connect WhatsApp to OpenClaw - Setup Guide",
+  description: "Complete guide to linking your WhatsApp account to OpenClaw. Simple steps, troubleshooting tips, and alternatives.",
+  datePublished: "2026-02-24",
+  dateModified: "2026-02-24"
+}} />
+<SchemaOrg type="faq" data={faqData} />
+
 <BaseLayout
-  title="Connect OpenClaw to WhatsApp — Complete Setup Guide (2026)"
-  description="Control OpenClaw from WhatsApp. Simple QR code setup — no extra app needed. Complete guide with screenshots.">
+  title="Connect WhatsApp to OpenClaw: Complete Setup Guide (2026)"
+  description="Step-by-step guide to linking your WhatsApp account to OpenClaw. Works with VPS and Railway setups. Takes 5 minutes.">
 
   <div class="article">
     <div class="container-narrow">
-      <h1>Connect OpenClaw to WhatsApp</h1>
-      <p class="subtitle">Control your AI assistant from your phone. Just scan a QR code — no extra apps needed.</p>
+      <h1>Connect WhatsApp to OpenClaw</h1>
+      <p class="subtitle">Link your phone in 5 minutes so you can message your AI assistant from WhatsApp.</p>
 
-      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
-        <h3 style="color: #1c1c26;">Detailed Guide Coming Soon</h3>
-        <p style="color: rgba(0,0,0,0.8);">Full step-by-step instructions with screenshots are on the way. Here's a quick overview.</p>
-      </div>
-
-      <h2>How It Works</h2>
-      <p>OpenClaw uses the WhatsApp Web protocol to connect to your phone. You scan a QR code (just like setting up WhatsApp on a computer), and your assistant appears as a contact you can message.</p>
-      <p>It's not a separate app — you use your normal WhatsApp. The assistant shows up like any other chat.</p>
-
-      <h2>Quick Steps</h2>
-      <ol>
-        <li><strong>Start OpenClaw</strong> — make sure it's running (via Railway or locally)</li>
-        <li><strong>Open the control panel</strong> — go to your OpenClaw dashboard in a web browser</li>
-        <li><strong>Scan the QR code</strong> — open WhatsApp on your phone, go to Linked Devices, and scan</li>
-        <li><strong>Send a test message</strong> — type "hello" and check you get a response</li>
-      </ol>
-
-      <h2>What You'll Need</h2>
+      <h2>Prerequisites</h2>
+      <p>Before connecting WhatsApp, make sure:</p>
       <ul>
-        <li>OpenClaw already set up and running (<a href="/guides/railway-quick-start">set it up here</a> if you haven't)</li>
-        <li>WhatsApp installed on your phone</li>
-        <li>A web browser to access the OpenClaw dashboard</li>
+        <li>OpenClaw is installed and running (see <a href="/guides/vps-deployment">VPS setup guide</a> or <a href="/guides/railway-quick-start">Railway guide</a>)</li>
+        <li>You have WhatsApp installed on your phone</li>
+        <li>Your phone has internet connection</li>
       </ul>
 
-      <h2>Troubleshooting</h2>
-      <h3>QR code won't scan</h3>
-      <p>Make sure your phone camera is clean and well-lit. Try refreshing the dashboard page to generate a new QR code. The code expires after about 60 seconds.</p>
+      <h2 id="step-1">Step 1: Make Sure OpenClaw is Running</h2>
 
-      <h3>Messages not getting through</h3>
-      <p>Check that OpenClaw is still running (the dashboard should show "Online"). If you're on Railway, check the deployment logs for errors.</p>
+      <h3>If You Used VPS Setup</h3>
+      <p>SSH into your VPS:</p>
+      <pre><code>ssh root@YOUR_IP_ADDRESS</code></pre>
 
-      <h3>Connection drops</h3>
-      <p>WhatsApp occasionally disconnects linked devices. If this happens, re-scan the QR code. This is a known limitation of the WhatsApp Web protocol.</p>
+      <p>Check if OpenClaw is running:</p>
+      <pre><code>pm2 status</code></pre>
+
+      <p>If it shows <code>openclaw</code> as <strong>online</strong>, you're good to go.</p>
+
+      <p>If not, start it:</p>
+      <pre><code>pm2 start openclaw</code></pre>
+
+      <h3>If You Used Railway</h3>
+      <p>Go to your <a href="https://railway.app/dashboard" target="_blank" rel="noopener">Railway dashboard</a> and check that your OpenClaw deployment shows as <strong>Active</strong>.</p>
+
+      <h2 id="step-2">Step 2: Get the WhatsApp QR Code</h2>
+
+      <p>There are two ways to view the QR code:</p>
+
+      <h3>Method 1: Terminal/SSH (VPS Users)</h3>
+      <p>When OpenClaw starts, it displays a QR code directly in your terminal. Look for output like:</p>
+      <pre><code>┌─────────────────────────────────┐
+│                                 │
+│   Scan this QR code with        │
+│   WhatsApp to link              │
+│                                 │
+│   ███████████████████████████   │
+│   ███ ▄▄▄▄▄ █▀▄ █ ▄▄▄▄▄ ███   │
+│   ███ █   █ ██▀▀█ █   █ ███   │
+│   ███ █▄▄▄█ █ ▀ █ █▄▄▄█ ███   │
+│   ...</code></pre>
+
+      <p>If you missed it or it expired, restart the WhatsApp pairing:</p>
+      <pre><code>openclaw gateway restart</code></pre>
+
+      <h3>Method 2: Web Interface (Railway Users or Advanced)</h3>
+      <p>If you set up the web interface:</p>
+      <ol>
+        <li>Open your browser and go to your OpenClaw URL (Railway provides this)</li>
+        <li>Navigate to <strong>Settings</strong> → <strong>Messaging</strong> → <strong>WhatsApp</strong></li>
+        <li>The QR code will be displayed on screen</li>
+      </ol>
+
+      <h2 id="step-3">Step 3: Link Your Phone</h2>
+      <p>Now you'll scan the QR code with your phone:</p>
+
+      <ol>
+        <li>Open <strong>WhatsApp</strong> on your phone</li>
+        <li>Tap the <strong>three dots</strong> (⋮) in the top right (Android) or <strong>Settings</strong> (iPhone)</li>
+        <li>Tap <strong>Linked Devices</strong></li>
+        <li>Tap <strong>Link a Device</strong></li>
+        <li>Point your phone camera at the QR code on your computer</li>
+        <li>Wait a few seconds...</li>
+      </ol>
+
+      <p>You should see "Device linked successfully" or similar.</p>
+
+      <p>In your terminal (or Railway logs), you'll see:</p>
+      <pre><code>✓ WhatsApp connected successfully
+✓ Ready to receive messages</code></pre>
+
+      <h2 id="step-4">Step 4: Test the Connection</h2>
+      <p>Now test that everything works:</p>
+
+      <ol>
+        <li>Open WhatsApp on your phone</li>
+        <li>Start a chat with yourself (yes, message your own number)</li>
+        <li>Type: <strong>"Hello"</strong> and send</li>
+        <li>OpenClaw should respond within a few seconds</li>
+      </ol>
+
+      <p><strong>Expected response:</strong> OpenClaw will introduce itself and confirm it's working.</p>
+
+      <p>Try a few more commands:</p>
+      <ul>
+        <li><strong>"Help"</strong> - See available commands</li>
+        <li><strong>"What's the weather?"</strong> - Test web search</li>
+        <li><strong>"Remind me to test this in 5 minutes"</strong> - Test reminders</li>
+      </ul>
 
       <div class="cta-box">
-        <h3>Not Set Up Yet?</h3>
-        <p>You need OpenClaw running before you can connect WhatsApp. Start with the easy guide.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">Set Up OpenClaw First →</a>
+        <h3>✅ All Connected!</h3>
+        <p>Your OpenClaw assistant is now linked to WhatsApp. Message it anytime to get help with tasks.</p>
       </div>
+
+      <h2>Troubleshooting</h2>
+
+      <h3>QR Code Won't Scan</h3>
+      <ul>
+        <li><strong>Try again:</strong> QR codes expire after 60 seconds. Restart OpenClaw to get a new one</li>
+        <li><strong>Check internet:</strong> Both your phone and server need internet</li>
+        <li><strong>Clear space:</strong> Make your terminal fullscreen so the QR code is larger</li>
+        <li><strong>Screenshot it:</strong> Take a screenshot and zoom in on your phone</li>
+      </ul>
+
+      <h3>Connected But Not Responding</h3>
+      <ul>
+        <li><strong>Check logs:</strong> <code>pm2 logs openclaw</code> (VPS) or Railway logs tab</li>
+        <li><strong>Verify API key:</strong> Make sure your AI provider API key is working</li>
+        <li><strong>Restart:</strong> <code>pm2 restart openclaw</code> (VPS) or redeploy on Railway</li>
+        <li><strong>Check credits:</strong> Ensure you have API credits remaining (Anthropic, OpenAI, etc.)</li>
+      </ul>
+
+      <h3>Getting "This Device is Banned" Error</h3>
+      <p>WhatsApp sometimes flags new linked devices as suspicious. This is rare but can happen.</p>
+
+      <p><strong>Solutions:</strong></p>
+      <ul>
+        <li>Wait 24 hours and try again</li>
+        <li>Use a different phone number or WhatsApp account (e.g., business account)</li>
+        <li>Try linking through WhatsApp Web first to "warm up" the account</li>
+        <li>Contact WhatsApp support if the issue persists</li>
+      </ul>
+
+      <h3>Connection Keeps Dropping</h3>
+      <ul>
+        <li><strong>Server issues:</strong> Make sure your VPS/Railway instance isn't restarting frequently</li>
+        <li><strong>WhatsApp limits:</strong> WhatsApp may disconnect if it detects unusual activity</li>
+        <li><strong>Check pm2:</strong> <code>pm2 save</code> ensures OpenClaw restarts automatically</li>
+      </ul>
+
+      <h2>Advanced: Using Telegram Instead</h2>
+      <p>Prefer Telegram over WhatsApp? The setup is even easier:</p>
+
+      <ol>
+        <li>Message <a href="https://t.me/BotFather" target="_blank" rel="noopener">@BotFather</a> on Telegram</li>
+        <li>Send <code>/newbot</code> and follow the prompts</li>
+        <li>Copy your bot token</li>
+        <li>Add it to OpenClaw config: <code>~/.openclaw/config.yaml</code></li>
+        <li>Restart OpenClaw</li>
+        <li>Message your bot on Telegram</li>
+      </ol>
+
+      <p>Telegram is often more reliable than WhatsApp for bot usage.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Will this affect my normal WhatsApp usage?</h3>
+      <p>No. OpenClaw appears as a "Linked Device" just like WhatsApp Web. Your normal chats with friends/family are unaffected.</p>
+
+      <h3>Can I unlink OpenClaw later?</h3>
+      <p>Yes. Go to WhatsApp → <strong>Settings</strong> → <strong>Linked Devices</strong> → find OpenClaw → <strong>Log Out</strong>.</p>
+
+      <h3>Does OpenClaw see all my WhatsApp messages?</h3>
+      <p>No. OpenClaw only receives messages you send TO it. It doesn't have access to your conversations with other people.</p>
+
+      <h3>Can multiple people use the same OpenClaw instance?</h3>
+      <p>Yes, but they'd all need to message the same WhatsApp number. Better to:</p>
+      <ul>
+        <li>Each person sets up their own OpenClaw instance, OR</li>
+        <li>Use different messaging platforms (one person WhatsApp, another Telegram, etc.)</li>
+      </ul>
+
+      <h3>What if my phone is offline?</h3>
+      <p>OpenClaw stays connected. You can message it from WhatsApp Web or another linked device even if your phone is off.</p>
+
+      <h2>Next Steps</h2>
+      <ul>
+        <li><a href="/guides/vps-deployment#what-next">Learn what to do with OpenClaw</a></li>
+        <li><a href="/guides/what-is-openclaw">Understand more about OpenClaw capabilities</a></li>
+        <li><a href="https://docs.openclaw.ai" target="_blank" rel="noopener">Browse official documentation</a></li>
+      </ul>
+
+      <p><strong>Having issues?</strong> Ask in the <a href="https://discord.gg/clawd" target="_blank" rel="noopener">OpenClaw Discord community</a> for help.</p>
+
     </div>
   </div>
 

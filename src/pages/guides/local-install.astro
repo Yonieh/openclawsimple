@@ -3,52 +3,94 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Free OpenClaw Install: Mac, Windows & Linux (2026)"
-  description="Install OpenClaw on your computer for free. Step-by-step guide for Mac, Windows, and Linux. No Docker required.">
+  title="Install OpenClaw Locally on Your Computer (2026)"
+  description="Quick guide to running OpenClaw on your Mac or Windows computer. Free option but requires your computer to stay on.">
 
   <div class="article">
     <div class="container-narrow">
-      <h1>Free OpenClaw Install: Mac, Windows &amp; Linux</h1>
-      <p class="subtitle">Run OpenClaw on your own computer at no cost. Takes about 20 minutes — your computer needs to stay on for it to work.</p>
+      <h1>Install OpenClaw Locally</h1>
+      <p class="subtitle">Run OpenClaw on your own Mac or Windows computer instead of a VPS.</p>
 
-      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
-        <h3 style="color: #1c1c26;">Writing in Progress</h3>
-        <p style="color: rgba(0,0,0,0.8);">This guide is being written. Check back soon for the full step-by-step instructions.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">Try the One-Click Setup Instead →</a>
-      </div>
-
-      <h2>What You'll Need</h2>
+      <h2>Should You Do This?</h2>
+      <p><strong>Local installation is best if:</strong></p>
       <ul>
-        <li>A Mac (macOS 13+), Windows 10/11, or Linux computer</li>
-        <li>Node.js version 20 or newer</li>
-        <li>An Anthropic API key (free to create, pay-as-you-go usage)</li>
-        <li>About 20 minutes</li>
+        <li>You have a computer that's always on (or don't mind leaving it on)</li>
+        <li>You want £0 hosting cost</li>
+        <li>You're comfortable with terminal commands</li>
       </ul>
 
-      <h2>Quick Overview</h2>
-      <p>The full guide will walk you through each step in detail. Here's what the process looks like:</p>
-      <ol>
-        <li><strong>Install Node.js</strong> — download from nodejs.org and run the installer</li>
-        <li><strong>Install OpenClaw</strong> — one command in your terminal</li>
-        <li><strong>Run the setup wizard</strong> — answers a few questions to configure everything</li>
-        <li><strong>Connect WhatsApp</strong> — scan a QR code to link your phone</li>
-        <li><strong>Start chatting</strong> — message your assistant and watch it work</li>
-      </ol>
-
-      <h2>Trade-offs vs Railway</h2>
-      <p>Running locally is free, but there are some differences compared to the <a href="/guides/railway-quick-start">Railway cloud setup</a>:</p>
+      <p><strong>We recommend VPS instead if:</strong></p>
       <ul>
-        <li><strong>Free</strong> — no hosting costs, just API usage (£2–5/month)</li>
-        <li><strong>Your computer must stay on</strong> — if you close the lid or shut down, the assistant goes offline</li>
-        <li><strong>No auto-updates</strong> — you'll need to update manually when new versions come out</li>
-        <li><strong>More control</strong> — full access to config files and logs on your own machine</li>
+        <li>You want OpenClaw available 24/7 (even when your computer is off)</li>
+        <li>You don't want to deal with your computer's firewall/network settings</li>
+        <li>You're willing to pay £4–6/month for hosting</li>
       </ul>
 
       <div class="cta-box">
-        <h3>Can't Wait?</h3>
-        <p>The Railway setup takes 5 minutes and costs just £5/month. Your assistant runs 24/7 without keeping your computer on.</p>
-        <a href="/guides/railway-quick-start" class="cta-btn">One-Click Setup →</a>
+        <h3>Prefer Hosted Setup?</h3>
+        <p>Most users choose VPS hosting. It's easier and more reliable.</p>
+        <a href="/guides/vps-deployment" class="cta-btn">VPS Setup Guide →</a>
+        <p style="margin-top: 16px; font-size: 0.9375rem;"><a href="/guides/railway-quick-start" style="color: white; text-decoration: underline;">Or try Railway (one-click, £5/month)</a></p>
       </div>
+
+      <h2>Quick Local Installation</h2>
+
+      <h3>Mac or Linux</h3>
+      <p>Open Terminal and run:</p>
+      <pre><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></pre>
+
+      <p>This installs Node.js (if needed) and OpenClaw.</p>
+
+      <p>Then start OpenClaw:</p>
+      <pre><code>openclaw gateway start</code></pre>
+
+      <h3>Windows</h3>
+      <p>Download and install <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> first (LTS version).</p>
+
+      <p>Then open PowerShell or Command Prompt and run:</p>
+      <pre><code>npm install -g openclaw</code></pre>
+
+      <p>Start OpenClaw:</p>
+      <pre><code>openclaw gateway start</code></pre>
+
+      <h2>Next Steps</h2>
+      <p>Once OpenClaw is running:</p>
+      <ol>
+        <li><strong>Get an AI API key</strong> - See Step 2 in the <a href="/guides/vps-deployment#step-2">VPS guide</a> (same process)</li>
+        <li><strong>Configure OpenClaw</strong> - Add your API key when prompted</li>
+        <li><strong>Connect WhatsApp</strong> - Follow the <a href="/guides/whatsapp-setup">WhatsApp setup guide</a></li>
+        <li><strong>Start using it</strong> - Message yourself on WhatsApp</li>
+      </ol>
+
+      <h2>Important Limitations</h2>
+      <ul>
+        <li><strong>Your computer must stay on</strong> - OpenClaw stops when you turn off your computer</li>
+        <li><strong>Port forwarding may be needed</strong> - Some features require opening ports on your router</li>
+        <li><strong>Sleep mode breaks it</strong> - Disable sleep/hibernation if you want 24/7 availability</li>
+        <li><strong>No automatic updates</strong> - You need to manually update OpenClaw</li>
+      </ul>
+
+      <h2>Why We Recommend VPS Instead</h2>
+      <p>For £4–6/month, you get:</p>
+      <ul>
+        <li>Always-on availability (even when your computer is off)</li>
+        <li>No port forwarding headaches</li>
+        <li>Automatic restarts if something crashes</li>
+        <li>Better for WhatsApp linking (more stable connection)</li>
+        <li>Access from anywhere (not tied to your home network)</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Switch to VPS Hosting</h3>
+        <p>Takes 20 minutes to set up, runs 24/7, only £4–6/month.</p>
+        <a href="/guides/vps-deployment" class="cta-btn">VPS Setup Guide →</a>
+      </div>
+
+      <h2>Need Help?</h2>
+      <p>For detailed local installation help, see the <a href="https://docs.openclaw.ai/getting-started/installation" target="_blank" rel="noopener">official OpenClaw documentation</a>.</p>
+
+      <p>Or ask in the <a href="https://discord.gg/clawd" target="_blank" rel="noopener">Discord community</a>.</p>
+
     </div>
   </div>
 
