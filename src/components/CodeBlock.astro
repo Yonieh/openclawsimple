@@ -1,0 +1,134 @@
+---
+interface Props {
+  code: string;
+  language?: string;
+  title?: string;
+}
+
+const { code, language = 'bash', title } = Astro.props;
+const codeId = `code-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="code-block">
+  {title && <div class="code-title">{title}</div>}
+  <div class="code-container">
+    <button class="copy-btn" data-code-id={codeId} aria-label="Copy code">
+      <span class="copy-text">Copy</span>
+      <span class="copy-success">Copied!</span>
+    </button>
+    <pre><code id={codeId} class={`language-${language}`}>{code}</code></pre>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const codeId = btn.getAttribute('data-code-id');
+      const codeEl = document.getElementById(codeId);
+      if (!codeEl) return;
+
+      try {
+        await navigator.clipboard.writeText(codeEl.textContent || '');
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    });
+  });
+</script>
+
+<style>
+  .code-block {
+    margin: 24px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .code-title {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .code-container {
+    position: relative;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+
+  .copy-btn:hover {
+    background: var(--bg-card);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .copy-btn:active {
+    transform: scale(0.95);
+  }
+
+  .copy-success {
+    display: none;
+  }
+
+  .copy-btn.copied .copy-text {
+    display: none;
+  }
+
+  .copy-btn.copied .copy-success {
+    display: inline;
+    color: var(--green);
+  }
+
+  pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #e8eaed;
+  }
+
+  /* Syntax highlighting hints */
+  .language-bash::before {
+    content: '$ ';
+    color: var(--accent);
+    user-select: none;
+  }
+
+  @media (max-width: 640px) {
+    pre {
+      padding: 12px;
+      font-size: 0.8125rem;
+    }
+
+    .copy-btn {
+      top: 8px;
+      right: 8px;
+      padding: 4px 10px;
+      font-size: 0.8125rem;
+    }
+  }
+</style>

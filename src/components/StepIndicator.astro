@@ -1,0 +1,145 @@
+---
+interface Props {
+  number: number;
+  title: string;
+  time?: string;
+  difficulty?: 'Easy' | 'Medium' | 'Hard';
+  id?: string;
+}
+
+const { number, title, time, difficulty, id } = Astro.props;
+---
+
+<div class="step-indicator" id={id}>
+  <div class="step-number">
+    <span>{number}</span>
+  </div>
+  <div class="step-content">
+    <h2>{title}</h2>
+    <div class="step-meta">
+      {time && <span class="step-badge time">⏱️ {time}</span>}
+      {difficulty && (
+        <span class={`step-badge difficulty difficulty-${difficulty.toLowerCase()}`}>
+          {difficulty === 'Easy' && '✓'}
+          {difficulty === 'Medium' && '◐'}
+          {difficulty === 'Hard' && '⚡'}
+          {' '}{difficulty}
+        </span>
+      )}
+    </div>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .step-indicator {
+    display: flex;
+    gap: 24px;
+    margin: 48px 0;
+    position: relative;
+  }
+
+  .step-indicator::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 56px;
+    bottom: -48px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    opacity: 0.3;
+  }
+
+  .step-indicator:last-of-type::before {
+    display: none;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 87, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-content h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    color: var(--text);
+  }
+
+  .step-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .step-badge.time {
+    color: var(--blue);
+    border-color: var(--blue);
+    background: rgba(91, 158, 255, 0.1);
+  }
+
+  .difficulty-easy {
+    color: var(--green);
+    border-color: var(--green);
+    background: rgba(82, 209, 121, 0.1);
+  }
+
+  .difficulty-medium {
+    color: var(--yellow);
+    border-color: var(--yellow);
+    background: rgba(251, 191, 36, 0.1);
+  }
+
+  .difficulty-hard {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(255, 107, 87, 0.1);
+  }
+
+  @media (max-width: 640px) {
+    .step-indicator {
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1.1rem;
+    }
+
+    .step-indicator::before {
+      left: 19px;
+    }
+
+    .step-content h2 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

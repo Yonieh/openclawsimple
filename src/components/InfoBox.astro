@@ -1,0 +1,131 @@
+---
+interface Props {
+  type: 'tip' | 'warning' | 'success' | 'security' | 'error';
+  title?: string;
+}
+
+const { type, title } = Astro.props;
+
+const icons = {
+  tip: '💡',
+  warning: '⚠️',
+  success: '✅',
+  security: '🔒',
+  error: '❌'
+};
+
+const defaultTitles = {
+  tip: 'Pro Tip',
+  warning: 'Important',
+  success: 'Success',
+  security: 'Security Note',
+  error: 'Common Mistake'
+};
+---
+
+<div class={`info-box info-box-${type}`}>
+  <div class="info-box-icon">{icons[type]}</div>
+  <div class="info-box-content">
+    <h4 class="info-box-title">{title || defaultTitles[type]}</h4>
+    <div class="info-box-text">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .info-box {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    margin: 24px 0;
+    border-left: 4px solid;
+  }
+
+  .info-box-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .info-box-content {
+    flex: 1;
+  }
+
+  .info-box-title {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .info-box-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .info-box-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tip (Blue) */
+  .info-box-tip {
+    background: rgba(91, 158, 255, 0.08);
+    border-color: var(--blue);
+  }
+
+  .info-box-tip .info-box-title {
+    color: var(--blue);
+  }
+
+  /* Warning (Yellow) */
+  .info-box-warning {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: var(--yellow);
+  }
+
+  .info-box-warning .info-box-title {
+    color: var(--yellow);
+  }
+
+  /* Success (Green) */
+  .info-box-success {
+    background: rgba(82, 209, 121, 0.08);
+    border-color: var(--green);
+  }
+
+  .info-box-success .info-box-title {
+    color: var(--green);
+  }
+
+  /* Security (Purple) */
+  .info-box-security {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: var(--purple);
+  }
+
+  .info-box-security .info-box-title {
+    color: var(--purple);
+  }
+
+  /* Error (Red) */
+  .info-box-error {
+    background: rgba(255, 107, 87, 0.08);
+    border-color: var(--accent);
+  }
+
+  .info-box-error .info-box-title {
+    color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .info-box {
+      padding: 16px;
+      gap: 12px;
+    }
+
+    .info-box-icon {
+      font-size: 1.25rem;
+    }
+  }
+</style>
