@@ -29,262 +29,305 @@ import '../styles/global.css';
 		<meta property="twitter:title" content="OpenClaw Setup Guide - Install & Configure in 5 Minutes" />
 		<meta property="twitter:description" content="Complete OpenClaw setup guides for beginners. No jargon, no confusion - just simple steps to get your AI assistant running." />
 		
-		<!-- Schema.org structured data -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "OpenClaw Simple",
 			"url": "https://openclawsimple.com",
-			"description": "Setup guides and tutorials for OpenClaw AI assistant",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": "https://openclawsimple.com/?q={search_term_string}",
-				"query-input": "required name=search_term_string"
-			}
-		}
-		</script>
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Organization",
-			"name": "OpenClaw Simple",
-			"url": "https://openclawsimple.com",
-			"logo": "https://openclawsimple.com/favicon.svg",
-			"sameAs": []
-		}
-		</script>
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "FAQPage",
-			"mainEntity": [
-				{
-					"@type": "Question",
-					"name": "What is OpenClaw?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "OpenClaw is an open-source, self-hosted AI assistant that you run on your own computer or server. You message it from WhatsApp or Telegram, and it actually does tasks for you - clears emails, books restaurants, manages your calendar, and more."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "How long does OpenClaw setup take?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "With our Railway one-click method, you can have OpenClaw running in 5-10 minutes. The free local install takes 20-30 minutes if you follow our step-by-step guide."
-					}
-				},
-				{
-					"@type": "Question",
-					"name": "Do I need to be technical to set up OpenClaw?",
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": "No. Our guides are written for complete beginners with no coding experience. We offer a one-click Railway deployment option that requires zero terminal use."
-					}
-				}
-			]
+			"description": "Setup guides and tutorials for OpenClaw AI assistant"
 		}
 		</script>
 	</head>
-	<body>
-		<div class="min-h-screen">
-			<!-- Header -->
-			<header class="bg-white border-b border-gray-200">
-				<div class="max-w-5xl mx-auto px-4 sm:px-6 py-4">
-					<div class="flex items-center space-x-2">
-						<span class="text-3xl">🦞</span>
+	<body class="antialiased">
+		<!-- Header -->
+		<header class="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+				<div class="flex items-center justify-between">
+					<div class="flex items-center space-x-3">
+						<div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl">
+							🦞
+						</div>
 						<div>
-							<h1 class="text-xl font-bold text-gray-900">OpenClaw Simple</h1>
-							<p class="text-xs text-gray-500">Get your AI assistant running today</p>
+							<div class="text-lg font-bold text-gray-900">OpenClaw Simple</div>
+							<div class="text-xs text-gray-500">Setup made easy</div>
 						</div>
 					</div>
 				</div>
-			</header>
+			</div>
+		</header>
 
-			<!-- Hero -->
-			<section class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 to-white">
-				<div class="max-w-3xl mx-auto px-4 sm:px-6">
-					<h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-						OpenClaw Setup Guide: Install Your AI Assistant in 5 Minutes
+		<!-- Hero -->
+		<section class="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 py-20 sm:py-28">
+			<div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+			<div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+				<div class="text-center mb-12">
+					<div class="inline-block mb-4">
+						<span class="bg-purple-100 text-purple-700 text-sm font-semibold px-4 py-2 rounded-full">
+							✨ No technical skills required
+						</span>
+					</div>
+					<h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+						Set Up Your AI Assistant<br />
+						<span class="gradient-text">in 5 Minutes</span>
 					</h1>
-					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
-						You've heard about OpenClaw — the AI that clears your emails, books restaurants, manages your calendar, and actually <em>does the work</em> instead of just telling you how.
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+						OpenClaw is the AI that actually does things — clears your inbox, books restaurants, manages your calendar. We'll show you the easiest way to get started.
 					</p>
-					<p class="text-lg text-gray-700 mb-8 leading-relaxed">
-						The problem? Every guide assumes you're a developer. You just want it to <strong>work</strong> without spending your weekend fighting with terminals and Docker.
-					</p>
-					<div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8">
-						<p class="font-semibold text-blue-900 mb-2">Good news:</p>
-						<p class="text-blue-800">You can get OpenClaw running in under 10 minutes. Seriously. No terminal required (unless you want the free option).</p>
-					</div>
-					<a href="#options" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-						Show me how →
-					</a>
-				</div>
-			</section>
-
-			<!-- Three Options -->
-			<section id="options" class="py-12 bg-white">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6">
-					<h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">Pick Your Path</h3>
-					<p class="text-gray-600 text-center mb-10">Choose based on how much effort you want to put in.</p>
-					
-					<div class="space-y-6">
-						<!-- Option 1: Railway (Easiest) -->
-						<div class="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-500 rounded-lg p-6 relative">
-							<div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-								RECOMMENDED
-							</div>
-							<div class="flex items-start">
-								<span class="text-4xl mr-4">✨</span>
-								<div class="flex-1">
-									<h4 class="text-2xl font-bold text-gray-900 mb-2">Click and Done</h4>
-									<p class="text-lg text-gray-700 mb-3">
-										<strong>Time:</strong> 5 minutes · <strong>Cost:</strong> ~£5/month · <strong>Difficulty:</strong> Just clicking buttons
-									</p>
-									<p class="text-gray-700 mb-4 leading-relaxed">
-										Use Railway (a simple hosting service) to deploy OpenClaw with literally one click. No terminal, no code, no confusion. Just follow a web form, paste your API key, and you're done.
-									</p>
-									<div class="bg-white border border-green-200 rounded p-3 mb-4">
-										<p class="text-sm text-gray-700"><strong>Perfect for:</strong> Anyone who just wants it to work and doesn't mind £5/month.</p>
-									</div>
-									<a href="/guides/railway-quick-start" class="inline-block bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition">
-										Start here (easiest) →
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Option 2: Free DIY -->
-						<div class="bg-white border-2 border-gray-300 rounded-lg p-6">
-							<div class="flex items-start">
-								<span class="text-4xl mr-4">🛠️</span>
-								<div class="flex-1">
-									<h4 class="text-2xl font-bold text-gray-900 mb-2">Free DIY Install</h4>
-									<p class="text-lg text-gray-700 mb-3">
-										<strong>Time:</strong> 20-30 minutes · <strong>Cost:</strong> Free · <strong>Difficulty:</strong> You'll use Terminal (we'll guide you)
-									</p>
-									<p class="text-gray-700 mb-4 leading-relaxed">
-										Install OpenClaw on your own Mac or Windows PC. It's free, but you'll need to follow some terminal commands. We walk you through every single step with screenshots.
-									</p>
-									<div class="bg-gray-50 border border-gray-200 rounded p-3 mb-4">
-										<p class="text-sm text-gray-700"><strong>Perfect for:</strong> People who want it free and don't mind a bit of hands-on setup.</p>
-										<p class="text-xs text-gray-600 mt-2"><em>Note: Your computer needs to stay on for OpenClaw to work. We'll show you cheap server options later if you want it running 24/7.</em></p>
-									</div>
-									<a href="/guides/local-install" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
-										Free install guide →
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Option 3: Fully Managed (Coming Soon) -->
-						<div class="bg-gray-50 border-2 border-gray-300 rounded-lg p-6 opacity-75">
-							<div class="flex items-start">
-								<span class="text-4xl mr-4">🚀</span>
-								<div class="flex-1">
-									<h4 class="text-2xl font-bold text-gray-900 mb-2">Done For You (Coming Soon)</h4>
-									<p class="text-lg text-gray-700 mb-3">
-										<strong>Time:</strong> 2 minutes · <strong>Cost:</strong> ~£15-25/month · <strong>Difficulty:</strong> Zero
-									</p>
-									<p class="text-gray-700 mb-4 leading-relaxed">
-										We set up and manage everything for you. You just sign up, connect WhatsApp, and start using it. No thinking required.
-									</p>
-									<div class="bg-white border border-gray-200 rounded p-3 mb-4">
-										<p class="text-sm text-gray-700"><strong>Perfect for:</strong> People who value their time over money and just want it handled.</p>
-									</div>
-									<span class="inline-block bg-gray-400 text-white px-5 py-2 rounded-lg font-semibold cursor-not-allowed">
-										Coming soon
-									</span>
-								</div>
-							</div>
-						</div>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<a href="#setup-paths" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-200">
+							Get Started Now →
+						</a>
+						<a href="#what-is-openclaw" class="bg-white text-gray-700 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:border-purple-300 hover:shadow-lg transition-all duration-200">
+							What is OpenClaw?
+						</a>
 					</div>
 				</div>
-			</section>
+				
+				<!-- Stats -->
+				<div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-16">
+					<div class="text-center">
+						<div class="text-3xl font-bold text-purple-600 mb-1">5 min</div>
+						<div class="text-sm text-gray-600">Setup time</div>
+					</div>
+					<div class="text-center">
+						<div class="text-3xl font-bold text-purple-600 mb-1">£0-5</div>
+						<div class="text-sm text-gray-600">Monthly cost</div>
+					</div>
+					<div class="text-center">
+						<div class="text-3xl font-bold text-purple-600 mb-1">3</div>
+						<div class="text-sm text-gray-600">Easy paths</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-			<!-- What is OpenClaw (Simple) -->
-			<section class="py-12 bg-gray-50">
-				<div class="max-w-3xl mx-auto px-4 sm:px-6">
-					<h2 class="text-2xl font-bold text-gray-900 mb-4">What is OpenClaw? A Complete Beginner's Explanation</h2>
-					<div class="space-y-4 text-gray-700 leading-relaxed">
-						<p>
-							Imagine having a really capable assistant you can text from WhatsApp or Telegram:
+		<!-- Setup Paths -->
+		<section id="setup-paths" class="py-20 bg-white">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl font-bold text-gray-900 mb-4">Choose Your Setup Path</h2>
+					<p class="text-xl text-gray-600">Pick based on how much effort you want to put in</p>
+				</div>
+				
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Path 1: Railway -->
+					<div class="relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200 card-hover">
+						<div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+							<span class="bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
+								⭐ RECOMMENDED
+							</span>
+						</div>
+						<div class="text-5xl mb-4">✨</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-3">Click & Done</h3>
+						<div class="space-y-2 mb-6">
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Time:</strong> 5 minutes</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Cost:</strong> ~£5/month</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Difficulty:</strong> Just click buttons</span>
+							</div>
+						</div>
+						<p class="text-gray-700 mb-6 leading-relaxed">
+							Deploy with Railway's one-click button. No terminal, no code. Perfect for anyone who just wants it to work.
 						</p>
-						<div class="bg-white border-l-4 border-blue-500 p-4 space-y-2">
-							<p class="italic">"Check my emails and flag anything urgent."</p>
-							<p class="italic">"Book me a table for 2 at that Italian place on Friday at 7pm."</p>
-							<p class="italic">"Remind me to call Dave tomorrow morning at 9."</p>
+						<a href="/guides/railway-quick-start" class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-colors">
+							Start here →
+						</a>
+					</div>
+
+					<!-- Path 2: Free DIY -->
+					<div class="bg-white rounded-2xl p-8 border-2 border-gray-200 card-hover">
+						<div class="text-5xl mb-4">🛠️</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-3">Free DIY Install</h3>
+						<div class="space-y-2 mb-6">
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Time:</strong> 20-30 minutes</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Cost:</strong> £0</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Difficulty:</strong> We'll guide you</span>
+							</div>
 						</div>
-						<p>
+						<p class="text-gray-700 mb-6 leading-relaxed">
+							Install on your Mac or Windows PC. Completely free. We walk you through every step with screenshots.
+						</p>
+						<a href="/guides/local-install" class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors">
+							Free guide →
+						</a>
+						<p class="text-xs text-gray-500 mt-3 text-center">
+							Your computer needs to stay on
+						</p>
+					</div>
+
+					<!-- Path 3: Premium -->
+					<div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-200 card-hover opacity-75">
+						<div class="text-5xl mb-4">🚀</div>
+						<h3 class="text-2xl font-bold text-gray-900 mb-3">Done For You</h3>
+						<div class="space-y-2 mb-6">
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Time:</strong> 2 minutes</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Cost:</strong> ~£15-25/month</span>
+							</div>
+							<div class="flex items-center text-sm text-gray-600">
+								<svg class="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+								</svg>
+								<span><strong>Difficulty:</strong> Zero effort</span>
+							</div>
+						</div>
+						<p class="text-gray-700 mb-6 leading-relaxed">
+							We set up and manage everything. You just sign up and start using it. White glove service.
+						</p>
+						<button disabled class="block w-full bg-gray-300 text-gray-500 text-center px-6 py-3 rounded-xl font-bold cursor-not-allowed">
+							Coming soon
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- What is OpenClaw -->
+		<section id="what-is-openclaw" class="py-20 bg-gray-50">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6">
+				<div class="text-center mb-12">
+					<h2 class="text-4xl font-bold text-gray-900 mb-4">What is OpenClaw?</h2>
+					<p class="text-xl text-gray-600">Your AI assistant that actually does things</p>
+				</div>
+				
+				<div class="bg-white rounded-2xl p-8 shadow-lg">
+					<div class="prose prose-lg max-w-none">
+						<p class="text-gray-700 leading-relaxed mb-6">
+							Think of OpenClaw like having a really capable assistant you can text from WhatsApp or Telegram. You send it messages like:
+						</p>
+						
+						<div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-6 space-y-3">
+							<p class="text-gray-800 italic">"Check my emails and flag anything urgent."</p>
+							<p class="text-gray-800 italic">"Book me a table for 2 at that Italian place on Friday at 7pm."</p>
+							<p class="text-gray-800 italic">"Remind me to call Dave tomorrow morning."</p>
+						</div>
+						
+						<p class="text-gray-700 leading-relaxed mb-6">
 							And it <strong>actually does it</strong> — not just tells you how. It logs into your email, sends the booking request, sets the reminder. All the boring admin you hate doing.
 						</p>
-						<p>
-							The catch? Most AI assistants are either locked-down SaaS products (can't customize, data privacy concerns) or require you to be a developer to set up.
-						</p>
-						<p class="font-semibold">
-							OpenClaw is open-source and self-hosted. You control it. But setting it up has been... complicated. Until now.
-						</p>
+						
+						<div class="grid md:grid-cols-2 gap-6 mt-8">
+							<div class="flex items-start space-x-3">
+								<div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+									<svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-900 mb-1">Open source</h4>
+									<p class="text-sm text-gray-600">You control it, no vendor lock-in</p>
+								</div>
+							</div>
+							
+							<div class="flex items-start space-x-3">
+								<div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+									<svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-900 mb-1">Self-hosted</h4>
+									<p class="text-sm text-gray-600">Your data stays with you</p>
+								</div>
+							</div>
+							
+							<div class="flex items-start space-x-3">
+								<div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+									<svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-900 mb-1">Works from your phone</h4>
+									<p class="text-sm text-gray-600">Message it like a person</p>
+								</div>
+							</div>
+							
+							<div class="flex items-start space-x-3">
+								<div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+									<svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-bold text-gray-900 mb-1">Fully customizable</h4>
+									<p class="text-sm text-gray-600">Make it work your way</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Trust Signals -->
-			<section class="py-12 bg-white border-t border-gray-200">
-				<div class="max-w-3xl mx-auto px-4 sm:px-6">
-					<h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Why trust this site?</h3>
-					<div class="space-y-6">
-						<div class="flex items-start space-x-4">
-							<span class="text-3xl">✅</span>
-							<div>
-								<h4 class="font-bold text-gray-900 mb-1">We're not affiliated with OpenClaw</h4>
-								<p class="text-gray-700">This is an independent site. We make money through affiliate links (Railway hosting, API providers) and ads. We only recommend things we've tested.</p>
-							</div>
+		<!-- CTA -->
+		<section class="py-20 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+				<h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+				<p class="text-xl mb-8 opacity-90">
+					Choose your setup path and have your AI assistant running in minutes.
+				</p>
+				<a href="#setup-paths" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-200">
+					Choose Your Path →
+				</a>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-900 text-gray-400 py-12">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6">
+				<div class="text-center">
+					<div class="flex items-center justify-center space-x-2 mb-4">
+						<div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-xl">
+							🦞
 						</div>
-						<div class="flex items-start space-x-4">
-							<span class="text-3xl">✅</span>
-							<div>
-								<h4 class="font-bold text-gray-900 mb-1">Written by someone who struggled too</h4>
-								<p class="text-gray-700">I'm not a developer. I'm a product person who spent 3 frustrating days figuring this out. These are the guides I wish existed.</p>
-							</div>
-						</div>
-						<div class="flex items-start space-x-4">
-							<span class="text-3xl">✅</span>
-							<div>
-								<h4 class="font-bold text-gray-900 mb-1">Actually tested on real people</h4>
-								<p class="text-gray-700">Every guide is tested on non-technical friends first. If they get stuck, we rewrite it until it's foolproof.</p>
-							</div>
-						</div>
+						<span class="font-bold text-white">OpenClaw Simple</span>
 					</div>
-				</div>
-			</section>
-
-			<!-- CTA -->
-			<section class="py-12 bg-blue-600 text-white">
-				<div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-					<h3 class="text-3xl font-bold mb-4">Ready to get started?</h3>
-					<p class="text-xl mb-8 opacity-90">
-						Pick your path above and let's get your AI assistant running.
+					<p class="text-sm mb-4">Making AI assistants accessible to everyone</p>
+					<p class="text-xs">
+						<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="hover:text-white transition-colors">OpenClaw on GitHub</a>
 					</p>
-					<a href="#options" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-						Choose your setup method →
-					</a>
-				</div>
-			</section>
-
-			<!-- Footer -->
-			<footer class="bg-gray-50 border-t border-gray-200 py-8">
-				<div class="max-w-3xl mx-auto px-4 sm:px-6 text-center text-sm text-gray-600">
-					<p class="mb-2">OpenClaw Simple · Setup guides for normal humans</p>
-					<p class="mb-4">
-						<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="text-blue-600 hover:underline">OpenClaw on GitHub</a>
-					</p>
-					<p class="text-xs text-gray-500">
-						Affiliate disclosure: We earn commission from Railway and other services when you sign up through our links. It doesn't cost you extra and helps keep these guides free.
+					<p class="text-xs mt-4 opacity-75">
+						Independent resource • Not affiliated with OpenClaw project
 					</p>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
 	</body>
 </html>
