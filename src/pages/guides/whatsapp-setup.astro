@@ -1,41 +1,56 @@
 ---
-import '../../styles/global.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Connect OpenClaw to WhatsApp - Complete Setup Guide (2026)</title>
-		<meta name="description" content="Control OpenClaw from WhatsApp. Simple QR code setup - no app needed. Complete guide with screenshots." />
-		<meta name="keywords" content="openclaw whatsapp, openclaw whatsapp setup, openclaw messaging, control openclaw from phone" />
-		<link rel="canonical" href="https://openclawsimple.com/guides/whatsapp-setup" />
-	</head>
-	<body>
-		<div class="min-h-screen bg-gray-50">
-			<header class="bg-white border-b border-gray-200">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-					<div class="flex items-center justify-between">
-						<a href="/" class="flex items-center space-x-2 hover:opacity-75">
-							<span class="text-3xl">🦞</span>
-							<div class="text-xl font-bold text-gray-900">OpenClaw Simple</div>
-						</a>
-						<a href="/" class="text-sm text-gray-600 hover:text-gray-900">← Back</a>
-					</div>
-				</div>
-			</header>
+<BaseLayout
+  title="Connect OpenClaw to WhatsApp — Complete Setup Guide (2026)"
+  description="Control OpenClaw from WhatsApp. Simple QR code setup — no extra app needed. Complete guide with screenshots.">
 
-			<article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-				<h1 class="text-4xl font-bold text-gray-900 mb-6">Connect OpenClaw to WhatsApp</h1>
-				
-				<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-8">
-					<p class="font-semibold">Coming soon</p>
-					<p class="text-sm text-gray-700 mt-2">
-						This guide will show you how to connect OpenClaw to WhatsApp so you can control it from your phone.
-					</p>
-				</div>
-			</article>
-		</div>
-	</body>
-</html>
+  <div class="article">
+    <div class="container-narrow">
+      <h1>Connect OpenClaw to WhatsApp</h1>
+      <p class="subtitle">Control your AI assistant from your phone. Just scan a QR code — no extra apps needed.</p>
+
+      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
+        <h3 style="color: #1c1c26;">Detailed Guide Coming Soon</h3>
+        <p style="color: rgba(0,0,0,0.8);">Full step-by-step instructions with screenshots are on the way. Here's a quick overview.</p>
+      </div>
+
+      <h2>How It Works</h2>
+      <p>OpenClaw uses the WhatsApp Web protocol to connect to your phone. You scan a QR code (just like setting up WhatsApp on a computer), and your assistant appears as a contact you can message.</p>
+      <p>It's not a separate app — you use your normal WhatsApp. The assistant shows up like any other chat.</p>
+
+      <h2>Quick Steps</h2>
+      <ol>
+        <li><strong>Start OpenClaw</strong> — make sure it's running (via Railway or locally)</li>
+        <li><strong>Open the control panel</strong> — go to your OpenClaw dashboard in a web browser</li>
+        <li><strong>Scan the QR code</strong> — open WhatsApp on your phone, go to Linked Devices, and scan</li>
+        <li><strong>Send a test message</strong> — type "hello" and check you get a response</li>
+      </ol>
+
+      <h2>What You'll Need</h2>
+      <ul>
+        <li>OpenClaw already set up and running (<a href="/guides/railway-quick-start">set it up here</a> if you haven't)</li>
+        <li>WhatsApp installed on your phone</li>
+        <li>A web browser to access the OpenClaw dashboard</li>
+      </ul>
+
+      <h2>Troubleshooting</h2>
+      <h3>QR code won't scan</h3>
+      <p>Make sure your phone camera is clean and well-lit. Try refreshing the dashboard page to generate a new QR code. The code expires after about 60 seconds.</p>
+
+      <h3>Messages not getting through</h3>
+      <p>Check that OpenClaw is still running (the dashboard should show "Online"). If you're on Railway, check the deployment logs for errors.</p>
+
+      <h3>Connection drops</h3>
+      <p>WhatsApp occasionally disconnects linked devices. If this happens, re-scan the QR code. This is a known limitation of the WhatsApp Web protocol.</p>
+
+      <div class="cta-box">
+        <h3>Not Set Up Yet?</h3>
+        <p>You need OpenClaw running before you can connect WhatsApp. Start with the easy guide.</p>
+        <a href="/guides/railway-quick-start" class="cta-btn">Set Up OpenClaw First →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

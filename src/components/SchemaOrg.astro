@@ -1,0 +1,106 @@
+---
+// Schema.org JSON-LD Component for SEO and AI Optimization
+interface Props {
+  type: 'website' | 'article' | 'howto' | 'faq';
+  data?: any;
+}
+
+const { type, data = {} } = Astro.props;
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+
+// Organization schema (site-wide)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OpenClaw Simple",
+  "url": "https://openclawsimple.com",
+  "logo": "https://openclawsimple.com/logo.png",
+  "description": "Setup guides for OpenClaw - your AI assistant that actually does things",
+  "sameAs": [
+    "https://github.com/Yonieh/openclawsimple"
+  ]
+};
+
+// Website schema (homepage)
+const websiteSchema = type === 'website' ? {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OpenClaw Simple",
+  "url": "https://openclawsimple.com",
+  "description": "Complete beginner's guide to setting up OpenClaw",
+  "publisher": {
+    "@type": "Organization",
+    "name": "OpenClaw Simple"
+  }
+} : null;
+
+// Article schema (guide pages)
+const articleSchema = type === 'article' ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": data.title || "OpenClaw Setup Guide",
+  "description": data.description || "Learn how to set up OpenClaw",
+  "author": {
+    "@type": "Person",
+    "name": "OpenClaw Simple Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OpenClaw Simple",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://openclawsimple.com/logo.png"
+    }
+  },
+  "datePublished": data.datePublished || "2026-02-24",
+  "dateModified": data.dateModified || "2026-02-24",
+  "url": currentUrl.toString()
+} : null;
+
+// HowTo schema (tutorial pages)
+const howToSchema = type === 'howto' && data.steps ? {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": data.title || "How to Set Up OpenClaw",
+  "description": data.description || "Step-by-step guide to setting up OpenClaw",
+  "totalTime": data.totalTime || "PT5M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "GBP",
+    "value": data.cost || "5"
+  },
+  "step": data.steps.map((step: any, index: number) => ({
+    "@type": "HowToStep",
+    "position": index + 1,
+    "name": step.name,
+    "text": step.text,
+    "url": currentUrl.toString() + (step.anchor || '')
+  }))
+} : null;
+
+// FAQPage schema
+const faqSchema = type === 'faq' && data.questions ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.questions.map((q: any) => ({
+    "@type": "Question",
+    "name": q.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": q.answer
+    }
+  }))
+} : null;
+
+const schemas = [
+  organizationSchema,
+  websiteSchema,
+  articleSchema,
+  howToSchema,
+  faqSchema
+].filter(Boolean);
+---
+
+{schemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

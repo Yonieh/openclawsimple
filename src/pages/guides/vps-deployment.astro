@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Deploy OpenClaw on a VPS — Full Server Setup Guide (2026)"
+  description="Install OpenClaw on your own VPS for full control. Step-by-step guide for Ubuntu, Debian, and other Linux servers.">
+
+  <div class="article">
+    <div class="container-narrow">
+      <h1>Deploy OpenClaw on a VPS</h1>
+      <p class="subtitle">Full control on your own server. Best for technical users who want maximum flexibility.</p>
+
+      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
+        <h3 style="color: #1c1c26;">Full Guide Coming Soon</h3>
+        <p style="color: rgba(0,0,0,0.8);">Detailed instructions for VPS deployment are being written. Here's what to expect.</p>
+        <a href="/guides/railway-quick-start" class="cta-btn">Try the Easy Setup Instead →</a>
+      </div>
+
+      <h2>Who Is This For?</h2>
+      <p>This guide is for people who are comfortable with a terminal and want to run OpenClaw on their own Linux server. If terms like SSH, npm, and systemd sound familiar, you're in the right place.</p>
+      <p>If that sounds intimidating, the <a href="/guides/railway-quick-start">Railway one-click setup</a> gives you the same result without any terminal work.</p>
+
+      <h2>What You'll Need</h2>
+      <ul>
+        <li>A VPS running Ubuntu 22.04+ or Debian 12+ (providers like Hetzner, DigitalOcean, Linode all work)</li>
+        <li>At least 1 GB RAM and 10 GB storage</li>
+        <li>SSH access to your server</li>
+        <li>A domain name (optional but recommended)</li>
+        <li>An Anthropic API key</li>
+      </ul>
+
+      <h2>Quick Overview</h2>
+      <ol>
+        <li><strong>Set up your server</strong> — install Node.js 20+ and basic dependencies</li>
+        <li><strong>Install OpenClaw</strong> — one npm command</li>
+        <li><strong>Run the setup wizard</strong> — configure your AI model, API key, and preferences</li>
+        <li><strong>Set up as a service</strong> — keep it running 24/7 with systemd</li>
+        <li><strong>Connect WhatsApp</strong> — scan a QR code to link your phone</li>
+        <li><strong>Secure it</strong> — firewall, HTTPS, and access controls</li>
+      </ol>
+
+      <h2>VPS vs Railway</h2>
+      <ul>
+        <li><strong>More control</strong> — full root access, custom domains, SSH</li>
+        <li><strong>Potentially cheaper</strong> — a basic VPS starts around £3–4/month</li>
+        <li><strong>More work</strong> — you handle updates, security, and maintenance</li>
+        <li><strong>More flexible</strong> — run additional services alongside OpenClaw</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Want the Easy Route?</h3>
+        <p>Railway handles all the server work for you. Same result, zero terminal commands.</p>
+        <a href="/guides/railway-quick-start" class="cta-btn">One-Click Setup →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

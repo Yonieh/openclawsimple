@@ -1,41 +1,55 @@
 ---
-import '../../styles/global.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>OpenClaw Local Install Guide - Free Setup on Mac, Windows & Linux (2026)</title>
-		<meta name="description" content="Install OpenClaw on your computer for free. Step-by-step guide for Mac, Windows, and Linux with screenshots. No Docker required." />
-		<meta name="keywords" content="openclaw install, openclaw mac install, openclaw windows install, openclaw linux install, openclaw npm install" />
-		<link rel="canonical" href="https://openclawsimple.com/guides/local-install" />
-	</head>
-	<body>
-		<div class="min-h-screen bg-gray-50">
-			<header class="bg-white border-b border-gray-200">
-				<div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-					<div class="flex items-center justify-between">
-						<a href="/" class="flex items-center space-x-2 hover:opacity-75">
-							<span class="text-3xl">🦞</span>
-							<div class="text-xl font-bold text-gray-900">OpenClaw Simple</div>
-						</a>
-						<a href="/" class="text-sm text-gray-600 hover:text-gray-900">← Back</a>
-					</div>
-				</div>
-			</header>
+<BaseLayout
+  title="Free OpenClaw Install: Mac, Windows & Linux (2026)"
+  description="Install OpenClaw on your computer for free. Step-by-step guide for Mac, Windows, and Linux. No Docker required.">
 
-			<article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-				<h1 class="text-4xl font-bold text-gray-900 mb-6">Free OpenClaw Install: Mac, Windows & Linux</h1>
-				
-				<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-8">
-					<p class="font-semibold">Writing in progress</p>
-					<p class="text-sm text-gray-700 mt-2">
-						This guide will show you how to install OpenClaw on your computer completely free. Check back tomorrow or <a href="/guides/railway-quick-start" class="text-blue-600 hover:underline">try the one-click Railway method</a> instead.
-					</p>
-				</div>
-			</article>
-		</div>
-	</body>
-</html>
+  <div class="article">
+    <div class="container-narrow">
+      <h1>Free OpenClaw Install: Mac, Windows &amp; Linux</h1>
+      <p class="subtitle">Run OpenClaw on your own computer at no cost. Takes about 20 minutes — your computer needs to stay on for it to work.</p>
+
+      <div class="cta-box" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); margin-bottom: 2rem;">
+        <h3 style="color: #1c1c26;">Writing in Progress</h3>
+        <p style="color: rgba(0,0,0,0.8);">This guide is being written. Check back soon for the full step-by-step instructions.</p>
+        <a href="/guides/railway-quick-start" class="cta-btn">Try the One-Click Setup Instead →</a>
+      </div>
+
+      <h2>What You'll Need</h2>
+      <ul>
+        <li>A Mac (macOS 13+), Windows 10/11, or Linux computer</li>
+        <li>Node.js version 20 or newer</li>
+        <li>An Anthropic API key (free to create, pay-as-you-go usage)</li>
+        <li>About 20 minutes</li>
+      </ul>
+
+      <h2>Quick Overview</h2>
+      <p>The full guide will walk you through each step in detail. Here's what the process looks like:</p>
+      <ol>
+        <li><strong>Install Node.js</strong> — download from nodejs.org and run the installer</li>
+        <li><strong>Install OpenClaw</strong> — one command in your terminal</li>
+        <li><strong>Run the setup wizard</strong> — answers a few questions to configure everything</li>
+        <li><strong>Connect WhatsApp</strong> — scan a QR code to link your phone</li>
+        <li><strong>Start chatting</strong> — message your assistant and watch it work</li>
+      </ol>
+
+      <h2>Trade-offs vs Railway</h2>
+      <p>Running locally is free, but there are some differences compared to the <a href="/guides/railway-quick-start">Railway cloud setup</a>:</p>
+      <ul>
+        <li><strong>Free</strong> — no hosting costs, just API usage (£2–5/month)</li>
+        <li><strong>Your computer must stay on</strong> — if you close the lid or shut down, the assistant goes offline</li>
+        <li><strong>No auto-updates</strong> — you'll need to update manually when new versions come out</li>
+        <li><strong>More control</strong> — full access to config files and logs on your own machine</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Can't Wait?</h3>
+        <p>The Railway setup takes 5 minutes and costs just £5/month. Your assistant runs 24/7 without keeping your computer on.</p>
+        <a href="/guides/railway-quick-start" class="cta-btn">One-Click Setup →</a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

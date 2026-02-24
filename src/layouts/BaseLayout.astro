@@ -15,12 +15,16 @@ const { title, description } = Astro.props;
   <title>{title}</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={`https://openclawsimple.com${Astro.url.pathname}`} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={`https://openclawsimple.com${Astro.url.pathname}`} />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* Modern, accessible color palette */
       --bg: #0d0d12;
       --bg-elevated: #16161d;
       --bg-card: #1c1c26;
@@ -28,13 +32,9 @@ const { title, description } = Astro.props;
       --border: #2d2d3d;
       --border-subtle: #222230;
       --border-accent: #3a3a4f;
-      
-      /* Typography with WCAG AA+ contrast */
       --text: #f5f5f7;
       --text-secondary: #a8a8b8;
       --text-tertiary: #75758a;
-      
-      /* Brand colors - vibrant but accessible */
       --accent: #ff6b57;
       --accent-hover: #ff8574;
       --accent-glow: rgba(255, 107, 87, 0.25);
@@ -42,8 +42,6 @@ const { title, description } = Astro.props;
       --blue: #5b9eff;
       --purple: #a78bfa;
       --yellow: #fbbf24;
-      
-      /* Typography scale */
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --text-xs: 0.75rem;
       --text-sm: 0.875rem;
@@ -53,8 +51,6 @@ const { title, description } = Astro.props;
       --text-2xl: 1.5rem;
       --text-3xl: 1.875rem;
       --text-4xl: 2.25rem;
-      
-      /* Spacing scale */
       --space-xs: 0.5rem;
       --space-sm: 0.75rem;
       --space-md: 1rem;
@@ -62,26 +58,22 @@ const { title, description } = Astro.props;
       --space-xl: 2rem;
       --space-2xl: 3rem;
       --space-3xl: 4rem;
-      
-      /* Border radius */
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
       --radius-xl: 24px;
-      
-      /* Shadows */
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
       --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
       --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
       --shadow-glow: 0 0 32px var(--accent-glow);
     }
 
-    html { 
+    html {
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    
+
     body {
       font-family: var(--font-body);
       background: var(--bg);
@@ -97,7 +89,20 @@ const { title, description } = Astro.props;
       outline-offset: 2px;
     }
 
-    /* Skip to main content for screen readers */
+    /* Screen reader only text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Skip to main content for keyboard users */
     .skip-to-main {
       position: absolute;
       left: -9999px;
@@ -107,15 +112,16 @@ const { title, description } = Astro.props;
       background: var(--accent);
       color: white;
       text-decoration: none;
+      font-weight: 600;
       border-radius: var(--radius-md);
     }
-    
+
     .skip-to-main:focus {
       left: var(--space-md);
       top: var(--space-md);
     }
 
-    /* NAV - Improved contrast and hover states */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -142,10 +148,8 @@ const { title, description } = Astro.props;
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    
-    .nav-logo:hover {
-      opacity: 0.8;
-    }
+
+    .nav-logo:hover { opacity: 0.8; }
 
     .nav-logo .lobster {
       font-size: var(--text-2xl);
@@ -172,19 +176,10 @@ const { title, description } = Astro.props;
     }
 
     /* CONTAINER */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 var(--space-lg);
-    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 var(--space-lg); }
+    .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 var(--space-lg); }
 
-    .container-narrow {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 var(--space-lg);
-    }
-
-    /* ARTICLE CONTENT - Better typography */
+    /* ARTICLE CONTENT */
     .article {
       padding-top: 100px;
       padding-bottom: var(--space-3xl);
@@ -230,10 +225,7 @@ const { title, description } = Astro.props;
       margin-bottom: var(--space-lg);
     }
 
-    .article strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .article strong { color: var(--text); font-weight: 600; }
 
     .article a {
       color: var(--accent);
@@ -242,7 +234,7 @@ const { title, description } = Astro.props;
       text-underline-offset: 2px;
       transition: all 0.2s;
     }
-    
+
     .article a:hover {
       text-decoration-color: var(--accent);
       color: var(--accent-hover);
@@ -286,7 +278,7 @@ const { title, description } = Astro.props;
       color: var(--text-secondary);
     }
 
-    /* CTA BOX - More prominent */
+    /* CTA BOX */
     .cta-box {
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
       padding: var(--space-2xl);
@@ -332,16 +324,14 @@ const { title, description } = Astro.props;
       background: #fafafa;
     }
 
-    /* FOOTER - Better hierarchy */
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border-subtle);
       padding: var(--space-2xl) 0;
       background: var(--bg-elevated);
     }
 
-    .footer-content {
-      text-align: center;
-    }
+    .footer-content { text-align: center; }
 
     .footer-logo {
       display: flex;
@@ -375,9 +365,7 @@ const { title, description } = Astro.props;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover {
-      color: var(--text);
-    }
+    .footer-links a:hover { color: var(--text); }
 
     .footer-disclaimer {
       font-size: var(--text-xs);
@@ -386,25 +374,11 @@ const { title, description } = Astro.props;
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { 
-        padding: var(--space-md);
-      }
-      
-      .article { 
-        padding-top: 80px;
-      }
-      
-      .container, .container-narrow {
-        padding: 0 var(--space-md);
-      }
-      
-      .article h1 {
-        font-size: var(--text-3xl);
-      }
-      
-      .article h2 {
-        font-size: var(--text-2xl);
-      }
+      nav { padding: var(--space-md); }
+      .article { padding-top: 80px; }
+      .container, .container-narrow { padding: 0 var(--space-md); }
+      .article h1 { font-size: var(--text-3xl); }
+      .article h2 { font-size: var(--text-2xl); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -423,7 +397,7 @@ const { title, description } = Astro.props;
 
 <!-- NAV -->
 <nav role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="OpenClaw Simple home">
+  <a href="/" class="nav-logo" aria-label="OpenClaw Simple — home">
     <span class="lobster" aria-hidden="true">🦞</span>
     <span>OpenClaw Simple</span>
   </a>
@@ -448,7 +422,7 @@ const { title, description } = Astro.props;
         <a href="/">Home</a>
         <a href="/guides/railway-quick-start">Quick Start</a>
         <a href="/guides/what-is-openclaw">What is OpenClaw</a>
-        <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub <span class="sr-only">(opens in new tab)</span></a>
       </nav>
       <p class="footer-disclaimer">Independent resource · Not affiliated with OpenClaw project</p>
     </div>

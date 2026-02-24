@@ -1,20 +1,28 @@
 ---
 // OpenClaw Simple - Accessible, Stylish Homepage
+import SchemaOrg from '../components/SchemaOrg.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set Up OpenClaw in 5 Minutes — Your AI Assistant That Actually Does Things</title>
-<meta name="description" content="Complete beginner's guide to setting up OpenClaw - your AI assistant that checks emails, books restaurants, and manages your calendar from WhatsApp.">
+<title>OpenClaw Setup Guide: Install in 5 Minutes | OpenClaw Simple</title>
+<meta name="description" content="Complete beginner's guide to setting up OpenClaw - your AI assistant that checks emails, books restaurants, and manages your calendar from WhatsApp. Free and paid options.">
 <link rel="canonical" href="https://openclawsimple.com" />
+<meta property="og:title" content="Set Up OpenClaw in 5 Minutes">
+<meta property="og:description" content="Your AI assistant that checks emails, books restaurants, and manages your calendar from WhatsApp.">
+<meta property="og:url" content="https://openclawsimple.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Setup Guide: Install in 5 Minutes">
+<meta name="twitter:description" content="Complete beginner's guide. Free and paid setup options. Your AI assistant that actually does things.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<SchemaOrg type="website" />
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    /* Modern accessible color palette */
     --bg: #0d0d12;
     --bg-elevated: #16161d;
     --bg-card: #1c1c26;
@@ -55,6 +63,37 @@
   *:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
+  }
+
+  /* Screen reader only text */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* SKIP TO CONTENT */
+  .skip-to-main {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 999;
+    padding: var(--space-md);
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+  }
+  .skip-to-main:focus {
+    left: var(--space-md);
+    top: var(--space-md);
   }
 
   /* NAV */
@@ -230,12 +269,14 @@
     box-shadow: var(--shadow-md);
   }
 
+  /* TRUST BAR - now a proper list */
   .trust-bar {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
     margin-bottom: 72px;
+    list-style: none;
   }
 
   .trust-item {
@@ -398,6 +439,7 @@
     line-height: 1.6;
   }
 
+  /* PATH STATS - now a definition list */
   .path-stats {
     display: flex;
     flex-direction: column;
@@ -413,8 +455,8 @@
     font-size: 0.9375rem;
   }
 
-  .path-stat .label { color: var(--text-secondary); }
-  .path-stat .value { font-weight: 600; color: var(--text); }
+  .path-stat dt { color: var(--text-secondary); }
+  .path-stat dd { font-weight: 600; color: var(--text); margin: 0; }
 
   .path-link {
     display: block;
@@ -447,7 +489,7 @@
 
   .path-link.disabled {
     opacity: 0.5;
-    pointer-events: none;
+    cursor: not-allowed;
   }
 
   /* FEATURES */
@@ -560,7 +602,7 @@
     .trust-bar { gap: 24px; }
     .paths { grid-template-columns: 1fr; }
     .hero-buttons { flex-direction: column; align-items: center; }
-    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -573,8 +615,11 @@
 </head>
 <body>
 
+<!-- Skip to main content for keyboard/screen reader users -->
+<a href="#main-content" class="skip-to-main">Skip to main content</a>
+
 <nav role="navigation" aria-label="Main navigation">
-  <a href="#" class="nav-logo" aria-label="OpenClaw Simple home">
+  <a href="/" class="nav-logo" aria-label="OpenClaw Simple — home">
     <span class="lobster" aria-hidden="true">🦞</span>
     <span>OpenClaw Simple</span>
   </a>
@@ -584,17 +629,17 @@
 <main id="main-content">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-heading">
   <div class="container">
     <div class="hero-badge">
       <span class="dot" aria-hidden="true"></span>
       Complete beginner's guide
     </div>
 
-    <h1>Set Up OpenClaw<br>in <span class="highlight">5 Minutes</span></h1>
+    <h1 id="hero-heading">Set Up OpenClaw in <span class="highlight">5 Minutes</span></h1>
 
     <p class="hero-sub">
-      Your own AI assistant that actually does things. Checks emails, books restaurants, manages your calendar - all from WhatsApp. We'll show you the easiest way.
+      Your own AI assistant that actually does things. Checks emails, books restaurants, manages your calendar — all from WhatsApp. We'll show you the easiest way.
     </p>
 
     <div class="hero-buttons">
@@ -602,18 +647,18 @@
       <a href="#what-is" class="btn-secondary">See How It Works</a>
     </div>
 
-    <div class="trust-bar">
-      <span class="trust-item"><span aria-hidden="true">⚡</span> Easy to follow</span>
-      <span class="trust-item"><span aria-hidden="true">💰</span> Free option available</span>
-      <span class="trust-item"><span aria-hidden="true">🔒</span> Your data stays yours</span>
-    </div>
+    <ul class="trust-bar" aria-label="Key benefits">
+      <li class="trust-item"><span aria-hidden="true">⚡</span> Easy to follow</li>
+      <li class="trust-item"><span aria-hidden="true">💰</span> Free option available</li>
+      <li class="trust-item"><span aria-hidden="true">🔒</span> Your data stays yours</li>
+    </ul>
 
-    <div class="chat-demo">
+    <div class="chat-demo" role="figure" aria-label="Example conversation with OpenClaw on WhatsApp">
       <div class="chat-header">
-        <span class="status" aria-label="Online"></span>
+        <span class="status" aria-hidden="true"></span>
         <span aria-hidden="true">🦞</span> OpenClaw — Online
       </div>
-      <div class="chat-messages">
+      <div class="chat-messages" aria-hidden="true">
         <div class="msg msg-user">Check my emails and flag anything urgent</div>
         <div class="msg msg-bot"><span class="check">✓</span> Checked — 3 urgent emails found</div>
         <div class="msg msg-user">Book me a table for 2 on Friday at 7pm</div>
@@ -626,83 +671,83 @@
 </section>
 
 <!-- SETUP PATHS -->
-<section id="start">
+<section id="start" aria-labelledby="start-heading">
   <div class="container">
-    <h2 class="section-title">Choose Your Setup Method</h2>
+    <h2 class="section-title" id="start-heading">Choose Your Setup Method</h2>
     <p class="section-sub">Pick the approach that works best for you</p>
 
     <div class="paths">
-      <div class="path-card recommended">
+      <article class="path-card recommended">
         <span class="path-badge">⚡ Easiest</span>
         <div class="path-icon" aria-hidden="true">✨</div>
         <h3>One-Click Setup</h3>
         <p class="desc">Just click a button and paste one thing. No terminal, no code.</p>
-        <div class="path-stats">
+        <dl class="path-stats">
           <div class="path-stat">
-            <span class="label">Time:</span>
-            <span class="value">5 minutes</span>
+            <dt>Time:</dt>
+            <dd>5 minutes</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Cost:</span>
-            <span class="value">£5/month hosting</span>
+            <dt>Cost:</dt>
+            <dd>£5/month hosting</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Always on:</span>
-            <span class="value">24/7</span>
+            <dt>Always on:</dt>
+            <dd>24/7</dd>
           </div>
-        </div>
+        </dl>
         <a href="/guides/railway-quick-start" class="path-link">Start Here →</a>
-      </div>
+      </article>
 
-      <div class="path-card">
+      <article class="path-card">
         <div class="path-icon" aria-hidden="true">🛠️</div>
         <h3>Free Setup</h3>
         <p class="desc">Run it on your Mac or Windows computer. No monthly cost.</p>
-        <div class="path-stats">
+        <dl class="path-stats">
           <div class="path-stat">
-            <span class="label">Time:</span>
-            <span class="value">20 minutes</span>
+            <dt>Time:</dt>
+            <dd>20 minutes</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Cost:</span>
-            <span class="value">Free</span>
+            <dt>Cost:</dt>
+            <dd>Free</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Note:</span>
-            <span class="value">Computer stays on</span>
+            <dt>Note:</dt>
+            <dd>Computer stays on</dd>
           </div>
-        </div>
+        </dl>
         <a href="/guides/local-install" class="path-link">Free Guide →</a>
-      </div>
+      </article>
 
-      <div class="path-card">
+      <article class="path-card">
         <div class="path-icon" aria-hidden="true">🚀</div>
         <h3>Done For You</h3>
         <p class="desc">We handle everything. You just start using it.</p>
-        <div class="path-stats">
+        <dl class="path-stats">
           <div class="path-stat">
-            <span class="label">Time:</span>
-            <span class="value">2 minutes</span>
+            <dt>Time:</dt>
+            <dd>2 minutes</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Cost:</span>
-            <span class="value">£20/month</span>
+            <dt>Cost:</dt>
+            <dd>£20/month</dd>
           </div>
           <div class="path-stat">
-            <span class="label">Work:</span>
-            <span class="value">None</span>
+            <dt>Work:</dt>
+            <dd>None</dd>
           </div>
-        </div>
-        <span class="path-link disabled">Coming Soon</span>
-      </div>
+        </dl>
+        <span class="path-link disabled" role="link" aria-disabled="true">Coming Soon</span>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- WHAT IS OPENCLAW -->
-<section id="what-is">
+<section id="what-is" aria-labelledby="what-is-heading">
   <div class="container">
-    <h2 class="section-title">What is OpenClaw?</h2>
+    <h2 class="section-title" id="what-is-heading">What is OpenClaw?</h2>
 
     <div class="what-is-content">
       <p>
@@ -713,23 +758,23 @@
       </p>
     </div>
 
-    <div class="features">
-      <div class="feature-card">
+    <div class="features" role="list">
+      <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true">📧</div>
         <h4>Email Management</h4>
         <p>Checks inbox, flags urgent messages, drafts replies</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true">📅</div>
         <h4>Calendar Control</h4>
         <p>Schedules meetings, sets reminders, checks availability</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true">🍽️</div>
-        <h4>Bookings & Reservations</h4>
+        <h4>Bookings &amp; Reservations</h4>
         <p>Books restaurants, orders taxis, makes appointments</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true">🔒</div>
         <h4>Your Data, Your Control</h4>
         <p>Self-hosted, open source, no vendor lock-in</p>
@@ -739,9 +784,9 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="final-cta">
+<section class="final-cta" aria-labelledby="cta-heading">
   <div class="container">
-    <h2>Ready to Get Started?</h2>
+    <h2 id="cta-heading">Ready to Get Started?</h2>
     <p>Follow one of our guides and have OpenClaw running in minutes.</p>
     <a href="/guides/railway-quick-start" class="btn-primary">Start With the Easy Guide →</a>
   </div>
@@ -761,7 +806,7 @@
       <a href="/guides/railway-quick-start">Quick Start</a>
       <a href="/guides/what-is-openclaw">What is OpenClaw</a>
       <a href="/guides/local-install">Free Setup</a>
-      <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">GitHub <span class="sr-only">(opens in new tab)</span></a>
     </nav>
     <p class="footer-disclaimer">Independent resource · Not affiliated with OpenClaw project</p>
   </div>
