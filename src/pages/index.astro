@@ -1,315 +1,381 @@
 ---
-import '../styles/global.css';
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>OpenClaw Setup Guide - Install & Configure in 5 Minutes (2026)</title>
-		<meta name="description" content="Complete OpenClaw setup guides for beginners. Learn what OpenClaw is, how to install it, and start using your AI assistant today." />
-		<link rel="canonical" href="https://openclawsimple.com" />
-	</head>
-	<body>
-		<!-- Navigation -->
-		<nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="flex justify-between items-center h-16">
-					<div class="flex items-center space-x-2">
-						<div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white text-xl font-bold shadow-lg">
-							🦞
-						</div>
-						<span class="text-xl font-bold text-slate-900">OpenClaw Simple</span>
-					</div>
-					<a href="#start" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all shadow-sm hover:shadow-md">
-						Get Started
-					</a>
-				</div>
-			</div>
-		</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Setup Guide - Install in 5 Minutes</title>
+    <meta name="description" content="Complete OpenClaw setup guides for beginners. No jargon, just simple steps to get your AI assistant running.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased">
 
-		<!-- Hero Section -->
-		<section class="pt-32 pb-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-			<div class="max-w-7xl mx-auto">
-				<div class="grid lg:grid-cols-2 gap-12 items-center">
-					<div>
-						<div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-								<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-							</svg>
-							<span>No technical skills required</span>
-						</div>
-						<h1 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-							Set Up OpenClaw in 
-							<span class="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">5 Minutes</span>
-						</h1>
-						<p class="text-xl text-slate-600 mb-8 leading-relaxed">
-							Your AI assistant that actually does things. Clear your inbox, book restaurants, manage your calendar - all from WhatsApp. We'll show you the easiest way to get started.
-						</p>
-						<div class="flex flex-col sm:flex-row gap-4">
-							<a href="#start" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
-								Get Started Free →
-							</a>
-							<a href="#what-is" class="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 rounded-lg font-semibold text-lg transition-all border-2 border-slate-200 hover:border-slate-300 text-center">
-								What is OpenClaw?
-							</a>
-						</div>
-						<div class="mt-8 flex items-center space-x-6 text-sm text-slate-600">
-							<div class="flex items-center space-x-2">
-								<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span>Free option available</span>
-							</div>
-							<div class="flex items-center space-x-2">
-								<svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span>5 minute setup</span>
-							</div>
-						</div>
-					</div>
-					<div class="relative">
-						<div class="bg-white rounded-2xl shadow-2xl p-8 border border-slate-200">
-							<div class="space-y-4">
-								<div class="flex items-start space-x-3">
-									<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-1">
-										<svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-											<path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
-											<path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
-										</svg>
-									</div>
-									<div class="flex-1">
-										<p class="text-slate-700 font-medium">"Check my emails and flag anything urgent"</p>
-										<p class="text-sm text-slate-500 mt-1">✓ Checked - 3 urgent emails found</p>
-									</div>
-								</div>
-								<div class="flex items-start space-x-3">
-									<div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 mt-1">
-										<svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-											<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-										</svg>
-									</div>
-									<div class="flex-1">
-										<p class="text-slate-700 font-medium">"Book me a table for 2 on Friday at 7pm"</p>
-										<p class="text-sm text-slate-500 mt-1">✓ Booking request sent</p>
-									</div>
-								</div>
-								<div class="flex items-start space-x-3">
-									<div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-										<svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-										</svg>
-									</div>
-									<div class="flex-1">
-										<p class="text-slate-700 font-medium">"Remind me to call Dave at 9am tomorrow"</p>
-										<p class="text-sm text-slate-500 mt-1">✓ Reminder set</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- Navigation -->
+<nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center text-white text-2xl shadow-md">
+                    🦞
+                </div>
+                <span class="text-xl font-bold text-gray-900">OpenClaw Simple</span>
+            </div>
+            <a href="#get-started" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all shadow-sm hover:shadow-md">
+                Get Started
+            </a>
+        </div>
+    </div>
+</nav>
 
-		<!-- Setup Paths Section -->
-		<section id="start" class="py-20 px-4 bg-white">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl font-bold text-slate-900 mb-4">Choose Your Setup Path</h2>
-					<p class="text-xl text-slate-600">Pick based on how much effort you want to put in</p>
-				</div>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Column -->
+            <div>
+                <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    No technical skills required
+                </div>
+                
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                    Set Up OpenClaw in 
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">5 Minutes</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Your AI assistant that actually does things. Clear your inbox, book restaurants, manage your calendar - all from WhatsApp.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#get-started" class="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center">
+                        Get Started Free
+                        <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                    </a>
+                    <a href="#what-is" class="bg-white hover:bg-gray-50 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all border-2 border-gray-200 hover:border-gray-300 text-center">
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="flex flex-wrap gap-6 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Free option
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        5 min setup
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Works from phone
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Demo -->
+            <div class="relative">
+                <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                    <div class="flex items-center gap-2 mb-6 pb-4 border-b">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span class="ml-auto text-xs text-gray-500 font-mono">WhatsApp</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-2xl rounded-tl-none px-4 py-3">
+                                    <p class="text-gray-800 text-sm">"Check my emails and flag anything urgent"</p>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1 ml-2">You · Just now</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                                🦞
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-2xl rounded-tl-none px-4 py-3">
+                                    <p class="text-sm font-medium">✓ Checked your inbox</p>
+                                    <p class="text-sm opacity-90 mt-1">Found 3 urgent emails:</p>
+                                    <ul class="text-xs mt-2 space-y-1 opacity-90">
+                                        <li>• Project deadline reminder</li>
+                                        <li>• Meeting rescheduled</li>
+                                        <li>• Invoice awaiting approval</li>
+                                    </ul>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1 ml-2">OpenClaw · Just now</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-2xl rounded-tl-none px-4 py-3">
+                                    <p class="text-gray-800 text-sm">"Perfect, thanks! 👍"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-				<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-					<!-- Railway -->
-					<div class="relative bg-white rounded-2xl border-2 border-blue-200 p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-						<div class="absolute -top-4 left-1/2 -translate-x-1/2">
-							<span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-								⭐ Recommended
-							</span>
-						</div>
-						<div class="text-5xl mb-4">✨</div>
-						<h3 class="text-2xl font-bold text-slate-900 mb-2">Click & Done</h3>
-						<p class="text-slate-600 mb-6">Deploy with one click. Zero terminal, zero code.</p>
-						<div class="space-y-3 mb-6">
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>5 minutes</strong> setup</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>£5/month</strong> hosting</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>24/7</strong> availability</span>
-							</div>
-						</div>
-						<a href="/guides/railway-quick-start" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors">
-							Start Here →
-						</a>
-					</div>
+<!-- Setup Paths -->
+<section id="get-started" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Choose Your Setup Path</h2>
+            <p class="text-xl text-gray-600">Pick based on how much effort you want to put in</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Railway -->
+            <div class="relative bg-white rounded-2xl border-2 border-blue-500 p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg">
+                        ⭐ RECOMMENDED
+                    </span>
+                </div>
+                
+                <div class="text-6xl mb-4">✨</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Click & Done</h3>
+                <p class="text-gray-600 mb-6">Deploy with one click. Zero terminal required.</p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>5 minutes</strong> setup</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>£5/month</strong> hosting</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>24/7</strong> online</span>
+                    </li>
+                </ul>
+                
+                <a href="/guides/railway-quick-start" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3.5 rounded-xl font-bold transition-all shadow-md hover:shadow-lg">
+                    Start Here →
+                </a>
+            </div>
+            
+            <!-- Local -->
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                <div class="text-6xl mb-4">🛠️</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Free DIY</h3>
+                <p class="text-gray-600 mb-6">Install on your computer for free.</p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>20 minutes</strong> setup</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>£0</strong> cost</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Step-by-step</span>
+                    </li>
+                </ul>
+                
+                <a href="/guides/local-install" class="block w-full bg-gray-800 hover:bg-gray-900 text-white text-center py-3.5 rounded-xl font-bold transition-all shadow-md hover:shadow-lg">
+                    Free Guide →
+                </a>
+                <p class="text-xs text-gray-500 mt-3 text-center">PC must stay on</p>
+            </div>
+            
+            <!-- Premium -->
+            <div class="bg-gray-50 rounded-2xl border-2 border-gray-200 p-8 opacity-60">
+                <div class="text-6xl mb-4">🚀</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Done For You</h3>
+                <p class="text-gray-600 mb-6">We handle everything for you.</p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>2 minutes</strong> setup</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span><strong>£20/month</strong> managed</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm">
+                        <svg class="w-5 h-5 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Zero effort</span>
+                    </li>
+                </ul>
+                
+                <button disabled class="block w-full bg-gray-300 text-gray-500 text-center py-3.5 rounded-xl font-bold cursor-not-allowed">
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
 
-					<!-- Local Install -->
-					<div class="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-						<div class="text-5xl mb-4">🛠️</div>
-						<h3 class="text-2xl font-bold text-slate-900 mb-2">Free DIY</h3>
-						<p class="text-slate-600 mb-6">Install on your Mac or Windows PC for free.</p>
-						<div class="space-y-3 mb-6">
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>20 minutes</strong> setup</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>£0</strong> cost</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span>Step-by-step guide</span>
-							</div>
-						</div>
-						<a href="/guides/local-install" class="block w-full bg-slate-700 hover:bg-slate-800 text-white text-center py-3 rounded-lg font-semibold transition-colors">
-							Free Guide →
-						</a>
-						<p class="text-xs text-slate-500 mt-3 text-center">PC must stay on</p>
-					</div>
+<!-- What is OpenClaw -->
+<section id="what-is" class="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">What is OpenClaw?</h2>
+            <p class="text-xl text-gray-600">Your AI assistant that actually does things</p>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                OpenClaw is an AI assistant that runs on your computer or server and actually <strong>does things</strong> for you. Unlike ChatGPT which just answers questions, OpenClaw takes action.
+            </p>
+            <p class="text-lg text-gray-700 mb-10 leading-relaxed">
+                You message it from WhatsApp or Telegram like you'd message a person, and it handles all the boring admin - checking emails, booking restaurants, managing your calendar, and more.
+            </p>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">Open Source</h4>
+                        <p class="text-sm text-gray-600">You control it completely</p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">Self-Hosted</h4>
+                        <p class="text-sm text-gray-600">Your data stays private</p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">From Your Phone</h4>
+                        <p class="text-sm text-gray-600">Message it via WhatsApp</p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-1">Fully Customizable</h4>
+                        <p class="text-sm text-gray-600">Make it work your way</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-					<!-- Premium -->
-					<div class="bg-slate-50 rounded-2xl border-2 border-slate-200 p-8 opacity-60">
-						<div class="text-5xl mb-4">🚀</div>
-						<h3 class="text-2xl font-bold text-slate-900 mb-2">Done For You</h3>
-						<p class="text-slate-600 mb-6">We set up and manage everything for you.</p>
-						<div class="space-y-3 mb-6">
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>2 minutes</strong> setup</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span><strong>£20/month</strong> managed</span>
-							</div>
-							<div class="flex items-center text-sm text-slate-600">
-								<svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-								<span>Zero effort</span>
-							</div>
-						</div>
-						<button disabled class="block w-full bg-slate-300 text-slate-500 text-center py-3 rounded-lg font-semibold cursor-not-allowed">
-							Coming Soon
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- CTA -->
+<section class="py-20 px-4 gradient-bg">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-white mb-4">Ready to Get Started?</h2>
+        <p class="text-xl text-blue-100 mb-8">Choose your setup path and have your AI assistant running in minutes</p>
+        <a href="#get-started" class="inline-block bg-white hover:bg-gray-50 text-blue-600 px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-2xl hover:shadow-3xl hover:-translate-y-1">
+            Choose Your Path →
+        </a>
+    </div>
+</section>
 
-		<!-- What is OpenClaw -->
-		<section id="what-is" class="py-20 px-4 bg-slate-50">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-4xl font-bold text-slate-900 mb-6 text-center">What is OpenClaw?</h2>
-				<div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
-					<p class="text-lg text-slate-700 mb-6 leading-relaxed">
-						OpenClaw is an AI assistant that runs on your computer or server and actually <strong>does things</strong> for you. Unlike ChatGPT which just answers questions, OpenClaw takes action.
-					</p>
-					<p class="text-lg text-slate-700 mb-8 leading-relaxed">
-						You message it from WhatsApp or Telegram like you'd message a person, and it handles all the boring admin - checking emails, booking restaurants, managing your calendar, sending messages, and more.
-					</p>
-					<div class="grid md:grid-cols-2 gap-6">
-						<div class="flex items-start space-x-3">
-							<div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-							</div>
-							<div>
-								<h4 class="font-semibold text-slate-900 mb-1">Open Source</h4>
-								<p class="text-sm text-slate-600">You control it completely, no vendor lock-in</p>
-							</div>
-						</div>
-						<div class="flex items-start space-x-3">
-							<div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-							</div>
-							<div>
-								<h4 class="font-semibold text-slate-900 mb-1">Self-Hosted</h4>
-								<p class="text-sm text-slate-600">Your data stays with you, private and secure</p>
-							</div>
-						</div>
-						<div class="flex items-start space-x-3">
-							<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-							</div>
-							<div>
-								<h4 class="font-semibold text-slate-900 mb-1">Works From Phone</h4>
-								<p class="text-sm text-slate-600">Message it like a person via WhatsApp</p>
-							</div>
-						</div>
-						<div class="flex items-start space-x-3">
-							<div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
-								<svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-								</svg>
-							</div>
-							<div>
-								<h4 class="font-semibold text-slate-900 mb-1">Fully Customizable</h4>
-								<p class="text-sm text-slate-600">Make it work exactly how you want</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center text-white text-2xl shadow-md">
+                🦞
+            </div>
+            <span class="text-white font-bold text-xl">OpenClaw Simple</span>
+        </div>
+        <p class="text-sm mb-4">Setup guides for normal humans</p>
+        <p class="text-xs mb-4">
+            <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+                OpenClaw on GitHub
+            </a>
+        </p>
+        <p class="text-xs opacity-75">Independent resource · Not affiliated with OpenClaw project</p>
+    </div>
+</footer>
 
-		<!-- CTA -->
-		<section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-purple-600">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
-				<p class="text-xl text-blue-100 mb-8">Choose your setup path and have your AI assistant running in minutes</p>
-				<a href="#start" class="inline-block px-8 py-4 bg-white hover:bg-slate-50 text-blue-600 rounded-lg font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
-					Choose Your Path →
-				</a>
-			</div>
-		</section>
-
-		<!-- Footer -->
-		<footer class="bg-slate-900 text-slate-400 py-12 px-4">
-			<div class="max-w-7xl mx-auto text-center">
-				<div class="flex items-center justify-center space-x-2 mb-4">
-					<div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white text-lg font-bold">
-						🦞
-					</div>
-					<span class="text-white font-bold">OpenClaw Simple</span>
-				</div>
-				<p class="text-sm mb-4">Setup guides for normal humans</p>
-				<p class="text-xs">
-					<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener" class="hover:text-white transition-colors">OpenClaw on GitHub</a>
-				</p>
-				<p class="text-xs mt-4 opacity-75">Independent resource · Not affiliated with OpenClaw project</p>
-			</div>
-		</footer>
-	</body>
+</body>
 </html>
